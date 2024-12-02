@@ -1,0 +1,59 @@
+.navContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2px 20%;
+}
+
+.navLeft {
+    display: flex;
+    align-items: center;
+}
+
+.navItems {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.navLeft input {
+    height: 30px;
+    background-color: #EDF3F8;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    padding-left: 40px;
+}
+
+.navLeftInputContainer {
+    position: relative;
+}
+
+.navRight {
+    padding: 2px 0;
+    display: flex;
+    align-items: center;
+}
+
+.navItemsContainer {
+    width: 80px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.navItemsText {
+    font-size: 14px;
+    color: grey;
+}
+
+.navRightBusinessContainer {
+    display: flex;
+    align-items: center;
+}
+
+.tryPremiumIcon {
+    width: 120px;
+}
