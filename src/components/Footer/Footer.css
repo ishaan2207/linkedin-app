@@ -1,0 +1,49 @@
+.footer {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    padding: 20px 0;
+    width: 13%;
+    margin: 15px 0 0 71%;
+}
+
+.footerLinks {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.footerLinks a {
+    text-decoration: none;
+    color: #666;
+    display: flex;
+    align-items: center;
+    /* Align icon with text */
+}
+
+.footerLinks a:hover {
+    text-decoration: underline;
+}
+
+.dropdownIcon {
+    font-size: 16px;
+    margin-left: 2px;
+}
+
+.footerBottom {
+    font-size: 12px;
+    color: #666;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.linkedinLogo {
+    width: 60px;
+    /* Adjust size as needed */
+    height: auto;
+}

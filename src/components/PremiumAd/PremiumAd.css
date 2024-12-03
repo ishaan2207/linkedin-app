@@ -1,0 +1,30 @@
+.premiumAdContainer {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid grey;
+    border-radius: 8px;
+    width: 10%;
+    margin: 7px 0 0 20%;
+    font-size: 12px;
+    padding: 10px 12px;
+    cursor: pointer;
+}
+
+.premiumAdContainer>p {
+    color: grey;
+}
+
+.adIconContainer {
+    display: flex;
+    align-items: center;
+    padding-top: 5px;
+}
+
+.adIconContainer>p {
+    padding-left: 5px;
+}
+
+.adIconContainer:hover {
+    color: #0A66C2;
+}

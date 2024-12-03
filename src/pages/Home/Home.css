@@ -1,0 +1,9 @@
+.homeContainer {
+    width: 100%;
+    overflow: hidden;
+}
+
+.homeColumn {
+    float: left;
+    width: 100%;
+}

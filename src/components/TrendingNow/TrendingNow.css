@@ -1,0 +1,83 @@
+.trendingSectionContainer {
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid grey;
+    border-radius: 8px;
+    width: 13%;
+    padding: 15px 17px;
+    margin: 15px 0 0 70%;
+}
+
+#trendingHeader {
+    font-size: 20px;
+    padding-bottom: 8px;
+}
+
+#trendingTag {
+    font-size: 16px;
+    color: grey;
+    padding-bottom: 3px;
+}
+
+.trendingTopics {
+    display: flex;
+    flex-direction: column;
+}
+
+.showMoreContainer {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    color: rgb(101, 108, 114);
+    padding-top: 3px;
+}
+
+.topicInfo {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    color: grey;
+}
+
+.topicsContainer>p {
+    font-weight: 600;
+    font-size: 13px;
+    padding: 5px 0;
+}
+
+.todaysPuzzles {
+    padding-top: 15px;
+}
+
+.todaysPuzzles>p {
+    font-size: 18px;
+    color: grey;
+}
+
+.individualPuzzlesContainer {
+    display: flex;
+    padding-top: 10px;
+}
+
+.individualPuzzlesContainer>img {
+    margin-right: 7px;
+}
+
+.puzzleDescription {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.puzzleTitle {
+    font-size: 14px;
+    font-weight: 600;
+    padding-bottom: 3px;
+}
+
+.puzzleInformation {
+    font-size: 12px;
+    color: grey;
+}
