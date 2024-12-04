@@ -57,3 +57,7 @@
 .tryPremiumIcon {
     width: 120px;
 }
+
+.navLeftIcon {
+    cursor: pointer;
+}
