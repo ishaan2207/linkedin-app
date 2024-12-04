@@ -1,21 +1,43 @@
 import React from "react";
 import './Footer.css';
+import { useNavigate } from "react-router-dom";
 
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 function Footer() {
+    const navigate = useNavigate();
+
+    function goToAbout() {
+        navigate('/about');
+    }
+
+    function goToAccessibility() {
+        navigate('/accessibility');
+    }
+
+    function goToHelpCenter() {
+        navigate('/help-center');
+    }
+
+    function goToAdChoices() {
+        navigate('/ad-choices');
+    }
+
+    function goToAdvertising() {
+        navigate('/advertising');
+    }
 
     return (
         <div className="footer">
             <div className="footerLinks">
-                <a href="#">About</a>
-                <a href="#">Accesibility</a>
-                <a href="#">Help Center</a>
+                <a href="#" onClick={goToAbout}>About</a>
+                <a href="#" onClick={goToAccessibility}>Accessibility</a>
+                <a href="#" onClick={goToHelpCenter}>Help Center</a>
                 <a href="#">
                     Privacy & Terms <ArrowDropDownIcon className="dropdownIcon" />
                 </a>
-                <a href="#">Ad Choices</a>
-                <a href="#">Advertising</a>
+                <a href="#" onClick={goToAdChoices}>Ad Choices</a>
+                <a href="#" onClick={goToAdvertising}>Advertising</a>
                 <a href="#">
                     Business Services <ArrowDropDownIcon className="dropdownIcon" />
                 </a>

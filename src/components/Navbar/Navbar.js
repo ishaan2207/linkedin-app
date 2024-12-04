@@ -86,7 +86,7 @@ function Navbar() {
             <div className='navRight'>
                 <div className='navItems'>
                     {navItems.map((navItem, key) => (
-                        <div className='navItemsContainer' onClick={goToPage(navItem.path)}>
+                        <div className='navItemsContainer' onClick={() => goToPage(navItem.path)}>
                             <div className='navItemsIcon'>{navItem.icon}</div>
                             <p className='navItemsText'>{navItem.text}</p>
                         </div>
