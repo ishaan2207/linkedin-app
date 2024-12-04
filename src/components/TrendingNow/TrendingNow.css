@@ -5,9 +5,9 @@
     flex-direction: column;
     border: 1px solid grey;
     border-radius: 8px;
-    width: 13%;
+    /* width: 13%; */
     padding: 15px 17px;
-    margin: 15px 0 0 70%;
+    /* margin: 15px 0 0 70%; */
 }
 
 #trendingHeader {

@@ -6,13 +6,10 @@ import Footer from "../../../components/Footer/Footer";
 function RightPane() {
 
     return (
-        <div>
-            <TrendingNow />
-            <Footer />
+        <div className="rightPaneContainer">
+            <TrendingNow className='trendingNowElement' />
+            <Footer className='footerElement' />
         </div>
-        // Trending now 
-        // Promoted page
-        // Footer
     )
 }
 

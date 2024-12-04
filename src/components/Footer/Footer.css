@@ -4,16 +4,15 @@
     color: #666;
     text-align: center;
     padding: 20px 0;
-    width: 13%;
-    margin: 15px 0 0 71%;
+    /* width: 13%;
+    margin: 15px 0 0 71%; */
 }
 
 .footerLinks {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 15px;
-    margin-bottom: 10px;
+    gap: 12px;
 }
 
 .footerLinks a {
@@ -21,7 +20,7 @@
     color: #666;
     display: flex;
     align-items: center;
-    /* Align icon with text */
+    margin-bottom: 0;
 }
 
 .footerLinks a:hover {
@@ -40,10 +39,10 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+    margin-top: 20px;
 }
 
 .linkedinLogo {
     width: 60px;
-    /* Adjust size as needed */
     height: auto;
 }

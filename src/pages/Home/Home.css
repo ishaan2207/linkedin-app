@@ -5,5 +5,14 @@
 
 .homeColumn {
     float: left;
-    width: 100%;
+}
+
+.leftPane {
+    width: 13%;
+    margin: 15px 0 0 20%
+}
+
+.rightPane {
+    width: 15%;
+    margin-left: 33%;
 }

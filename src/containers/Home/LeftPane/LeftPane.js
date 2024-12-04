@@ -7,15 +7,11 @@ import BottomLeftPanel from "../../../components/BottomLeftPanel/BottomLeftPanel
 function LeftPane() {
 
     return (
-        <div>
+        <div className="leftPaneContainer">
             <ProfileSummary />
             <PremiumAd />
             <ProfileStatistics />
             <BottomLeftPanel />
-            {/* Profile Summary
-            Profile Statistics
-            Linkedin premium ad
-            Bottom left panel */}
         </div>
     )
 }

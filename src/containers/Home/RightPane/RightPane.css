@@ -1,0 +1,6 @@
+.rightPaneContainer {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
