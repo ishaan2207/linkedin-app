@@ -1,18 +1,27 @@
 .homeContainer {
     width: 100%;
     overflow: hidden;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .homeColumn {
     float: left;
+    margin-right: 20px;
+    box-sizing: border-box;
 }
 
 .leftPane {
     width: 13%;
-    margin: 15px 0 0 20%
+    margin-top: 15px;
+    margin-left: 20%;
+}
+
+.mainFeed {
+    width: 30%;
 }
 
 .rightPane {
     width: 15%;
-    margin-left: 33%;
+    margin-right: 0;
 }

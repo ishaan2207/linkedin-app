@@ -18,14 +18,19 @@ function ProfileSummary() {
 
     return (
         <div className="profileSummaryContainer" onClick={goToProfile}>
-            <img className="userImage" src={image} />
-            <p id="username">{username}</p>
-            <p id="about">{about}</p>
-            <p id="location">{location}</p>
-            <button>
-                <AddIcon style={{ paddingRight: '3px', height: '22px', width: '22px' }} />
-                Experience
-            </button>
+            <div className="bannerImageContainer">
+                <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0hhTzETCBuUg5fZ5ShDkejmAb9i8z_cqvNQ&s' />
+            </div>
+            <div className="userInformationContainer">
+                <img className="userImage" src={image} />
+                <p id="username">{username}</p>
+                <p id="about">{about}</p>
+                <p id="location">{location}</p>
+                <button>
+                    <AddIcon style={{ paddingRight: '3px', height: '22px', width: '22px' }} />
+                    Experience
+                </button>
+            </div>
         </div>
     )
 }
