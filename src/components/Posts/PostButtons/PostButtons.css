@@ -1,0 +1,22 @@
+.postButtonsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+
+.postButtons {
+    display: flex;
+    align-items: center;
+    color: grey;
+}
+
+.postButtonIcon {
+    margin-right: 4px;
+}
+
+.postButtonText {
+    margin-bottom: 4px;
+    font-size: 14px;
+    font-weight: 600;
+}

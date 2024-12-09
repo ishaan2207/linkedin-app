@@ -3,11 +3,10 @@
     font-size: 12px;
     display: flex;
     flex-direction: column;
-    border: 1px solid grey;
+    border: 1px solid lightgray;
     border-radius: 8px;
-    /* width: 13%; */
     padding: 15px 17px;
-    /* margin: 15px 0 0 70%; */
+    background-color: white;
 }
 
 #trendingHeader {

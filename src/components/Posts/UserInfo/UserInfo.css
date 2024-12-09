@@ -1,0 +1,60 @@
+.userInfoContainer {
+    display: flex;
+    align-items: start;
+    margin: 5px 12px 0 12px;
+    box-sizing: border-box;
+}
+
+.userProfilePicture img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.userProfileInformation {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+}
+
+.userPostTitle {
+    display: flex;
+    align-items: center;
+    padding-bottom: 5px;
+}
+
+.connectionDegree {
+    color: grey;
+    font-size: 12px;
+    padding-left: 5px;
+}
+
+.userProfileName {
+    font-size: 16px;
+    font-weight: 600;
+    padding-right: 5px;
+}
+
+.userProfileDesignation {
+    font-size: 12px;
+    color: grey;
+}
+
+.postDate {
+    display: flex;
+    align-items: center;
+}
+
+.postDate p {
+    font-size: 12px;
+    color: grey;
+    margin-right: 3px;
+}
+
+.followButton {
+    display: flex;
+    align-items: center;
+    color: #0A66C2;
+    margin-left: auto;
+    font-size: 15px;
+}

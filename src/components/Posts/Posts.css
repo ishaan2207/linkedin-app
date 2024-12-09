@@ -1,0 +1,7 @@
+.postContainer {
+    margin-top: 10px;
+    border: 1px solid lightgray;
+    background-color: white;
+    border-radius: 8px;
+    font-family: 'Arial', sans-serif;
+}

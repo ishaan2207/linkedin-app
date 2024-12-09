@@ -1,0 +1,18 @@
+.postContentContainer {
+    font-size: 14px;
+}
+
+.postText {
+    line-height: 22px;
+    margin: 5px 12px 0 12px;
+}
+
+.postText span:hover {
+    text-decoration: underline;
+    color: rgb(0, 120, 255);
+}
+
+.postImage img {
+    width: 100%;
+    margin: 5px 0;
+}

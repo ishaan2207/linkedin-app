@@ -1,11 +1,12 @@
 .profileSummaryContainer {
     display: flex;
     flex-direction: column;
-    border: 1px solid grey;
+    border: 1px solid lightgray;
     margin-bottom: 10px;
     font-family: 'Arial', sans-serif;
     border-radius: 8px;
     cursor: pointer;
+    background-color: white;
 }
 
 .bannerImageContainer>img {

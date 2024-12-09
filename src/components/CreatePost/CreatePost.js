@@ -16,7 +16,7 @@ function CreatePost() {
             text: 'Video',
         },
         {
-            icon: <ArticleOutlinedIcon style={{ color: '#FF5722' }} />,
+            icon: <ArticleOutlinedIcon style={{ color: '#E06847' }} />,
             text: 'Write article',
         }
     ]

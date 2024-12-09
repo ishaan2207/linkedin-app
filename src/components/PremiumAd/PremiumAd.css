@@ -2,12 +2,13 @@
     font-family: 'Arial', sans-serif;
     display: flex;
     flex-direction: column;
-    border: 1px solid grey;
+    border: 1px solid lightgray;
     border-radius: 8px;
     margin-bottom: 10px;
     font-size: 12px;
     padding: 10px 12px;
     cursor: pointer;
+    background-color: white;
 }
 
 .premiumAdContainer>p {

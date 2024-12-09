@@ -1,0 +1,43 @@
+.postInteractionsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.postReactions {
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    cursor: pointer;
+}
+
+.postReactions p:hover {
+    color: rgb(0, 120, 255);
+    text-decoration: underline;
+}
+
+.postReactions p {
+    font-size: 13px;
+    color: grey;
+    padding-left: 7px;
+}
+
+.postComments {
+    font-size: 13px;
+    color: grey;
+    padding-right: 15px;
+    cursor: pointer;
+}
+
+.postComments:hover {
+    color: rgb(0, 120, 255);
+    text-decoration: underline;
+}
+
+.separator {
+    margin-bottom: 14px;
+    height: 1px;
+    background-color: #e0e0e0;
+    width: 100%;
+}
