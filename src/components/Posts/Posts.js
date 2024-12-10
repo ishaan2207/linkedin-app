@@ -5,6 +5,7 @@ import UserInfo from "./UserInfo/UserInfo";
 import PostContent from "../PostHeader/PostContent/PostContent";
 import PostInteractions from "./PostInteractions/PostInteractions";
 import PostButtons from "./PostButtons/PostButtons";
+import { LikesProvider } from "../../Context/LikesContext";
 
 function Posts() {
     return (
@@ -12,8 +13,10 @@ function Posts() {
             <PostHeader />
             <UserInfo />
             <PostContent />
-            <PostInteractions />
-            <PostButtons />
+            <LikesProvider>
+                <PostInteractions />
+                <PostButtons />
+            </LikesProvider>
         </div>
     )
 }
