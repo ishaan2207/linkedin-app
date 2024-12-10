@@ -2,13 +2,13 @@ import React from "react";
 import './MainFeed.css';
 
 import CreatePost from "../../../components/CreatePost/CreatePost";
-import Posts from "../../../components/Posts/Posts";
+import AllPosts from "../../../components/AllPosts/AllPosts";
 
 function MainFeed() {
     return (
         <div className="mainFeedContainer">
             <CreatePost />
-            <Posts />
+            <AllPosts />
         </div>
     )
 }

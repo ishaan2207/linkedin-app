@@ -8,17 +8,17 @@ import SendIcon from '@mui/icons-material/Send';
 import { useLikes } from "../../../Context/LikesContext";
 import { useState } from "react";
 
-function PostButtons() {
+function PostButtons({ setPostLikes }) {
     const { updateNumLikes, updateLikeUsername } = useLikes();
     const [likedByUser, setLikedByUser] = useState(false);
 
     function updateLikes() {
         if (!likedByUser) {
-            updateNumLikes(prev => prev + 1);
+            setPostLikes(prev => prev + 1);
             updateLikeUsername('You');
             setLikedByUser(true);
         } else {
-            updateNumLikes(prev => prev - 1);
+            setPostLikes(prev => prev - 1);
             updateLikeUsername('Raunak Khanna');
             setLikedByUser(false);
         }

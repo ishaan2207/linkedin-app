@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import './Posts.css';
 import PostHeader from "../PostHeader/PostHeader";
 import UserInfo from "./UserInfo/UserInfo";
@@ -7,15 +7,19 @@ import PostInteractions from "./PostInteractions/PostInteractions";
 import PostButtons from "./PostButtons/PostButtons";
 import { LikesProvider } from "../../Context/LikesContext";
 
-function Posts() {
+function Posts({ postInfo }) {
+    const { postId, postedBy, postContent, createdAt, likes, comments, shares } = postInfo;
+
+    const [postLikes, setPostLikes] = useState(likes);
+
     return (
         <div className="postContainer">
             <PostHeader />
-            <UserInfo />
-            <PostContent />
+            <UserInfo postedBy={postedBy} createdAt={createdAt} />
+            <PostContent postContent={postContent} />
             <LikesProvider>
-                <PostInteractions />
-                <PostButtons />
+                <PostInteractions likes={postLikes} comments={comments} shares={shares} />
+                <PostButtons setPostLikes={setPostLikes} />
             </LikesProvider>
         </div>
     )
