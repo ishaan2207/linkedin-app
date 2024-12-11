@@ -46,10 +46,10 @@ function ProfileInformation() {
                 </div>
             </div>
             <div className="profileInformationButtons">
-                <button id="profileOpenToButton profileButton">Open to</button>
-                <button id="profileAddSectionButton profileButton">Add profile section</button>
-                <button id="profileEnhanceProfileButton profileButton">Enhance profile</button>
-                <button id="profileResourcesButton profileButton">Resources</button>
+                <button className="profileOpenToButton profileButton">Open to</button>
+                <button className="profileAddSectionButton profileButton">Add profile section</button>
+                <button className="profileEnhanceProfileButton profileButton">Enhance profile</button>
+                <button className="profileResourcesButton profileButton">Resources</button>
             </div>
         </div>
     )
