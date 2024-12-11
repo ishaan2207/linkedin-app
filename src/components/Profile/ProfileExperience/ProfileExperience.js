@@ -70,6 +70,7 @@ function ProfileExperience() {
                             <div className="experienceTitle">{experience.title}</div>
                             <div className="experienceCompany">{experience.company}</div>
                             <div className="experienceStartEndDates">{experience.startDate} to {experience.endDate}</div>
+                            <div className="experienceLocation">{experience.location}</div>
                             <ul className="experienceDescription">
                                 {experience.descriptions.map(description => (
                                     <li>{description}</li>
