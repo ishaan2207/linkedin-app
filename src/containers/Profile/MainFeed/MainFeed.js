@@ -3,6 +3,7 @@ import './MainFeed.css';
 import ProfileInformation from "../../../components/Profile/ProfileInformation/ProfileInformation";
 import ProfileAnalytics from "../../../components/Profile/ProfileAnalytics/ProfileAnalytics";
 import ProfileExperience from "../../../components/Profile/ProfileExperience/ProfileExperience";
+import AddExperience from "../../../components/Profile/AddExperience/AddExperience";
 
 function MainFeed() {
     return (
@@ -10,6 +11,7 @@ function MainFeed() {
             <ProfileInformation />
             <ProfileAnalytics />
             <ProfileExperience />
+            <AddExperience />
         </div>
     )
 }
