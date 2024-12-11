@@ -4,7 +4,7 @@ import './ProfileExperience.css';
 import AddIcon from '@mui/icons-material/Add';
 import EditIcon from '@mui/icons-material/Edit';
 
-function ProfileExperience() {
+function ProfileExperience({ setShowAddExperience }) {
     const experiences = [
 
         {
