@@ -1,0 +1,65 @@
+.profileExperienceContainer {
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    background-color: white;
+    margin-top: 7px;
+}
+
+.profileExperienceHeader {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 12px 12px 0;
+}
+
+.profileExperienceHeader p {
+    padding: 12px 12px 0;
+}
+
+.profileHeaderButtons {
+    display: flex;
+    align-items: center;
+    padding: 12px 12px 0;
+}
+
+.experiencesContainer {
+    display: flex;
+    padding: 12px 24px;
+}
+
+.profileExperienceImage {
+    width: 60px;
+}
+
+.profileExperienceImage img {
+    height: 48px;
+    width: 48px;
+}
+
+.profileExperienceDescription {
+    font-size: 14px;
+}
+
+.experienceTitle {
+    font-size: 16px;
+    font-weight: 600;
+    padding-bottom: 3px;
+}
+
+.experienceCompany {
+    padding-bottom: 3px;
+}
+
+.experienceStartEndDates {
+    color: #00000099;
+    padding-bottom: 3px;
+}
+
+.experienceDescription {
+    margin-left: 15px;
+}
+
+.experienceDescription li {
+    padding-bottom: 4px;
+}
