@@ -45,7 +45,7 @@
     padding: 3px 0;
 }
 
-button {
+.addExperienceButton {
     display: flex;
     background-color: #F4F2EE;
     border: 1px dashed grey;

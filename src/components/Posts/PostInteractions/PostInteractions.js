@@ -10,7 +10,7 @@ function PostInteractions({ postLikes, comments, shares }) {
         <div>
             <div className="postInteractionsContainer">
                 <div className="postReactions">
-                    <img src="https://static.licdn.com/aero-v1/sc/h/8ekq8gho1ruaf8i7f86vd1ftt" />
+                    <img src="https://static.licdn.com/aero-v1/sc/h/8ekq8gho1ruaf8i7f86vd1ftt" alt="" />
                     <p>{likeUsername} and {postLikes - 1} others</p>
                 </div>
                 <div className="postComments">

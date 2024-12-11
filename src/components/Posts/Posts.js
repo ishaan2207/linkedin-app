@@ -18,7 +18,7 @@ function Posts({ postInfo }) {
             <UserInfo postedBy={postedBy} createdAt={createdAt} />
             <PostContent postContent={postContent} />
             <LikesProvider>
-                <PostInteractions likes={postLikes} comments={comments} shares={shares} />
+                <PostInteractions postLikes={postLikes} comments={comments} shares={shares} />
                 <PostButtons setPostLikes={setPostLikes} />
             </LikesProvider>
         </div>

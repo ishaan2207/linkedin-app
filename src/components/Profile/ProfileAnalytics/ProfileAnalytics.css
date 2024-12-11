@@ -1,0 +1,108 @@
+.profileAnalyticsContainer {
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    margin-top: 7px;
+    background-color: white;
+}
+
+.profileAnalyticsContainer>p {
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 20px;
+    margin-top: 25px;
+}
+
+.privateToYou {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: grey;
+    margin: 3px 0 0 20px;
+}
+
+.privateToYou p {
+    margin-left: 3px;
+}
+
+.profileAnalyticsInfoContainer {
+    display: flex;
+    justify-content: space-between;
+    margin: 12px 0 0 20px;
+}
+
+.profileViewsAnalyticsContainer {
+    display: flex;
+    line-height: 20px;
+    width: 220px;
+}
+
+.profileViewsAnalytics {
+    margin-left: 5px;
+}
+
+.profileViewsAnalytics p:nth-child(1) {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.profileViewsAnalytics p:nth-child(2) {
+    font-size: 14px;
+}
+
+.postImpressionsAnalyticsContainer {
+    display: flex;
+    line-height: 20px;
+    width: 220px;
+    margin-left: 20px;
+}
+
+.postImpressionsAnalytics {
+    margin-left: 5px;
+}
+
+.postImpressionsAnalytics p:nth-child(1) {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.postImpressionsAnalytics p:nth-child(2) {
+    font-size: 14px;
+}
+
+.postImpressionsAnalytics p:nth-child(3) {
+    font-size: 14px;
+    color: grey;
+}
+
+.searchAppearancesAnalyticsContainer {
+    display: flex;
+    line-height: 20px;
+    width: 250px;
+    margin-left: 25px;
+}
+
+.searchAppearancesAnalytics {
+    margin-left: 5px;
+}
+
+.searchAppearancesAnalytics p:nth-child(1) {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.searchAppearancesAnalytics p:nth-child(2) {
+    font-size: 14px;
+}
+
+.separator {
+    margin: 10px 0;
+}
+
+.showAllAnalyticsButtonContainer {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: grey;
+    margin: 0 0 10px 40%;
+}

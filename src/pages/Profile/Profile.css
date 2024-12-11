@@ -1,0 +1,16 @@
+.profileContainer {
+    display: flex;
+    align-items: center;
+    padding-top: 15px;
+    background-color: #F4F2EE;
+}
+
+.profileMainFeed {
+    width: 43%;
+    margin-left: 20%;
+    margin-right: 32px;
+}
+
+.profileRightPane {
+    width: 16%;
+}
