@@ -53,9 +53,6 @@
     height: 32px;
     border: 1px solid black;
     border-radius: 4px;
-}
-
-.addExperienceTextForm input::placeholder {
     padding-left: 7px;
 }
 
@@ -94,8 +91,132 @@
     height: 32px;
     border: 1px solid black;
     border-radius: 4px;
+    padding-left: 7px;
 }
 
-.addExperienceDates input::placeholder {
-    padding-left: 7px;
+.addExperienceDescription p {
+    font-size: 14px;
+    color: #00000099;
+    padding-bottom: 2px;
+}
+
+.addExperienceDescription textarea {
+    width: 100%;
+    height: 91px;
+    padding: 7px 0 0 7px;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    border: none;
+}
+
+.descriptionTextAreaContainer {
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-bottom: 2px;
+}
+
+.descriptionTextAreaContainer .separator {
+    margin-top: -3px;
+    margin-bottom: 0;
+}
+
+.descriptionAiAdContainer {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+}
+
+.descriptionAiAdContainer p {
+    font-size: 14px;
+}
+
+.descriptionAiAdContainer span {
+    color: #0A66C2;
+    font-weight: 600;
+    padding-left: 2px;
+}
+
+.descriptionAiAdContainer span:hover {
+    text-decoration: underline;
+}
+
+.experienceDescriptionLength {
+    width: 30px;
+    margin-left: auto;
+    margin-right: 17px;
+}
+
+.profileHeaderInfo {
+    font-size: 12px !important;
+    padding-top: 2px;
+    color: #00000099;
+}
+
+.experienceJobFoundInfo {
+    padding-top: 2px;
+}
+
+.addExperienceButtonGroups div {
+    font-size: 20px;
+    margin: 0 0 4px;
+}
+
+.addExperienceButtonGroups p {
+    font-size: 14px;
+    margin: 0 0 8px;
+}
+
+.addExperienceButtons {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    color: #0A66C2;
+    padding: 4px 14px;
+    border: 1px solid #0A66C2;
+    border-radius: 30px;
+}
+
+.addExperienceButtons:hover {
+    border: 2px solid rgb(10, 102, 194);
+    background-color: rgb(10, 102, 194, 0.1);
+    padding: 3px 13px;
+}
+
+.addExperienceButtons span {
+    font-size: 16px;
+    padding-top: 2px;
+}
+
+.addExperienceButtonGroups p span {
+    color: #0A66C2;
+}
+
+.addExperienceButtonGroups p span:hover {
+    text-decoration: underline;
+}
+
+.addSkillsButton {
+    margin-bottom: 32px;
+}
+
+.addExperienceBottomSeparator {
+    margin: 0;
+}
+
+.experienceSaveButtonContainer {
+    padding: 16px 24px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.experienceSaveButtonContainer button {
+    color: white;
+    background-color: #0A66C2;
+    padding: 6px 16px;
+    border: none;
+    border-radius: 22px;
+}
+
+.experienceSaveButtonContainer button span {
+    font-size: 16px;
 }

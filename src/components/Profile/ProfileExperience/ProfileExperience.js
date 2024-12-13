@@ -51,13 +51,17 @@ function ProfileExperience({ setShowAddExperience }) {
         }
     ]
 
+    function handleShowExperience(show) {
+        setShowAddExperience(show)
+    }
+
     return (
         <div className="profileExperienceContainer">
             <div className="profileExperienceHeader">
                 <p>Experiences</p>
                 <div className="profileHeaderButtons">
-                    <AddIcon style={{ height: '30px', width: '30px', marginRight: '20px' }} />
-                    <EditIcon />
+                    <button onClick={handleShowExperience('block')}><AddIcon style={{ height: '30px', width: '30px', marginRight: '20px' }} /></button>
+                    <button><EditIcon /></button>
                 </div>
             </div>
             <div className="profileExperience">

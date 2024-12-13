@@ -23,6 +23,12 @@
     padding: 12px 12px 0;
 }
 
+.profileHeaderButtons button {
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+
 .experiencesContainer {
     display: flex;
     padding: 12px 24px;
