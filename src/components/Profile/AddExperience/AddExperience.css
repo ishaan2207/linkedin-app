@@ -94,6 +94,10 @@
     padding-left: 7px;
 }
 
+.addExperienceDescription {
+    padding: 0 0 24px;
+}
+
 .addExperienceDescription p {
     font-size: 14px;
     color: #00000099;
