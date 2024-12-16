@@ -1,0 +1,92 @@
+.profileEducationContainer {
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    background-color: white;
+    margin: 8px 0 0;
+    padding: 0 0 12px;
+}
+
+.profileEducationHeader {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 12px 12px 0;
+}
+
+.profileEducationHeader p {
+    padding: 12px 12px 0;
+}
+
+.profileHeaderButtons {
+    display: flex;
+    align-items: center;
+    padding: 12px 12px 0;
+}
+
+.profileHeaderButtons button {
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+.educationsContainer {
+    display: flex;
+    padding: 12px 24px;
+}
+
+.profileEducationImage {
+    width: 60px;
+}
+
+.profileEducationImage img {
+    height: fit-content;
+    width: 48px;
+    margin-top: 5px;
+}
+
+.profileEducationDescription {
+    font-size: 14px;
+}
+
+.educationLocation {
+    font-size: 16px;
+    font-weight: 600;
+    padding-bottom: 3px;
+    cursor: pointer;
+}
+
+.educationLocation:hover {
+    color: #0A66C2;
+    text-decoration: underline;
+}
+
+.educationField {
+    padding-bottom: 3px;
+}
+
+.educationDates {
+    color: #00000099;
+    padding-bottom: 3px;
+}
+
+.separator {
+    margin: 0;
+}
+
+.profileEducationSkills {
+    display: flex;
+    align-items: center;
+    margin: 24px 0 6px;
+}
+
+.profileEducationSkills span {
+    margin-left: 4px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.profileEducationSkills span:hover {
+    color: #0A66C2;
+    text-decoration: underline;
+}

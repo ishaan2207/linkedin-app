@@ -5,6 +5,9 @@ import ProfileInformation from "../../../components/Profile/ProfileInformation/P
 import ProfileAnalytics from "../../../components/Profile/ProfileAnalytics/ProfileAnalytics";
 import ProfileExperience from "../../../components/Profile/ProfileExperience/ProfileExperience";
 import AddExperience from "../../../components/Profile/AddExperience/AddExperience";
+import ProfileAbout from "../../../components/Profile/ProfileAbout/ProfileAbout";
+import ProfileActivity from "../../../components/Profile/ProfileActivity/ProfileActivity";
+import ProfileEducation from "../../../components/Profile/ProfileEducation/ProfileEducation";
 
 function MainFeed() {
     const experiences = [
@@ -109,7 +112,10 @@ function MainFeed() {
         <div className="profileMainFeedContainer">
             <ProfileInformation />
             <ProfileAnalytics />
+            <ProfileAbout />
+            <ProfileActivity />
             <ProfileExperience experiences={allExperiences} setShowAddExperience={setShowAddExperience} />
+            <ProfileEducation />
             <AddExperience showAddExperience={showAddExperience} setShowAddExperience={setShowAddExperience}
                 newExperienceFields={newExperienceFields} addNewExperience={addNewExperience} />
         </div>

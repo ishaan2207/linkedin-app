@@ -1,0 +1,58 @@
+.profileAboutContainer {
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    background-color: white;
+    margin: 8px 0 0;
+    padding: 0 0 12px;
+}
+
+.profileAboutHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 24px 0;
+}
+
+.profileAboutHeader p {
+    font-size: 20px;
+    color: #000000E6;
+    font-weight: 600;
+}
+
+.profileAboutText {
+    padding: 12px 24px;
+    font-size: 14px;
+    word-spacing: 1px;
+    color: rgb(0, 0, 0, 0.9);
+    margin-top: 12px;
+}
+
+.profileAboutSkillsContainer {
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    margin: 12px 24px;
+}
+
+.profileAboutSkillsContainer>div {
+    display: flex;
+    padding: 12px;
+}
+
+.profileAboutSkills {
+    margin: 3px 0 0 8px;
+}
+
+.profileAboutSkills p:nth-child(1) {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 0 0 2px;
+}
+
+.profileAboutSkills p:nth-child(2) {
+    font-size: 14px;
+}
+
+.profileAboutArrow {
+    margin-left: auto;
+    align-self: center;
+}
