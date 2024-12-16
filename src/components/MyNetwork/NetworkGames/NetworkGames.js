@@ -41,6 +41,11 @@ function NetworkGames() {
                     <button className="gamesForwardButton"><ArrowForwardIosIcon style={{ height: '16px', width: '16px' }} /></button>
                 </div>
             </div>
+            <div className="networkGamesCarousel">
+                {networkGames.map(networkGames => (
+                    <div></div>
+                ))}
+            </div>
         </div>
     )
 }

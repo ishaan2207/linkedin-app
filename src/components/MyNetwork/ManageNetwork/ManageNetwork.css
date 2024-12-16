@@ -25,3 +25,7 @@
 .manageNetworkIconNum {
     margin-left: auto;
 }
+
+.manageNetworkContainer .separator {
+    margin-top: 0;
+}
