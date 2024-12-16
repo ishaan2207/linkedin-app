@@ -1,0 +1,35 @@
+.headerToggleContainer {
+    display: flex;
+    align-items: center;
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    background-color: white;
+    font-size: 16px;
+    font-weight: 600;
+    height: 52px;
+    margin: 0 0 16px;
+}
+
+.headerToggleContainer button {
+    border: none;
+    background-color: white;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 16px 24px;
+
+}
+
+.headerToggleContainer button:hover {
+    background-color: #8C8C8C1A;
+}
+
+.headerToggleContainer button:focus {
+    background-color: #8C8C8C1A;
+    color: #004C33;
+    padding-bottom: 14px;
+    border-bottom: 2px solid #004C33;
+}
+
+.headerGrow {
+    margin-left: 24px;
+}

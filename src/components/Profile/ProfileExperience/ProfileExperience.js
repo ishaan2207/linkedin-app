@@ -7,7 +7,7 @@ import EditIcon from '@mui/icons-material/Edit';
 function ProfileExperience({ setShowAddExperience, experiences }) {
 
     function handleShowExperience(show) {
-        setShowAddExperience(show)
+        console.log(setShowAddExperience(show));
     }
 
     return (

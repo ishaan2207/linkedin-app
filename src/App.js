@@ -15,6 +15,7 @@ import Accessibility from './pages/FooterPages/Accessibility/Accessibility';
 import HelpCenter from './pages/FooterPages/AdChoices/AdChoices';
 import AdChoices from './pages/FooterPages/AdChoices/AdChoices';
 import Advertising from './pages/FooterPages/Advertising/Advertising';
+import MyNetwork from './pages/MyNetwork/MyNetwork';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           <Route path='/help-center' element={<HelpCenter />} />
           <Route path='/ad-choices' element={<AdChoices />} />
           <Route path='/advertising' element={<Advertising />} />
+          <Route path='/my-network' element={<MyNetwork />} />
         </Routes>
       </div>
     </BrowserRouter>

@@ -1,0 +1,27 @@
+.manageNetworkContainer {
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    background-color: white;
+    padding: 0 0 16px;
+}
+
+.manageNetworkHeader {
+    font-weight: 600;
+    padding: 16px 24px;
+    color: rgb(0, 0, 0, 0.8);
+}
+
+.networkIconContainer {
+    display: flex;
+    align-items: center;
+    color: grey;
+    padding: 8px 16px;
+}
+
+.manageNetworkIconText {
+    margin-left: 15px;
+}
+
+.manageNetworkIconNum {
+    margin-left: auto;
+}

@@ -9,11 +9,11 @@ function AddExperience({ showAddExperience, setShowAddExperience, newExperienceF
     const [experienceDescriptionLength, setExperienceDescriptionLength] = useState(0);
 
     function handleHideExperience(hide) {
-        setShowAddExperience(hide)
+        console.log(setShowAddExperience(hide));
     }
 
     return (
-        <div className="addExperienceContainer" style={{ display: 'block' }}>
+        <div className="addExperienceContainer" style={{ display: showAddExperience }}>
             <div className="addExperienceHeader">
                 <p>Add experience</p>
                 <div className="addExperienceCloseButton" onClick={handleHideExperience('none')}>
