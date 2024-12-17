@@ -46,6 +46,11 @@ function NetworkInvitations() {
         setInvites(updatedInvites);
     }
 
+    const handleIgnore = (invite) => {
+        const updatedInvites = invites.filter(item => item !== invite)
+        setInvites(updatedInvites);
+    }
+
     return (
         <div className="networkInvitationsContainer">
             <div className="invitationsHeader">
@@ -77,7 +82,7 @@ function NetworkInvitations() {
                             </div>
 
                             <div className="inviteButtonGroup">
-                                <button className="ignoreInviteButton">Ignore</button>
+                                <button className="ignoreInviteButton" onClick={() => handleIgnore(invite)}>Ignore</button>
                                 <button className="acceptInviteButton" onClick={() => handleAccept(invite)}>Accept</button>
                             </div>
                         </div>
