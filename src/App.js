@@ -25,7 +25,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/profile' element={<Profile />} />
-          <Route path='/messages' element={<Messages />} />
+          <Route path='/messaging' element={<Messages />} />
           <Route path='/analytics' element={<Analytics />} />
           <Route path='/saved-items' element={<SavedItems />} />
           <Route path='/groups' element={<Groups />} />

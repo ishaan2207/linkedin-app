@@ -1,0 +1,110 @@
+.messagesFeedContainer {
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.messagesFeedHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.messagesFeedHeaderLeft {
+    display: flex;
+    align-items: center;
+}
+
+.messagesFeedHeaderLeft p {
+    padding: 0 4px 0 16px;
+    font-weight: bold;
+}
+
+.messagesFeedInputContainer {
+    display: flex;
+    align-items: center;
+    background-color: #EDF3F8;
+    margin: 8px 12px;
+    border-radius: 4px;
+}
+
+.messagesFeedInputContainer input {
+    border: none;
+    background-color: #EDF3F8;
+    padding: 10px 10px 10px 6px;
+}
+
+.messagesFeedHeaderRight {
+    margin-right: 8px;
+}
+
+.separator {
+    margin: 0;
+}
+
+.messagesFeedButtons {
+    display: flex;
+    align-items: center;
+    padding: 6px 0;
+}
+
+button {
+    cursor: pointer;
+}
+
+.messagesFeedFocusedButton {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #01754F;
+    border: none;
+    border-radius: 24px;
+    padding: 6px 11px 6px 16px;
+    margin: 0 8px 0 16px;
+}
+
+.messagesFeedFocusedButton:hover {
+    background-color: #004C33;
+}
+
+.messagesFeedFocusedButton span {
+    margin-left: 5px;
+}
+
+.divider {
+    height: 28px;
+    width: 1px;
+    background-color: grey;
+    margin: 4px 8px 4px 0;
+}
+
+.messagesFeedButtonShared {
+    font-size: 16px;
+    font-weight: 600;
+    color: #000000BF;
+    border: 1px solid lightgrey;
+    border-radius: 24px;
+    background-color: white;
+    padding: 8px 12px;
+    margin-right: 8px;
+}
+
+.messagesFeedButtonShared:hover {
+    border: 2px solid grey;
+    padding: 7px 11px;
+    background-color: #8C8C8C1A;
+}
+
+.messagesFeedColumns {
+    display: flex;
+}
+
+.messagesFeedLeftColumn {
+    width: 40%;
+}
+
+.messagesFeedRightColumn {
+    width: 60%;
+}

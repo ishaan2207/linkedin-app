@@ -1,0 +1,15 @@
+.messagingPageContainer {
+    display: flex;
+    padding-top: 24px;
+    background-color: #F4F2EE;
+}
+
+.messagingMainFeed {
+    width: 41%;
+    margin-left: 20%;
+}
+
+.messagingRightPane {
+    width: 17%;
+    margin-left: 25px;
+}
