@@ -1,12 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import './MessagesFeed.css';
 
 import SearchIcon from '@mui/icons-material/Search';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import EditNoteOutlinedIcon from '@mui/icons-material/EditNoteOutlined';
 import ArrowDropDownOutlinedIcon from '@mui/icons-material/ArrowDropDownOutlined';
+import MessagesChat from "./MessagesChat/MessagesChat";
 
 function MessagesFeed({ messages }) {
+    const messageFeedButtons = ['Unread', 'My Connections', 'InMail', 'Starred'];
+
+    const [selectedMessageId, setSelectedMessageId] = useState(null);
+    const [selectedMessage, setSelectedMessage] = useState(null);
+
+    const handleSelectedMessage = (message) => {
+        setSelectedMessageId(message.id);
+        setSelectedMessage(message);
+        console.log(selectedMessage)
+    }
+
     return (
         <div className="messagesFeedContainer">
             <div className="messagesFeedHeader">
@@ -26,23 +38,30 @@ function MessagesFeed({ messages }) {
             <div className="messagesFeedButtons">
                 <button className="messagesFeedFocusedButton"><span>Focused</span> <ArrowDropDownOutlinedIcon /></button>
                 <div className="divider"></div>
-                <button className="messagesFeedButtonShared">Unread</button>
-                <button className="messagesFeedButtonShared">My Connections</button>
-                <button className="messagesFeedButtonShared">InMail</button>
-                <button className="messagesFeedButtonShared">Starred</button>
+                {messageFeedButtons.map(messageFeedButton => <button className="messagesFeedButtonShared">{messageFeedButton}</button>)}
             </div>
             <div className="separator"></div>
 
             <div className="messagesFeedColumns">
                 <div className="messagesFeedLeftColumn">
                     {messages.map(message => (
-                        <div className="messagePreviewContainer">
+                        <div
+                            key={message.id}
+                            className={`messagePreviewContainer ${selectedMessageId === message.id ? 'selected' : ''}`}
+                            onClick={() => handleSelectedMessage(message)}>
                             <div className="messagePreviewUserImage"><img src={message.img} /></div>
+                            <div className="messageInformation">
+                                <div>
+                                    <p>{message.firstName + ' ' + message.lastName}</p>
+                                    <p className="messageInformationDate">{message.date}</p>
+                                </div>
+                                <p>{message.firstName + ': ' + (message.text.length > 35 ? (message.text.slice(0, 35) + '...') : message.text)}</p>
+                            </div>
                         </div>
                     ))}
                 </div>
                 <div className="messagesFeedRightColumn">
-                    message text
+                    <MessagesChat message={selectedMessage} />
                 </div>
             </div>
         </div>

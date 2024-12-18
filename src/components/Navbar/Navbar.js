@@ -42,7 +42,7 @@ function Navbar() {
             id: 4,
             icon: <SmsIcon style={styles} />,
             text: "Messaging",
-            path: '/messages'
+            path: '/messaging'
         },
         {
             id: 5,

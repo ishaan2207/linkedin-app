@@ -38,7 +38,7 @@
     margin-right: 8px;
 }
 
-.separator {
+.messagesFeedContainer .separator {
     margin: 0;
 }
 
@@ -107,4 +107,49 @@ button {
 
 .messagesFeedRightColumn {
     width: 60%;
+}
+
+.messagePreviewContainer {
+    display: flex;
+    align-items: center;
+}
+
+.selected {
+    border-left: 2px solid #01754F;
+    margin-left: -2px;
+    background-color: #EDF3F8;
+}
+
+.messagePreviewContainer:hover {
+    background-color: #00000014;
+}
+
+.messagePreviewUserImage img {
+    height: 58px;
+    width: 58px;
+    border-radius: 50%;
+    margin-left: 12px;
+}
+
+.messageInformation {
+    padding: 12px 8px;
+    border-bottom: 1px solid lightgrey;
+}
+
+.messageInformation div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.messageInformationDate {
+    font-size: 14px;
+}
+
+.messageInformation>p {
+    font-size: 14px;
+    color: #00000099;
+    padding-top: 3px;
+    line-height: 1.3em;
+    width: 80%;
 }
