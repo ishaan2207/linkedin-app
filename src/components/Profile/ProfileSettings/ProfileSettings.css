@@ -1,0 +1,27 @@
+.profileSettingsContainer {
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    background-color: white;
+    padding: 16px;
+    margin: 0 0 8px;
+}
+
+.profileSettingHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profileSettingHeader p {
+    font-size: 18px;
+}
+
+.profileSettingText {
+    font-size: 14px;
+    color: #00000099;
+    padding: 4px 0 0;
+}
+
+.profileSettingDivContainer .separator {
+    margin: 16px 0;
+}

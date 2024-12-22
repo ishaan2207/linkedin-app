@@ -7,7 +7,7 @@ import EditIcon from '@mui/icons-material/Edit';
 function ProfileExperience({ setShowAddExperience, experiences }) {
 
     function handleShowExperience(show) {
-        console.log(setShowAddExperience(show));
+        setShowAddExperience(show);
     }
 
     return (
@@ -15,7 +15,7 @@ function ProfileExperience({ setShowAddExperience, experiences }) {
             <div className="profileExperienceHeader">
                 <p>Experience</p>
                 <div className="profileHeaderButtons">
-                    <button onClick={handleShowExperience('block')}><AddIcon style={{ height: '30px', width: '30px', marginRight: '20px' }} /></button>
+                    <button onClick={() => handleShowExperience('block')}><AddIcon style={{ height: '30px', width: '30px', marginRight: '20px' }} /></button>
                     <button><EditIcon /></button>
                 </div>
             </div>

@@ -16,7 +16,7 @@ function AddExperience({ showAddExperience, setShowAddExperience, newExperienceF
         <div className="addExperienceContainer" style={{ display: showAddExperience }}>
             <div className="addExperienceHeader">
                 <p>Add experience</p>
-                <div className="addExperienceCloseButton" onClick={handleHideExperience('none')}>
+                <div className="addExperienceCloseButton" onClick={() => handleHideExperience('none')}>
                     <CloseIcon />
                 </div>
             </div>

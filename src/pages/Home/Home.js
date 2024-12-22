@@ -30,7 +30,7 @@ function Home() {
           Trending now 
           Promoted page
           Footer */}
-    </div>
+    </div >
 
   )
 }

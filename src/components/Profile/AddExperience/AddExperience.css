@@ -1,4 +1,7 @@
 .addExperienceContainer {
+    position: absolute;
+    top: 40%;
+    left: 30%;
     border: 1px solid lightgrey;
     border-radius: 8px;
     background-color: white;

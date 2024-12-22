@@ -1,13 +1,13 @@
 .profileContainer {
     display: flex;
-    padding-top: 15px;
+    padding-top: 24px;
     background-color: #F4F2EE;
 }
 
 .profileMainFeed {
     width: 43%;
     margin-left: 20%;
-    margin-right: 32px;
+    margin-right: 22px;
 }
 
 .profileRightPane {
