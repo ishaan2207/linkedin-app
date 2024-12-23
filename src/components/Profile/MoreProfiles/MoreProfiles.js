@@ -50,26 +50,38 @@ function MoreProfiles() {
             </div>
             <div className="moreProfiles">
                 {profiles.map((profile, index) => (
-                    <div className="">
-                        <div>
-                            <img src={profile.img} />
-                        </div>
-                        <div>
-                            <div>
-                                <p>{profile.name}</p>
-                                <CircleIcon />
-                                <p>{profile.degree}</p>
+                    <div className="recProfileContainer">
+                        <div className="recProfile">
+                            <div className="recProfileImg">
+                                <img src={profile.img} />
                             </div>
-                            <div>
-                                {profile.bio}
+                            <div className="recProfileRight">
+                                <div className="recProfileTitle">
+                                    <p className="recProfileName">{profile.name}</p>
+                                    <CircleIcon style={{ height: '2px', width: '2px', color: '#00000099', margin: '0 4px' }} />
+                                    <p className="recProfileDegree">{profile.degree}</p>
+                                </div>
+                                <div className="recProfileBio">
+                                    {profile.bio.length > 50 ? profile.bio.slice(0, 50) + '...' : profile.bio}
+                                </div>
+                                <div className="recProfileButton">
+                                    <button>{profile.connected ? <span>View profile</span> : <span className="profileConnectButton"><PersonAddAlt1Icon style={{ height: '18px', width: '18px' }} /><span>Connect</span></span>}</button>
+                                </div>
                             </div>
-                            <button>{profile.connected ? 'View profile' : <span><PersonAddAlt1Icon /><span>Connect</span></span>}</button>
                         </div>
+                        {index !== profiles.length - 1 ? <div className="separator"></div> : ''}
                     </div>
                 ))}
             </div>
-            <div>
+            <div className="moreProfilesShowAllContainer">
+                <div className="moreProfilesShowAll">
+                    <div className="separator"></div>
+                    <div className="showAllButton">
+                        <span>Show all</span>
+                    </div>
+                </div>
             </div>
+
         </div>
     )
 }

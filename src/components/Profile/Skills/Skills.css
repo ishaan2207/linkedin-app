@@ -1,0 +1,94 @@
+.skillsContainer {
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    background-color: white;
+    margin: 8px 0 0;
+    padding: 0 0 12px;
+}
+
+.skillsHeader {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 12px 12px 0;
+}
+
+.skillsHeader span {
+    padding: 12px 12px 0;
+}
+
+.skillsHeaderButtons {
+    display: flex;
+    align-items: center;
+    padding: 12px 12px 0;
+}
+
+.skillsHeaderButtons button {
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+.skillInformationContainer .separator {
+    margin: 0 22px;
+    width: 94%;
+}
+
+.skillInformation {
+    padding: 12px 24px;
+}
+
+.skillTitle {
+    font-weight: 600;
+    padding: 0 0 8px;
+}
+
+.skillLearntFrom {
+    display: flex;
+    align-items: center;
+    margin: 4px 0;
+}
+
+.skillLearntFrom span {
+    padding: 0 0 0 6px;
+    font-size: 14px;
+}
+
+.skillLearntFrom img {
+    height: 24px;
+    width: 24px;
+}
+
+.showAllSkillsButton .separator {
+    margin: 0;
+}
+
+.showAllSkillsText {
+    margin: 0 0 -12px;
+    padding: 10px 8px;
+}
+
+.showAllSkillsText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.showAllSkillsText p {
+    display: flex;
+    align-items: center;
+}
+
+.showAllSkillsText span {
+    padding-right: 4px;
+}
+
+.showAllSkillsButton {
+    cursor: pointer;
+}
+
+.showAllSkillsButton:hover {
+    background-color: #8C8C8C1A;
+}
