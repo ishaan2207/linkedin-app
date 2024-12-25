@@ -10,8 +10,8 @@ import MessagesChat from "./MessagesChat/MessagesChat";
 function MessagesFeed({ messages }) {
     const messageFeedButtons = ['Unread', 'My Connections', 'InMail', 'Starred'];
 
-    const [selectedMessageId, setSelectedMessageId] = useState(null);
-    const [selectedMessage, setSelectedMessage] = useState(null);
+    const [selectedMessageId, setSelectedMessageId] = useState(messages[0]);
+    const [selectedMessage, setSelectedMessage] = useState(messages[0]);
 
     const handleSelectedMessage = (message) => {
         setSelectedMessageId(message.id);

@@ -1,5 +1,6 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { MessageProvider } from './Context/MessageContext';
 
 import Navbar from './components/Navbar/Navbar';
 import Home from './pages/Home/Home';
@@ -19,8 +20,8 @@ import MyNetwork from './pages/MyNetwork/MyNetwork';
 
 function App() {
   return (
-    <BrowserRouter>
-      <div>
+    <MessageProvider>
+      <BrowserRouter>
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
@@ -38,8 +39,10 @@ function App() {
           <Route path='/advertising' element={<Advertising />} />
           <Route path='/my-network' element={<MyNetwork />} />
         </Routes>
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </MessageProvider>
+
+
   );
 }
 

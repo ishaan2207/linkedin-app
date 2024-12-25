@@ -32,3 +32,160 @@
     padding-right: 5px;
     color: #000000BF;
 }
+
+.messageChatUserInfoContainer {
+    padding: 16px 12px 0;
+}
+
+.messageChatUserInfoContainer img {
+    height: 72px;
+    width: 72px;
+    border-radius: 50%;
+}
+
+.messageChatUserInfo {
+    padding: 8px 0 0 8px;
+}
+
+.messageChatUsername {
+    display: flex;
+    align-items: center;
+}
+
+.messageChatUsername span:nth-child(1) {
+    font-weight: 600;
+}
+
+.messageChatUsername span:nth-child(1):hover {
+    text-decoration: underline;
+}
+
+.degreeOfConnection {
+    font-size: 14px;
+    color: #00000099;
+}
+
+.messageChatUserBio {
+    font-size: 14px;
+    padding: 2px 0 0;
+}
+
+.messageChatDateContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 8px 0;
+}
+
+.messageChatDate {
+    font-size: 12px;
+    color: #00000099;
+    width: 19%;
+    margin: 0 10px;
+}
+
+.messageChatBody {
+    display: flex;
+    padding: 0 0 220px;
+}
+
+.messageChatBodyLeft img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin: 0 0 0 12px;
+}
+
+.messageChatBodyRight {
+    padding: 4px 0 0 8px;
+}
+
+.messageChatBodyRight .messageSender {
+    display: flex;
+    align-items: center;
+    margin: 0 0 4px;
+}
+
+.messageChatBodyRight .messageSender span:nth-child(1) {
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.messageChatBodyRight .messageSender span:nth-child(1):hover {
+    color: #0A66C2;
+    text-decoration: underline;
+}
+
+.messageChatTimeStamp {
+    font-size: 12px;
+    color: #00000099;
+}
+
+.messageChatBodyRight .messageBody {
+    font-size: 14px;
+    color: #000000E6;
+    margin: 4px 0;
+    line-height: 20px;
+    width: 80%;
+}
+
+.messageChatTextBoxContainer {
+    display: flex;
+    padding: 12px;
+}
+
+.messageChatTextBoxContainer textarea {
+    height: 100px;
+    width: 95%;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(0, 0, 0, 0.1);
+    padding: 12px;
+}
+
+.messageChatTextBoxContainer textarea::placeholder {
+    font-family: 'Arial', sans-serif;
+}
+
+.messageChatTextBoxContainer div {
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+.messageChatButtons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px 48px;
+}
+
+.messageChatButtonsLeft {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.messageChatButtonsLeft button {
+    border: none;
+    background-color: white;
+}
+
+.messageChatButtonsRight {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.messageChatButtonsRight button {
+    font-size: 14px;
+    color: white;
+    background-color: #0A66C2;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 24px;
+}
+
+.messageChatButtonsRight button:hover {
+    background-color: #004182;
+}
