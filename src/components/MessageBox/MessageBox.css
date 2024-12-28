@@ -1,6 +1,77 @@
 .messageBoxContainer {
     border: 1px solid lightgrey;
-    border-radius: 8px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
     background-color: white;
-    box-shadow: 2px 2px 0 black;
+    font-family: 'Arial', sans-serif;
+    width: 15%;
+    position: absolute;
+}
+
+.messageBoxHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.messageBoxHeaderLeft {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 4px;
+    padding: 4px;
+}
+
+.messageBoxHeaderLeft img {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.messageBoxHeaderRight {
+    display: flex;
+    align-items: center;
+}
+
+.messageBoxHeaderRight button {
+    border: none;
+    background: none;
+}
+
+.messageBoxContainer .separator {
+    margin: 0;
+}
+
+.messageBoxSearchContainer {
+    padding: 8px 12px;
+}
+
+.messageBoxSearchInput {
+    display: flex;
+    align-items: center;
+    background-color: #EDF3F8;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+.messageBoxSearchInput:hover {
+    border: 2px solid black;
+    padding: 2px 8px;
+}
+
+.messageBoxSearchInputLeft {
+    display: flex;
+    align-items: center;
+}
+
+.messageBoxSearchInput input {
+    border: none;
+    background: none;
+    margin-left: 2px;
+}
+
+.messageBoxSearchInput input:focus {
+    outline: none;
 }

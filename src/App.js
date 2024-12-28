@@ -17,12 +17,14 @@ import HelpCenter from './pages/FooterPages/AdChoices/AdChoices';
 import AdChoices from './pages/FooterPages/AdChoices/AdChoices';
 import Advertising from './pages/FooterPages/Advertising/Advertising';
 import MyNetwork from './pages/MyNetwork/MyNetwork';
+import MessageBox from './components/MessageBox/MessageBox';
 
 function App() {
   return (
     <MessageProvider>
       <BrowserRouter>
         <Navbar />
+        <MessageBox />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/profile' element={<Profile />} />
