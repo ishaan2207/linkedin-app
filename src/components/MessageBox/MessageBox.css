@@ -75,3 +75,67 @@
 .messageBoxSearchInput input:focus {
     outline: none;
 }
+
+.messageBoxToggle {
+    display: flex;
+    align-items: center;
+}
+
+.messageBoxToggle button {
+    border: none;
+    background-color: white;
+    font-size: 14px;
+    padding: 9px 8px 11px;
+    flex: 1;
+    color: #000000BF;
+}
+
+.messageBoxToggle button:hover {
+    background-color: #8C8C8C1A;
+}
+
+.messageBoxToggle button:focus {
+    color: #004C33;
+    padding-bottom: 9px;
+    border-bottom: 2px solid #004C33;
+}
+
+.messageBoxMessage {
+    display: flex;
+    padding: 4px 0 0 8px;
+    cursor: pointer;
+}
+
+.messageBoxMessage:hover {
+    background-color: whitesmoke;
+}
+
+.messageBoxMessage img {
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    margin-top: 8px;
+}
+
+.messageBoxMessageRight {
+    padding: 8px 12px 8px 8px;
+    border-bottom: 1px solid lightgrey;
+}
+
+.messageSender {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #00000099;
+    padding: 0 0 4px;
+}
+
+.messageSenderName {
+    font-size: 14px;
+    color: #000000E6;
+}
+
+.messageBoxMessageText {
+    font-size: 12px;
+    color: #00000099;
+}
