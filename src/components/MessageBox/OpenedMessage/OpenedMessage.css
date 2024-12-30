@@ -1,0 +1,68 @@
+.openedMessageContainer {
+    border: 1px solid lightgrey;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color: white;
+    width: 450px;
+    font-family: 'Arial', sans-serif;
+}
+
+.openedMessageHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 8px;
+    border-bottom: 2px solid lightgrey;
+}
+
+.openedMessageHeaderLeft {
+    display: flex;
+    align-items: center;
+}
+
+.openedMessageHeaderLeft img {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+}
+
+.openedMessageHeaderLeft>div {
+    padding-left: 10px;
+    font-size: 12px;
+}
+
+.openedMessageHeaderLeft p {
+    font-size: 14px;
+    font-weight: 600;
+    padding-bottom: 4px;
+    cursor: pointer;
+}
+
+.openedMessageHeaderLeft p:hover {
+    color: #0A66C2;
+    text-decoration: underline;
+}
+
+.openedMessageHeaderRight button {
+    border: none;
+    background: none;
+    color: #000000BF;
+}
+
+.openedMessageHeaderRight {
+    display: flex;
+    gap: 10px;
+}
+
+.openedMessageContainer .messageChatBody {
+    padding: 0;
+    height: 183px;
+}
+
+.openedMessageContainer .separator {
+    margin: 0;
+}
+
+.openedMessageContainer .messageChatButtons {
+    padding: 8px 10px;
+}
