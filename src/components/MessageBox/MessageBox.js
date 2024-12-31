@@ -20,8 +20,15 @@ function MessageBox() {
     const [openedMessages, setOpenedMessages] = useState([]);
 
     const handleOpenMessage = (message) => {
-        setOpenedMessages([...openedMessages, message]);
-        console.log('opened');
+        setOpenedMessages(prev => {
+            if (!prev.includes(message)) {
+                if (prev.length === 3) {
+                    return [...prev.slice(1), message];
+                }
+                return [...prev, message]
+            }
+            return prev;
+        })
     }
 
     const handleFocusedClick = () => {
@@ -35,9 +42,13 @@ function MessageBox() {
     return (
         <div className="messagesWidget">
             <div className="openedMessagesContainer">
-                {openedMessages.map(openedMessage => (
+                {openedMessages.map((openedMessage, index) => (
                     <div className="openedMessage">
-                        <OpenedMessage message={openedMessage} setOpenedMessages={setOpenedMessages} openedMessages={openedMessages} />
+                        {console.log(openedMessages.length, index, openedMessages.length - 4)}
+                        <OpenedMessage
+                            message={openedMessage} setOpenedMessages={setOpenedMessages} openedMessages={openedMessages}
+                            minimized={openedMessages.length > 3 && index <= openedMessages.length - 4}
+                        />
                     </div>
                 ))}
             </div>
