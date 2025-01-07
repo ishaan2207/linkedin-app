@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import './NetworkPremiumAd.css';
 
 import CloseIcon from '@mui/icons-material/Close';
 
 function NetworkPremiumAd() {
+    const [closeAd, setCloseAd] = useState('block')
+
+    const handleCloseAd = () => {
+        setCloseAd('none')
+    }
+
     return (
-        <div className="networkPremiumAdContainer">
+        <div className="networkPremiumAdContainer" style={{ display: closeAd }}>
             <div className="networkPremiumAdHeader">
                 <div>Boost your career with Premium</div>
-                <CloseIcon />
+                <button onClick={handleCloseAd}><CloseIcon /></button>
             </div>
             <div className="premiumAdTagLine">
                 Premium subscribers are 39% more likely to hear back after applying for a job.

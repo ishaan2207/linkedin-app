@@ -1,0 +1,127 @@
+.recommendedProfilesContainer {
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.recommendedProfilesHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    padding: 8px 12px;
+}
+
+.recommendedProfilesHeader button {
+    border: none;
+    background: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #00000099;
+    padding: 8px 10px;
+}
+
+.recommendedProfilesHeader button:hover {
+    color: #000000E6;
+    background-color: whitesmoke;
+    border-radius: 4px;
+}
+
+.recommendedProfiles {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 12px 16px;
+}
+
+.recommendedProfile {
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    width: 186px;
+}
+
+.recommendedProfileBannerImage {
+    height: 64px;
+    width: 184px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.recommendedProfileBanner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.recommendedProfileBanner button {
+    background-color: rgb(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    position: absolute;
+    right: 10px;
+    top: 7px;
+}
+
+.recommendedProfileUserImage {
+    height: 104px;
+    width: 104px;
+    border-radius: 50%;
+    align-self: center;
+    margin-top: -52px;
+}
+
+.recommendedProfileUserInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 12px 0;
+    font-size: 14px;
+    color: #00000099;
+    text-align: center;
+
+}
+
+.recommendedProfileUserInfo p:nth-child(1) {
+    font-size: 16px;
+    font-weight: 600;
+    color: #000000E6;
+    padding: 0 0 2px;
+}
+
+.recommendedProfileConnect {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 12px;
+}
+
+.recommendedProfileConnect p {
+    font-size: 12px;
+    color: #00000099;
+}
+
+.recommendedProfileConnect button {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: 1px solid #0A66C2;
+    border-radius: 24px;
+    color: #0A66C2;
+    font-size: 15px;
+    font-weight: 600;
+    gap: 5px;
+    padding: 4px 32px;
+    margin: 10px 0 0;
+}
+
+.recommendedProfileConnect button:hover {
+    border: 2px solid #004182;
+    color: #004182;
+    background-color: #0041821A;
+    padding: 3px 31px;
+}

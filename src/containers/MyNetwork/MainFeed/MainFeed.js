@@ -4,6 +4,7 @@ import HeaderToggle from "../../../components/MyNetwork/HeaderToggle/HeaderToggl
 import NetworkInvitations from "../../../components/MyNetwork/NetworkInvitations/NetworkInvitations";
 import NetworkGames from "../../../components/MyNetwork/NetworkGames/NetworkGames";
 import NetworkPremiumAd from "../../../components/MyNetwork/NetworkPremiumAd/NetworkPremiumAd";
+import RecommendedProfiles from "../../../components/MyNetwork/RecommendedProfiles/RecommendedProfiles";
 
 function MainFeed() {
     return (
@@ -12,6 +13,7 @@ function MainFeed() {
             <NetworkInvitations />
             <NetworkGames />
             <NetworkPremiumAd />
+            <RecommendedProfiles />
         </div>
     )
 }
