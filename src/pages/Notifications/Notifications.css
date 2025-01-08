@@ -1,0 +1,20 @@
+.notificationsContainer {
+    background-color: #F4F2EE;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    padding: 24px 0;
+    font-family: 'Arial', sans-serif
+}
+
+.notificationsLeftPane {
+    width: 12%;
+}
+
+.notificationsMainFeed {
+    width: 30%;
+}
+
+.notificationsRightPane {
+    width: 15%;
+}

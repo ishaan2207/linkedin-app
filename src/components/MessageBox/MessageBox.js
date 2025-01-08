@@ -18,6 +18,7 @@ function MessageBox() {
 
     const [selectedMessages, setSelectedMessages] = useState(focusedMessages);
     const [openedMessages, setOpenedMessages] = useState([]);
+    const [showBody, setShowBody] = useState(false);
 
     const handleOpenMessage = (message) => {
         setOpenedMessages(prev => {
@@ -37,6 +38,10 @@ function MessageBox() {
 
     const handleOthersClick = () => {
         setSelectedMessages(otherMessages);
+    }
+
+    const handleShowBody = () => {
+        setShowBody(prev => !prev);
     }
 
     return (
@@ -61,39 +66,41 @@ function MessageBox() {
                     <div className="messageBoxHeaderRight">
                         <button><MoreHorizIcon style={{ color: '#000000BF', marginRight: '8px' }} /></button>
                         <button><EditNoteIcon style={{ color: '#000000BF', marginRight: '5px' }} /></button>
-                        <button><KeyboardArrowUpIcon style={{ color: '#000000BF', marginRight: '5px' }} /></button>
+                        <button onClick={handleShowBody}><KeyboardArrowUpIcon style={{ color: '#000000BF', marginRight: '5px' }} /></button>
                     </div>
                 </div>
-                <div className="separator"></div>
-                <div className="messageBoxSearchContainer">
-                    <div className="messageBoxSearchInput">
-                        <div className="messageBoxSearchInputLeft">
-                            <SearchIcon style={{ color: '#00000099', height: '20px', width: '20px' }} />
-                            <input type="search" placeholder="Search messages" />
-                        </div>
-                        <TuneIcon style={{ color: '#00000099', height: '20px', width: '20px', marginLeft: 'auto' }} />
-                    </div>
-                </div>
-                <div className="messageBoxToggle">
-                    <button className="toggleFocused" onClick={handleFocusedClick}>Focused</button>
-                    <button className="toggleOther" onClick={handleOthersClick}>Other</button>
-                </div>
-                <div className="messageBoxMessagesContainer">
-                    {selectedMessages.map(message => (
-                        <div className="messageBoxMessage" onClick={() => handleOpenMessage(message)}>
-                            <img src={message.img} />
-                            <div className="messageBoxMessageRight">
-                                <div className="messageSender">
-                                    <span className="messageSenderName">{message.firstName + ' ' + message.lastName}</span>
-                                    <span>{message.date}</span>
-                                </div>
-                                <p className="messageBoxMessageText">
-                                    {message.text.length > 50 ? message.firstName + ": " + message.text.slice(0, 50) + '...' : message.firstName + ": " + message.text}
-                                </p>
+                <div className="messageBoxBody" style={{ display: showBody ? 'block' : 'none' }}>
+                    <div className="messageBoxSearchContainer">
+                        <div className="messageBoxSearchInput">
+                            <div className="messageBoxSearchInputLeft">
+                                <SearchIcon style={{ color: '#00000099', height: '20px', width: '20px' }} />
+                                <input type="search" placeholder="Search messages" />
                             </div>
+                            <TuneIcon style={{ color: '#00000099', height: '20px', width: '20px', marginLeft: 'auto' }} />
                         </div>
-                    ))}
+                    </div>
+                    <div className="messageBoxToggle">
+                        <button className="toggleFocused" onClick={handleFocusedClick}>Focused</button>
+                        <button className="toggleOther" onClick={handleOthersClick}>Other</button>
+                    </div>
+                    <div className="messageBoxMessagesContainer">
+                        {selectedMessages.map(message => (
+                            <div className="messageBoxMessage" onClick={() => handleOpenMessage(message)}>
+                                <img src={message.img} />
+                                <div className="messageBoxMessageRight">
+                                    <div className="messageSender">
+                                        <span className="messageSenderName">{message.firstName + ' ' + message.lastName}</span>
+                                        <span>{message.date}</span>
+                                    </div>
+                                    <p className="messageBoxMessageText">
+                                        {message.text.length > 50 ? message.firstName + ": " + message.text.slice(0, 50) + '...' : message.firstName + ": " + message.text}
+                                    </p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
+
             </div>
         </div>
     )

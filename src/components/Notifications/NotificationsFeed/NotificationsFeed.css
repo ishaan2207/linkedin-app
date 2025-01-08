@@ -1,0 +1,46 @@
+.notificationsFeedContainer {
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.notification {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid lightgrey;
+    padding: 22px 12px;
+}
+
+.notification img {
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    margin: 0 8px;
+}
+
+.notification span {
+    font-size: 14px;
+    width: 75%;
+    line-height: 1.4;
+}
+
+.notificationRight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+}
+
+.notificationRight span {
+    color: #00000099;
+}
+
+.notificationRight button {
+    border: none;
+    background: none;
+    color: #000000E6;
+}
+
+.unread {
+    background-color: #D7E9FB;
+}

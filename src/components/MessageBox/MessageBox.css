@@ -1,17 +1,23 @@
 .messageBoxContainer {
-    border: 1px solid lightgrey;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
     background-color: white;
     font-family: 'Arial', sans-serif;
     width: 15%;
-    height: 800px;
-    position: absolute;
+    position: fixed;
     left: 84%;
-    top: 14%;
+    bottom: 0%;
+}
+
+.messageBoxBody {
+    border: 1px solid lightgrey;
+    height: 60vh;
 }
 
 .messageBoxHeader {
+    border: 1px solid lightgrey;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: space-between;

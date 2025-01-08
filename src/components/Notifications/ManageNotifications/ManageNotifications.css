@@ -1,0 +1,27 @@
+.manageNotificationsContainer {
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    line-height: 1.6;
+}
+
+.manageNotificationsContainer span {
+    font-size: 16px;
+    font-weight: 600;
+    width: 60%;
+    margin: 0 0 8px;
+}
+
+.manageNotificationsContainer div {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0A66C2;
+    cursor: pointer;
+}
+
+.manageNotificationsContainer div:hover {
+    text-decoration: underline;
+}

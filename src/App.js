@@ -18,6 +18,7 @@ import AdChoices from './pages/FooterPages/AdChoices/AdChoices';
 import Advertising from './pages/FooterPages/Advertising/Advertising';
 import MyNetwork from './pages/MyNetwork/MyNetwork';
 import MessageBox from './components/MessageBox/MessageBox';
+import Notifications from './pages/Notifications/Notifications';
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           <Route path='/ad-choices' element={<AdChoices />} />
           <Route path='/advertising' element={<Advertising />} />
           <Route path='/my-network' element={<MyNetwork />} />
+          <Route path='/notifications' element={<Notifications />} />
         </Routes>
       </BrowserRouter>
     </MessageProvider>
