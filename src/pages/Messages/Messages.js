@@ -1,7 +1,14 @@
+// deps
 import React from "react";
+
+// styles
 import './Messages.css';
-import MessagingPage from "./MessagingPage/MessagingPage";
+
+// contexts
 import { MessageProvider, useMessage } from '../../Context/MessageContext';
+
+// components
+import MessagingPage from "./MessagingPage/MessagingPage";
 
 function Messages() {
     const { messages } = useMessage();

@@ -1,6 +1,11 @@
+// deps
 import React, { useState } from "react";
+
+// styles
 import './MessagesFeed.css';
 
+
+// components
 import SearchIcon from '@mui/icons-material/Search';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import EditNoteOutlinedIcon from '@mui/icons-material/EditNoteOutlined';

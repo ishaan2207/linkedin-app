@@ -1,11 +1,15 @@
+// deps
 import React, { useState } from "react";
+
+// styles
 import './AddExperience.css';
 
+// components
 import CloseIcon from '@mui/icons-material/Close';
 import SquareRoundedIcon from '@mui/icons-material/SquareRounded';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 
-function AddExperience({ showAddExperience, setShowAddExperience, newExperienceFields, addNewExperience }) {
+function AddExperience({ showAddExperience, setShowAddExperience, newExperienceFields, setNewExperienceFields, addNewExperience }) {
     const [experienceDescriptionLength, setExperienceDescriptionLength] = useState(0);
 
     function handleHideExperience(hide) {
@@ -27,7 +31,7 @@ function AddExperience({ showAddExperience, setShowAddExperience, newExperienceF
                     <p>Title*</p>
                     <input type="text" placeholder="Ex: Retail Sales Manager"
                         value={newExperienceFields.experienceTitle}
-                        onChange={(event) => newExperienceFields.setExperienceTitle(event.target.value)} />
+                        onChange={(event) => setNewExperienceFields({...newExperienceFields, experienceTitle: event.target.value})} />
                 </div>
 
                 <div className="addExperienceEmploymentType addExperienceTextForm">

@@ -1,6 +1,10 @@
+// deps
 import React from "react";
+
+// styles
 import './MessagesChat.css';
 
+// components
 import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined';
 import VideoCallIcon from '@mui/icons-material/VideoCall';
 import StarBorderOutlinedIcon from '@mui/icons-material/StarBorderOutlined';

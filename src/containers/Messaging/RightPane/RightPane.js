@@ -1,5 +1,10 @@
+// deps
 import React from "react";
+
+// styles
 import './RightPane.css';
+
+// components
 import PremiumAd from "../../../components/Messaging/PremiumAd/PremiumAd";
 import Footer from "../../../components/Footer/Footer";
 

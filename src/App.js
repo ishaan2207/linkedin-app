@@ -1,8 +1,13 @@
-import './App.css';
+// deps
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+// contexsts
 import { MessageProvider } from './Context/MessageContext';
 
-import Navbar from './components/Navbar/Navbar';
+// styles
+import './App.css';
+
+// pages
 import Home from './pages/Home/Home';
 import Messages from './pages/Messages/Messages';
 import Profile from './pages/Profile/Profile';
@@ -17,8 +22,11 @@ import HelpCenter from './pages/FooterPages/AdChoices/AdChoices';
 import AdChoices from './pages/FooterPages/AdChoices/AdChoices';
 import Advertising from './pages/FooterPages/Advertising/Advertising';
 import MyNetwork from './pages/MyNetwork/MyNetwork';
-import MessageBox from './components/MessageBox/MessageBox';
 import Notifications from './pages/Notifications/Notifications';
+
+// components
+import MessageBox from './components/MessageBox/MessageBox';
+import Navbar from './components/Navbar/Navbar';
 
 function App() {
   return (

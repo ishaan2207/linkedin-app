@@ -1,5 +1,10 @@
+// deps
 import React from "react";
+
+// styles
 import './MessagingPage.css';
+
+// containers
 import MainFeed from "../../../containers/Messaging/MainFeed/MainFeed";
 import RightPane from "../../../containers/Messaging/RightPane/RightPane";
 
