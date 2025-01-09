@@ -77,9 +77,10 @@ function Navbar() {
                 </div>
                 <div>
                     <div className='navLeftInputContainer'>
-                        <SearchIcon style={{ position: 'absolute', top: '5px', padding: '0 10px' }} />
+                        <SearchIcon style={{ position: 'absolute', top: '3px', margin: '0 10px' }} />
+                        <p className='searchButtonText'>Search</p>
                     </div>
-                    <input type='text' placeholder='Search' />
+                    <input type='text' placeholder='Search' className='navSearchInput' />
                 </div>
             </div>
             {/*RightSide*/}

@@ -29,6 +29,22 @@ import MessageBox from './components/MessageBox/MessageBox';
 import Navbar from './components/Navbar/Navbar';
 
 function App() {
+  // 1. fix the navbar to be sticky
+  // 2. fix home footer
+  // 3. fix message pop up boxes
+  // 4. fix the posts adding at the last of the list
+  // 5. fix the truncation of the post (it should be for more than 80 words
+
+  // connections page -
+  // 1. left pane sticky
+
+  // messages page -
+  // 1. left pane scrollable of msgs list
+  // 2. fix height
+
+  // profile -
+  // 1. stick the footer
+  // 2. fix experience modal
   return (
     <MessageProvider>
       <BrowserRouter>
@@ -53,8 +69,6 @@ function App() {
         </Routes>
       </BrowserRouter>
     </MessageProvider>
-
-
   );
 }
 

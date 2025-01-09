@@ -1,29 +1,95 @@
 .homeContainer {
     width: 100%;
-    overflow: hidden;
-    padding: 10px;
+    display: flex;
     box-sizing: border-box;
     background-color: #F4F2EE;
+    padding: 0 20%;
 }
 
 .homeColumn {
-    float: left;
     margin-right: 20px;
     box-sizing: border-box;
 }
 
 .leftPane {
-    width: 13%;
+    flex: 9%;
     margin-top: 15px;
-    margin-left: 20%;
 }
 
 .mainFeed {
-    width: 30%;
+    flex: 40%;
 }
 
 .rightPane {
-    width: 15%;
+    flex: 16%;
     margin-right: 0;
     margin-top: 15px;
+}
+
+@media only screen and (max-width: 1600px) {
+    .homeContainer {
+        padding: 0 15%;
+    }
+
+    .leftPane {
+        flex: 18%;
+    }
+
+    .mainFeed {
+        flex: 50%;
+    }
+
+    .rightPane {
+        flex: 25%;
+    }
+}
+
+@media only screen and (max-width: 1360px) {
+    .homeContainer {
+        padding: 0 10%;
+    }
+
+    .leftPane {
+        flex: 20%;
+    }
+
+    .mainFeed {
+        flex: 45%;
+    }
+
+    .rightPane {
+        flex: 20%;
+    }
+}
+
+@media only screen and (max-width: 1110px) {
+    .homeContainer {
+        padding: 0 5%;
+    }
+
+    .mainFeed {
+        flex: 40%;
+    }
+
+    .rightPane {
+        flex: 25%;
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    .homeContainer {
+        padding: 0 10%;
+    }
+
+    .leftPane {
+        flex: 0%;
+    }
+
+    .mainFeed {
+        flex: 35%;
+    }
+
+    .rightPane {
+        display: none;
+    }
 }
