@@ -1,23 +1,19 @@
+// deps
 import React from "react";
+
+// styles
 import './ProfileSettings.css';
 
+// components
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 
-function ProfileSettings() {
-    const profileSettingSections = [
-        {
-            header: 'Profile Language',
-            text: 'English'
-        },
-        {
-            header: 'Public profile & URL',
-            text: 'www.linkedin.com/in/ishaan-gupta-34505518b'
-        }
-    ]
+// constants
+import { PROFILE_SETTINGS_SECTION } from "../../../constants/texts/Profile/profileSettings";
 
+function ProfileSettings() {
     return (
         <div className="profileSettingsContainer">
-            {profileSettingSections.map((profileSettingSection, index) => (
+            {PROFILE_SETTINGS_SECTION.map((profileSettingSection, index) => (
                 <div className="profileSettingDivContainer">
                     <div className="profileSettingHeader">
                         <p>{profileSettingSection.header}</p>
@@ -26,7 +22,7 @@ function ProfileSettings() {
                     <div className="profileSettingText">
                         {profileSettingSection.text}
                     </div>
-                    {index !== profileSettingSections.length - 1 ? <div className="separator"></div> : ''}
+                    {index !== PROFILE_SETTINGS_SECTION.length - 1 ? <div className="separator"></div> : ''}
                 </div>
             ))}
         </div>

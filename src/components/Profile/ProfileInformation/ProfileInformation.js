@@ -1,24 +1,26 @@
+// deps
 import React from "react";
+
+// styles
 import './ProfileInformation.css';
 
+// components
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import CircleIcon from '@mui/icons-material/Circle';
 
-function ProfileInformation() {
-    const username = 'Ishaan Gupta';
-    const about = 'Recent graduate from The University of British Columbia';
-    const location = 'Gurugram, Haryana, India';
-    const image = 'https://media.licdn.com/dms/image/v2/D4D03AQGYxNTXYJlddQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1699309825094?e=1738800000&v=beta&t=GMjdzIp5w0bjGYgLxVA3xmmgdlHNjsN00N224VioXm8';
-    const universityImage = 'https://media.licdn.com/dms/image/v2/C4E0BAQH415qlDBkj8Q/company-logo_100_100/company-logo_100_100/0/1630608877834/universityofbc_logo?e=1741824000&v=beta&t=hRCeJhdlT4tQOs7Xz4CCLyICPATRkfu0Xh5OldE3pek';
+// constants
+import { PROFILE_INFO } from "../../../constants/texts/Profile/profileInformation";
 
+function ProfileInformation() {
+    
     return (
         <div className="profileInformationContainer">
             <div className="profileBannerContainer">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0hhTzETCBuUg5fZ5ShDkejmAb9i8z_cqvNQ&s" alt="profileBanner" />
+                <img src={PROFILE_INFO.BANNER_IMG} alt="profileBanner" />
             </div>
             <div className="profileUserInformationContainer">
                 <div id="userImageAndEditIcon">
-                    <img src={image} alt="profileImage" />
+                    <img src={PROFILE_INFO.IMAGE} alt="profileImage" />
                     <div className="mainFeedEditIcon">
                         <EditOutlinedIcon />
                     </div>
@@ -26,22 +28,22 @@ function ProfileInformation() {
                 <div className="userInformation">
                     <div className="userInfoLeftColumn">
                         <div className="userNameContainer">
-                            <p id="profileUsername">{username}</p>
-                            <p id="profilePronouns">(He/Him)</p>
+                            <p id="profileUsername">{PROFILE_INFO.USERNAME}</p>
+                            <p id="profilePronouns">{PROFILE_INFO.PRONOUNS}</p>
                         </div>
-                        <p id="profileAbout">{about}</p>
+                        <p id="profileAbout">{PROFILE_INFO.ABOUT}</p>
                         <div className="userLocationContainer">
-                            <p id="profileLocation">{location}</p>
+                            <p id="profileLocation">{PROFILE_INFO.LOCATION}</p>
                             <CircleIcon style={{ height: '3px', width: '3px', color: 'grey' }} />
-                            <p id="profileContactInfo">Contact Info</p>
+                            <p id="profileContactInfo">{PROFILE_INFO.CONTACT_INFO}</p>
                         </div>
                         <div className="profileConnections">
-                            166 connections
+                            {PROFILE_INFO.NUM_CONNECTIONS}
                         </div>
                     </div>
                     <div className="userInfoRightColumn">
-                        <img src={universityImage} alt="" />
-                        <p>The University of British Columbia</p>
+                        <img src={PROFILE_INFO.UNIVERSITY_IMG} alt="" />
+                        <p>{PROFILE_INFO.UNIVERSITY_NAME}</p>
                     </div>
                 </div>
             </div>

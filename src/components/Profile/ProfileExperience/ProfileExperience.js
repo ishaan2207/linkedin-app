@@ -1,6 +1,10 @@
+// deps
 import React from "react";
+
+// styles
 import './ProfileExperience.css';
 
+// components
 import AddIcon from '@mui/icons-material/Add';
 import EditIcon from '@mui/icons-material/Edit';
 

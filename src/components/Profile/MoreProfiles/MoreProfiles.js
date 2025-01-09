@@ -1,6 +1,10 @@
+// deps
 import React from "react";
+
+// styles
 import './MoreProfiles.css';
 
+// components
 import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
 import CircleIcon from '@mui/icons-material/Circle';
 
