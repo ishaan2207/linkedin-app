@@ -5,7 +5,7 @@ import Footer from "../../../components/Footer/Footer";
 
 function LeftPane() {
     return (
-        <div>
+        <div className="networkLeftPane">
             <ManageNetwork />
             <Footer />
         </div>

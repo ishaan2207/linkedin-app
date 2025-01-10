@@ -62,7 +62,7 @@
     width: 30px;
     border-radius: 50%;
     position: absolute;
-    right: 10px;
+    right: 8px;
     top: 7px;
 }
 
@@ -124,4 +124,24 @@
     color: #004182;
     background-color: #0041821A;
     padding: 3px 31px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .recommendedProfile {
+        width: 144px;
+    }
+
+    .recommendedProfileBannerImage {
+        height: 64px;
+        width: 144px;
+    }
+
+    .recommendedProfileConnect button {
+        width: 120px;
+        padding: 4px 16px;
+    }
+
+    .recommendedProfileConnect button:hover {
+        padding: 3px 15px;
+    }
 }

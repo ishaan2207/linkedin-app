@@ -1,14 +1,18 @@
 import React from "react";
 import './PostContent.css';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function PostContent({ postContent }) {
-    const [hideFullText, setHideFullText] = useState(postContent.length > 75);
-    console.log(postContent.length)
+    const shouldTruncate = postContent.length > 75;
+    const [hideFullText, setHideFullText] = useState(shouldTruncate);
 
     function displayFullText() {
         setHideFullText(prev => !prev)
     }
+
+    useEffect(() => {
+        setHideFullText(postContent.length > 75);
+    }, [postContent]);
 
     return (
         <div className="postContentContainer">
