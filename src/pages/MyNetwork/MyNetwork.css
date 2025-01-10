@@ -4,13 +4,22 @@
     padding-top: 25px;
     background-color: #F4F2EE;
     font-family: 'Arial', sans-serif;
+    height: 100vh;
+    overflow-y: hidden;
 }
 
 .myNetworkLeftPane {
     width: 16%;
     margin-right: 30px;
+    overflow-y: hidden;
 }
 
 .myNetworkMainFeed {
     width: 43%;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.myNetworkMainFeed::-webkit-scrollbar {
+    display: none;
 }

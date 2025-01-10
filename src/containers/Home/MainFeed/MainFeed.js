@@ -7,6 +7,8 @@ import './MainFeed.css';
 // components
 import CreatePost from "../../../components/CreatePost/CreatePost";
 import AllPosts from "../../../components/AllPosts/AllPosts";
+import ProfileSummary from "../../../components/ProfileSummary/ProfileSummary";
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 // constants
 import { allPostsArray } from "../../../constants/mocks/Home/homeMainFeed";
@@ -26,12 +28,16 @@ function MainFeed() {
             comments: Math.floor(Math.random() * 41) + 15,
             shares: Math.floor(Math.random() * 21) + 10
         }
-        setAllPosts([...allPosts, newPost])
+        setAllPosts([newPost, ...allPosts])
         setCreatePostInput('');
     }
 
     return (
         <div className="mainFeedContainer">
+            <div className="hiddenProfile">
+                <ProfileSummary />
+                <button className="hiddenShowMoreButton"><span>Show more</span><KeyboardArrowDownIcon /></button>
+            </div>
             <CreatePost createNewPost={createNewPost} createPostInput={createPostInput} setCreatePostInput={setCreatePostInput} />
             <AllPosts allPosts={allPosts} />
         </div>

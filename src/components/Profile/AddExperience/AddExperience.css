@@ -9,6 +9,8 @@
 
 .addExperienceForm {
     padding: 16px 24px;
+    height: 70vh;
+    overflow-y: scroll;
 }
 
 .addExperienceHeader {

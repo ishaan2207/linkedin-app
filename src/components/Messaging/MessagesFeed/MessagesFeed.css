@@ -2,6 +2,11 @@
     border: 1px solid lightgrey;
     border-radius: 8px;
     background-color: white;
+    position: fixed;
+    left: 23%;
+    bottom: 0;
+    width: 37%;
+    height: 90vh;
 }
 
 .messagesFeedHeader {
@@ -102,11 +107,12 @@ button {
 }
 
 .messagesFeedLeftColumn {
-    width: 40%;
+    width: 42%;
+    overflow-y: scroll;
 }
 
 .messagesFeedRightColumn {
-    width: 60%;
+    width: 58%;
 }
 
 .messagePreviewContainer {

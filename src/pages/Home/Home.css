@@ -93,3 +93,23 @@
         display: none;
     }
 }
+
+@media only screen and (max-width: 850px) {
+    .homeContainer {
+        padding: 0 5%;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .homeContainer {
+        padding: 0 5%;
+    }
+
+    .leftPane {
+        display: none;
+    }
+
+    .mainFeed {
+        flex: 80%;
+    }
+}

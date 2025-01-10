@@ -1,3 +1,30 @@
 .mainFeedContainer {
     margin-top: 15px;
 }
+
+.hiddenShowMoreButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: #000000BF;
+    border: none;
+    background: none;
+    font-size: 14px;
+    margin: 0 0 10px;
+}
+
+.hiddenProfile {
+    display: none;
+}
+
+@media only screen and (max-width: 750px) {
+    .hiddenProfile {
+        display: block;
+    }
+
+    .userImage {
+        height: 72px;
+        width: 72px;
+    }
+}

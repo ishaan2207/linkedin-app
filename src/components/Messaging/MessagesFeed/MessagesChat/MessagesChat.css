@@ -87,6 +87,7 @@
 .messageChatBody {
     display: flex;
     padding: 0 0 220px;
+    height: 100%;
 }
 
 .messageChatBodyLeft img {

@@ -3,9 +3,9 @@
     border-top-left-radius: 8px;
     background-color: white;
     font-family: 'Arial', sans-serif;
-    width: 15%;
+    width: 288px;
     position: fixed;
-    left: 84%;
+    right: 1%;
     bottom: 0%;
 }
 
@@ -153,8 +153,14 @@
 .openedMessagesContainer {
     display: flex;
     flex-direction: row-reverse;
-    position: absolute;
-    top: 39%;
+    position: fixed;
+    bottom: 0%;
     left: 5%;
     width: 78%;
+}
+
+@media only screen and (max-width: 750px) {
+    .messagesWidget {
+        display: none;
+    }
 }
