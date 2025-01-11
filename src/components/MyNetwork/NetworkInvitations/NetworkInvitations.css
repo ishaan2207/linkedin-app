@@ -103,3 +103,18 @@
         font-size: 14px;
     }
 }
+
+@media only screen and (max-width: 980px) {
+    .inviteUserBio {
+        display: none;
+    }
+
+    .inviteButtonGroup {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-right: -5px;
+    }
+}

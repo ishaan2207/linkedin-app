@@ -145,3 +145,20 @@
         padding: 3px 15px;
     }
 }
+
+@media only screen and (max-width: 980px) {
+    .recommendedProfiles {
+        gap: 20px;
+        padding: 0 20px 16px;
+    }
+
+    .recommendedProfile {
+        width: 180px;
+    }
+
+    .recommendedProfileBannerImage {
+        height: 64px;
+        width: 179px;
+    }
+
+}

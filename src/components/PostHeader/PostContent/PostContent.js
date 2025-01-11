@@ -1,6 +1,8 @@
-import React from "react";
+// deps
+import React, { useState, useEffect } from "react";
+
+// styles
 import './PostContent.css';
-import { useState, useEffect } from "react";
 
 function PostContent({ postContent }) {
     const shouldTruncate = postContent.length > 75;
