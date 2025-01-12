@@ -4,17 +4,50 @@
     justify-content: center;
     gap: 24px;
     padding: 24px 0;
-    font-family: 'Arial', sans-serif
+    font-family: 'Arial', sans-serif;
 }
 
 .notificationsLeftPane {
-    width: 12%;
+    width: 225px;
 }
 
 .notificationsMainFeed {
-    width: 30%;
+    width: 555px;
 }
 
 .notificationsRightPane {
-    width: 15%;
+    width: 270px;
+}
+
+@media only screen and (max-width: 1150px) {
+    .notificationsMainFeed {
+        width: 387px;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .notificationsMainFeed {
+        width: 471px;
+    }
+
+    .notificationsRightPane {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 740px) {
+    .notificationsContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .notificationsLeftPane,
+    .notificationsMainFeed,
+    .notificationsRightPane {
+        width: 576px;
+    }
+
+    .notificationsRightPane {
+        display: block;
+    }
 }
