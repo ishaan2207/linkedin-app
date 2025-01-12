@@ -118,3 +118,17 @@
         margin-right: -5px;
     }
 }
+
+@media only screen and (max-width: 780px) {
+    .inviteUserInformation {
+        width: 80%;
+    }
+
+    .inviteUserBio {
+        display: block;
+    }
+
+    .inviteButtonGroup {
+        flex-direction: row;
+    }
+}

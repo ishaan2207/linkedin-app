@@ -32,3 +32,23 @@
         width: 450px;
     }
 }
+
+@media only screen and (max-width: 780px) {
+    .myNetworkContainer {
+        flex-direction: column;
+    }
+
+    .myNetworkLeftPane {
+        width: 100%;
+        display: block;
+    }
+
+    .myNetworkMainFeed {
+        width: 100%;
+        overflow-y: visible;
+    }
+
+    .myNetworkLeftPane .footer {
+        position: static;
+    }
+}
