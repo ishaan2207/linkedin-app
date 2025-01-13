@@ -3,10 +3,9 @@
     border-radius: 8px;
     background-color: white;
     position: fixed;
-    left: 23%;
     bottom: 0;
-    width: 37%;
-    height: 90vh;
+    width: 780px;
+    height: 92.5vh;
 }
 
 .messagesFeedHeader {
@@ -158,4 +157,18 @@ button {
     padding-top: 3px;
     line-height: 1.3em;
     width: 80%;
+}
+
+@media only screen and (max-width: 1110px) {
+    .messagesFeedContainer {
+        position: static;
+        height: 100%;
+        width: 720px;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    .messagesFeedContainer {
+        width: 100%;
+    }
 }

@@ -7,23 +7,11 @@
 }
 
 .profileMainFeed {
-    flex: 43%;
+    width: 804px;
 }
 
 .profileRightPane {
-    flex: 16%;
+    width: 300px;
 }
 
-@media only screen and (max-width: 1200px) {
-    .profileContainer {
-        padding: 24px 10%;
-    }
-
-    .profileMainFeed {
-        flex: 20%;
-    }
-
-    .profileRightPane {
-        flex: 50%;
-    }
-}
+@media only screen and (max-width: 1200px) {}

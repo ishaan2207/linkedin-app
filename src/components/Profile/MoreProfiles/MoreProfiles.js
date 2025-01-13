@@ -8,6 +8,9 @@ import './MoreProfiles.css';
 import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
 import CircleIcon from '@mui/icons-material/Circle';
 
+// constants
+import { MORE_PROFILES } from "../../../constants/texts/Profile/moreProfiles";
+
 function MoreProfiles() {
     const profiles = [
         {
@@ -50,7 +53,7 @@ function MoreProfiles() {
     return (
         <div className="moreProfilesContainer">
             <div className="moreProfilesHeader">
-                <p>More profiles for you</p>
+                <p>{MORE_PROFILES.HEADER}</p>
             </div>
             <div className="moreProfiles">
                 {profiles.map((profile, index) => (
@@ -69,7 +72,7 @@ function MoreProfiles() {
                                     {profile.bio.length > 50 ? profile.bio.slice(0, 50) + '...' : profile.bio}
                                 </div>
                                 <div className="recProfileButton">
-                                    <button>{profile.connected ? <span>View profile</span> : <span className="profileConnectButton"><PersonAddAlt1Icon style={{ height: '18px', width: '18px' }} /><span>Connect</span></span>}</button>
+                                    <button>{profile.connected ? <span>{MORE_PROFILES.VIEW}</span> : <span className="profileConnectButton"><PersonAddAlt1Icon style={{ height: '18px', width: '18px' }} /><span>Connect</span></span>}</button>
                                 </div>
                             </div>
                         </div>
@@ -81,7 +84,7 @@ function MoreProfiles() {
                 <div className="moreProfilesShowAll">
                     <div className="separator"></div>
                     <div className="showAllButton">
-                        <span>Show all</span>
+                        <span>{MORE_PROFILES.SHOW_ALL}</span>
                     </div>
                 </div>
             </div>

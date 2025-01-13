@@ -1,26 +1,18 @@
+// deps
 import React from "react";
+
+// styles
 import './CreatePost.css';
 
+// components
 import InsertPhotoOutlinedIcon from '@mui/icons-material/InsertPhotoOutlined';
 import SmartDisplayIcon from '@mui/icons-material/SmartDisplay';
 import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
 
-function CreatePost({ createNewPost, createPostInput, setCreatePostInput }) {
-    const createPostIcons = [
-        {
-            icon: <InsertPhotoOutlinedIcon style={{ color: '#0078FF' }} />,
-            text: 'Photo',
-        },
-        {
-            icon: <SmartDisplayIcon style={{ color: '#4CAF50' }} />,
-            text: 'Video',
-        },
-        {
-            icon: <ArticleOutlinedIcon style={{ color: '#E06847' }} />,
-            text: 'Write article',
-        }
-    ]
+// constants
+import { CREATE_POST_ICONS } from "../../constants/mocks/Home/homeCreatePost";
 
+function CreatePost({ createNewPost, createPostInput, setCreatePostInput }) {
     return (
         <div className="createPostContainer">
             <div className="createPostInput">
@@ -33,7 +25,7 @@ function CreatePost({ createNewPost, createPostInput, setCreatePostInput }) {
                 <button onClick={createNewPost}>Submit</button>
             </div>
             <div className="createPostButtonsContainer">
-                {createPostIcons.map(createPostIcon => (
+                {CREATE_POST_ICONS.map(createPostIcon => (
                     <div className="createPostButton">
                         <div className="postButtonIcon">{createPostIcon.icon}</div>
                         <p className="postButtonText">{createPostIcon.text}</p>

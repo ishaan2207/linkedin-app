@@ -1,4 +1,7 @@
+// deps
 import React from "react";
+
+// components
 import Posts from "../Posts/Posts";
 
 function AllPosts({ allPosts }) {

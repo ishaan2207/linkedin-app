@@ -1,16 +1,53 @@
 .messagingPageContainer {
     display: flex;
+    justify-content: center;
+    gap: 20px;
     padding-top: 24px;
     background-color: #F4F2EE;
-    height: 100vh;
+    height: calc(100vh - 55px);
 }
 
 .messagingMainFeed {
-    width: 41%;
-    margin-left: 20%;
+    width: 780px;
 }
 
 .messagingRightPane {
-    width: 17%;
-    margin-left: 25px;
+    width: 300px;
+}
+
+@media only screen and (max-width: 1110px) {
+    .messagingPageContainer {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: calc(100vh - 60px);
+    }
+
+    .messagingMainFeed {
+        width: 720px;
+    }
+
+    .messagingRightPane {
+        display: block;
+        width: 720px;
+        justify-self: center;
+    }
+
+    .messagingPremiumAdContainer {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    .messagingPageContainer {
+        height: calc(100vh - 60px);
+    }
+
+    .messagingMainFeed {
+        width: 100%;
+    }
+
+    .messagingRightPane {
+        width: 80%;
+    }
 }

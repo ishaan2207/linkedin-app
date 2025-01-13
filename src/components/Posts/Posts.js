@@ -1,10 +1,17 @@
+// deps
 import React, { useState } from "react";
+
+// styles
 import './Posts.css';
+
+// components
 import PostHeader from "../PostHeader/PostHeader";
 import UserInfo from "./UserInfo/UserInfo";
 import PostContent from "../PostHeader/PostContent/PostContent";
 import PostInteractions from "./PostInteractions/PostInteractions";
 import PostButtons from "./PostButtons/PostButtons";
+
+// contexts
 import { LikesProvider } from "../../Context/LikesContext";
 
 function Posts({ postInfo }) {
