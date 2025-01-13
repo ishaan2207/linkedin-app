@@ -78,7 +78,7 @@ function NotificationsFeed() {
     return (
         <div className="notificationsFeedContainer">
             <div className="notificationsFeed">
-                {notifications.map(notification => (
+                {notifications.map((notification, key) => (
                     <div className={`notification ${notification.read ? '' : 'unread'}`}>
                         {notification.read ? '' : <CircleIcon style={{ height: '10px', width: '10px', color: '#0A66C2', marginLeft: '-4px' }} />}
                         <img src={notification.img} />

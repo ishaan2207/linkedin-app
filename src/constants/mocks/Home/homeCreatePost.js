@@ -1,3 +1,8 @@
+// components
+import InsertPhotoOutlinedIcon from '@mui/icons-material/InsertPhotoOutlined';
+import SmartDisplayIcon from '@mui/icons-material/SmartDisplay';
+import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
+
 const CREATE_POST_ICONS = [
     {
         icon: <InsertPhotoOutlinedIcon style={{ color: '#0078FF' }} />,

@@ -5,7 +5,7 @@ import MoreProfiles from "../../../components/Profile/MoreProfiles/MoreProfiles"
 
 function RightPane() {
     return (
-        <div className="rightPaneContainer">
+        <div className="profileRightPaneContainer">
             <ProfileSettings />
             <MoreProfiles />
         </div>

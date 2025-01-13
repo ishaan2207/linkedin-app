@@ -4,11 +4,6 @@ import React from "react";
 // styles
 import './CreatePost.css';
 
-// components
-import InsertPhotoOutlinedIcon from '@mui/icons-material/InsertPhotoOutlined';
-import SmartDisplayIcon from '@mui/icons-material/SmartDisplay';
-import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
-
 // constants
 import { CREATE_POST_ICONS } from "../../constants/mocks/Home/homeCreatePost";
 

@@ -103,6 +103,7 @@ button {
 
 .messagesFeedColumns {
     display: flex;
+    height: 100%;
 }
 
 .messagesFeedLeftColumn {

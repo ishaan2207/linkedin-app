@@ -8,7 +8,7 @@ const ADD_EXPERIENCE = {
     START_DATE: 'Start date*',
     END_DATE: 'End date*',
     LOCATION: 'Location type',
-    DESCRIPTION: 'DESCRIPTION',
+    DESCRIPTION: 'Description',
     AI_SUGGESTIONS_BOLD: 'Get AI suggestions',
     AI_SUGGESTIONS: ' with Premium',
     AI_ASSISTANCE: 'Unlock AI assistance with 20 words',
@@ -23,4 +23,4 @@ const ADD_EXPERIENCE = {
     ADD_MEDIA_BOLD: 'media file types supported',
 }
 
-export {ADD_EXPERIENCE};
+export { ADD_EXPERIENCE };

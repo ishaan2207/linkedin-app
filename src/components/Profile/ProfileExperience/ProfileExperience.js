@@ -27,12 +27,12 @@ function ProfileExperience({ setShowAddExperience, experiences }) {
                 {experiences.map(experience => (
                     <div className="experiencesContainer">
                         <div className="profileExperienceImage">
-                            <img src={experience.companyImage} />
+                            <img src={experience.companyImage} alt="" />
                         </div>
                         <div className="profileExperienceDescription">
                             <div className="experienceTitle">{experience.title}</div>
                             <div className="experienceCompany">{experience.company}</div>
-                            <div className="experienceStartEndDates">{experience.startDate} to {experiences.endDate}</div>
+                            <div className="experienceStartEndDates">{experience.startDate} to {experience.endDate}</div>
                             <div className="experienceLocation">{experience.location}</div>
                             <ul className="experienceDescription">
                                 {experience.descriptions.map(description => (
