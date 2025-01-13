@@ -69,7 +69,7 @@ function MoreProfiles() {
                                     <p className="recProfileDegree">{profile.degree}</p>
                                 </div>
                                 <div className="recProfileBio">
-                                    {profile.bio.length > 50 ? profile.bio.slice(0, 50) + '...' : profile.bio}
+                                    {profile.bio.length > 50 && window.innerWidth > 770 ? profile.bio.slice(0, 50) + '...' : profile.bio}
                                 </div>
                                 <div className="recProfileButton">
                                     <button>{profile.connected ? <span>{MORE_PROFILES.VIEW}</span> : <span className="profileConnectButton"><PersonAddAlt1Icon style={{ height: '18px', width: '18px' }} /><span>Connect</span></span>}</button>

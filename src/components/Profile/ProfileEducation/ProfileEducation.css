@@ -90,3 +90,9 @@
     color: #0A66C2;
     text-decoration: underline;
 }
+
+@media only screen and (max-width: 1000px) {
+    .educationsContainer {
+        gap: 10px;
+    }
+}

@@ -1,8 +1,8 @@
 .profileContainer {
-    width: 100%;
     display: flex;
+    justify-content: center;
     gap: 22px;
-    padding: 24px 20%;
+    padding: 24px 0;
     background-color: #F4F2EE;
 }
 
@@ -14,4 +14,27 @@
     width: 300px;
 }
 
-@media only screen and (max-width: 1200px) {}
+@media only screen and (max-width: 1200px) {
+    .profileMainFeed {
+        width: 636px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .profileMainFeed {
+        width: 396px;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    .profileContainer {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .profileMainFeed,
+    .profileRightPane {
+        width: 576px;
+    }
+}

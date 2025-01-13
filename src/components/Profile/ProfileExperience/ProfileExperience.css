@@ -71,3 +71,9 @@
 .experienceDescription li {
     padding-bottom: 4px;
 }
+
+@media only screen and (max-width: 1000px) {
+    .experiencesContainer {
+        gap: 10px;
+    }
+}

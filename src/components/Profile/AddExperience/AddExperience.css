@@ -229,3 +229,33 @@
 .experienceSaveButtonContainer button span {
     font-size: 16px;
 }
+
+@media only screen and (max-width: 1400px) {
+    .addExperienceContainer {
+        left: 25%;
+    }
+}
+
+@media only screen and (max-width: 1240px) {
+    .addExperienceContainer {
+        left: 20%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .addExperienceContainer {
+        left: 15%;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .addExperienceContainer {
+        left: 10%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .addExperienceContainer {
+        left: 5%;
+    }
+}

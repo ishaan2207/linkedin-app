@@ -12,7 +12,7 @@ import CircleIcon from '@mui/icons-material/Circle';
 import { PROFILE_INFO } from "../../../constants/texts/Profile/profileInformation";
 
 function ProfileInformation() {
-    
+
     return (
         <div className="profileInformationContainer">
             <div className="profileBannerContainer">
@@ -32,6 +32,7 @@ function ProfileInformation() {
                             <p id="profilePronouns">{PROFILE_INFO.PRONOUNS}</p>
                         </div>
                         <p id="profileAbout">{PROFILE_INFO.ABOUT}</p>
+                        <p id="profileUniversityHidden">{PROFILE_INFO.UNIVERSITY_NAME}</p>
                         <div className="userLocationContainer">
                             <p id="profileLocation">{PROFILE_INFO.LOCATION}</p>
                             <CircleIcon style={{ height: '3px', width: '3px', color: 'grey' }} />

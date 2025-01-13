@@ -188,3 +188,46 @@
     background-color: rgb(0, 0, 0, 0.1);
     padding: 6px 17px;
 }
+
+#profileUniversityHidden {
+    display: none;
+}
+
+@media only screen and (max-width: 1000px) {
+    .profileBannerContainer img {
+        height: 99px;
+    }
+
+    #userImageAndEditIcon img {
+        height: 120px;
+        width: 120px;
+    }
+
+    .profileUserInformationContainer {
+        margin-top: -60px;
+    }
+
+    #profileUniversityHidden {
+        display: block;
+        font-size: 14px;
+        color: #00000099;
+        margin: 8px 0 0;
+    }
+
+    .userInfoRightColumn {
+        display: none;
+    }
+
+    .profileInformationButtons {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-right: 0;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    .profileResourcesButton {
+        width: 82%;
+    }
+}

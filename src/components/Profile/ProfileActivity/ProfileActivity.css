@@ -9,13 +9,17 @@
 .profileActivityHeaderContainer {
     display: flex;
     align-items: center;
-    padding: 24px 24px 0;
+    padding: 12px 12px 0;
 }
 
 .profileActivityHeader {
     display: flex;
     justify-content: space-between;
     width: 97%;
+}
+
+.profileActivityText {
+    padding: 12px 12px 0;
 }
 
 .profileActivityText p:nth-child(1) {
@@ -33,6 +37,7 @@
 }
 
 .profileActivityHeader button {
+    margin: 8px;
     padding: 6px 16px;
     border-radius: 24px;
     font-size: 16px;
@@ -57,6 +62,7 @@
 
 .profileActivityBody {
     padding: 18px 24px 0;
+    color: #000000E6;
 }
 
 .profileActivityBody p:nth-child(1) {
@@ -71,6 +77,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #000000BF;
 }
 
 .profileActivityShowMore p {

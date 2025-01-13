@@ -65,15 +65,13 @@
 }
 
 .showAllSkillsText {
-    margin: 0 0 -12px;
-    padding: 10px 8px;
-}
-
-.showAllSkillsText {
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 600;
+    color: #000000BF;
+    margin: 0 0 -12px;
+    padding: 10px 8px;
 }
 
 .showAllSkillsText p {

@@ -22,10 +22,15 @@
     padding: 12px 24px;
 }
 
+.recProfileContainer {
+    display: flex;
+    flex-direction: column;
+}
+
 .recProfileContainer .separator {
     margin: 0;
-    width: 250px;
-    margin-left: 20px;
+    width: 92%;
+    align-self: center;
 }
 
 .recProfileImg img {
@@ -105,4 +110,10 @@
 
 .showAllButton:hover {
     background-color: #8C8C8C1A;
+}
+
+@media only screen and (max-width: 770px) {
+    .recProfileRight {
+        width: 100%;
+    }
 }
