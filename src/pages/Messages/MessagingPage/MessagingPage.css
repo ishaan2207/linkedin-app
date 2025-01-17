@@ -19,8 +19,9 @@
     .messagingPageContainer {
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        height: calc(100vh - 60px);
+        justify-content: flex-start;
+        height: calc(100vh + 80px);
+        gap: 0;
     }
 
     .messagingMainFeed {
@@ -40,7 +41,7 @@
 
 @media only screen and (max-width: 770px) {
     .messagingPageContainer {
-        height: calc(100vh - 60px);
+        height: calc(100vh + 90px);
     }
 
     .messagingMainFeed {
@@ -49,5 +50,15 @@
 
     .messagingRightPane {
         width: 80%;
+    }
+}
+
+@media only screen and (max-width: 641px) {
+    .messagingPageContainer {
+        height: calc(100vh - 40px);
+    }
+
+    .messagingRightPane {
+        display: none;
     }
 }

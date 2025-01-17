@@ -52,15 +52,33 @@
     .notificationsContainer {
         flex-direction: column;
         align-items: center;
+        justify-content: center;
+        height: calc(200vh);
     }
 
     .notificationsLeftPane,
     .notificationsMainFeed,
     .notificationsRightPane {
         width: 576px;
+        position: static;
+        display: block;
+    }
+
+    .notificationsMainFeed {
+        overflow-y: visible;
+        padding-top: 0;
     }
 
     .notificationsRightPane {
-        display: block;
+        margin-top: 300px;
+    }
+}
+
+@media only screen and (max-width: 615px) {
+
+    .notificationsLeftPane,
+    .notificationsMainFeed,
+    .notificationsRightPane {
+        width: 100%;
     }
 }

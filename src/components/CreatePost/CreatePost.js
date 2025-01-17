@@ -4,6 +4,9 @@ import React from "react";
 // styles
 import './CreatePost.css';
 
+// components
+import SendIcon from '@mui/icons-material/Send';
+
 // constants
 import { CREATE_POST_ICONS } from "../../constants/mocks/Home/homeCreatePost";
 
@@ -17,7 +20,7 @@ function CreatePost({ createNewPost, createPostInput, setCreatePostInput }) {
                     value={createPostInput}
                     onChange={(event) => setCreatePostInput(event.target.value)}>
                 </input>
-                <button onClick={createNewPost}>Submit</button>
+                <button onClick={createNewPost}><SendIcon /></button>
             </div>
             <div className="createPostButtonsContainer">
                 {CREATE_POST_ICONS.map(createPostIcon => (

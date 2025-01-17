@@ -22,6 +22,12 @@
     text-align: center;
 }
 
+.navSearchIcon {
+    position: absolute;
+    top: 3px;
+    margin: 0 10px;
+}
+
 .navLeft input {
     height: 30px;
     background-color: #EDF3F8;
@@ -63,6 +69,15 @@
     align-items: center;
 }
 
+.premiumIconsContainer {
+    display: flex;
+}
+
+.collapsedIconsMore {
+    display: flex;
+    position: static;
+}
+
 .tryPremiumIcon {
     width: 120px;
 }
@@ -100,5 +115,47 @@
 @media only screen and (max-width: 790px) {
     .navItemsContainer {
         width: 45px;
+    }
+}
+
+@media only screen and (max-width: 615px) {
+    .navItemsContainer {
+        width: 30px;
+    }
+
+    .navContainer {
+        justify-content: space-evenly;
+    }
+
+    .navItems {
+        gap: 15px;
+    }
+
+    .navSearchInput {
+        display: none;
+    }
+
+    .navSearchIcon {
+        position: static;
+    }
+
+    .navRight {
+        gap: 10px;
+    }
+
+    .premiumIconsContainer {
+        gap: 15px;
+    }
+}
+
+@media only screen and (max-width: 531px) {
+    .navContainer {
+        justify-content: center;
+    }
+
+    .navItems,
+    .navRight,
+    .premiumIconsContainer {
+        gap: 8px;
     }
 }

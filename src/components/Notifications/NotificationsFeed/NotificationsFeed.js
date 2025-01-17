@@ -74,7 +74,6 @@ function NotificationsFeed() {
         },
     ];
 
-
     return (
         <div className="notificationsFeedContainer">
             <div className="notificationsFeed">

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Navbar.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -12,11 +12,14 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import SearchIcon from '@mui/icons-material/Search';
 import AppsIcon from '@mui/icons-material/Apps';
 import SquareIcon from '@mui/icons-material/Square';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
 function Navbar() {
     const navigate = useNavigate();
 
-    const ICON_DIMENSIONS = '28px';
+    const [collapseIcons, setCollapseIcons] = useState(window.innerWidth > 450);
+
+    const ICON_DIMENSIONS = collapseIcons ? '28px' : '23px';
     const styles = { height: ICON_DIMENSIONS, width: ICON_DIMENSIONS, color: 'gray', hover: 'black' }
 
     const navItems = [
@@ -58,6 +61,18 @@ function Navbar() {
         }
     ]
 
+    useEffect(() => {
+        const handleResize = () => {
+            setCollapseIcons(window.innerWidth > 450);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     function goToHome() {
         navigate('/');
     }
@@ -77,7 +92,9 @@ function Navbar() {
                 </div>
                 <div>
                     <div className='navLeftInputContainer'>
-                        <SearchIcon style={{ position: 'absolute', top: '3px', margin: '0 10px' }} />
+                        <div className='navSearchIcon'>
+                            <SearchIcon />
+                        </div>
                         <p className='searchButtonText'>Search</p>
                     </div>
                     <input type='text' placeholder='Search' className='navSearchInput' />
@@ -94,14 +111,22 @@ function Navbar() {
                     ))}
                 </div>
                 <div className='navRightBusinessContainer'>
-                    <div className='navItemsContainer'>
-                        <div className='navItemsIcon'><AppsIcon style={styles} /></div>
-                        <p className='navItemsText'>For Business</p>
-                    </div>
-                    <div className='navItemsContainer tryPremiumIcon'>
-                        <div className='navItemsIcon'><SquareIcon style={styles} /></div>
-                        <p className='navItemsText'>Try Premium for ₹0</p>
-                    </div>
+                    {collapseIcons ?
+                        <div className='premiumIconsContainer'>
+                            <div className='navItemsContainer'>
+                                <div className='navItemsIcon'><AppsIcon style={styles} /></div>
+                                <p className='navItemsText'>For Business</p>
+                            </div>
+                            <div className='navItemsContainer tryPremiumIcon'>
+                                <div className='navItemsIcon'><SquareIcon style={styles} /></div>
+                                <p className='navItemsText'>Try Premium for ₹0</p>
+                            </div>
+                        </div>
+                        : <div className='navItemsContainer collapsedIconsMore'>
+                            <div className='navItemsIcon'><MoreHorizIcon style={styles} /></div>
+                            <p className='navItemsText'>For Business</p>
+                        </div>}
+
                 </div>
             </div>
         </div>

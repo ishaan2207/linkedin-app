@@ -17,6 +17,8 @@ function MessagesFeed({ messages }) {
     const [selectedMessageId, setSelectedMessageId] = useState(messages[0]);
     const [selectedMessage, setSelectedMessage] = useState(messages[0]);
 
+    const [viewableColumn, setViewableColumn] = useState('left');
+
     const handleSelectedMessage = (message) => {
         setSelectedMessageId(message.id);
         setSelectedMessage(message);
@@ -64,7 +66,7 @@ function MessagesFeed({ messages }) {
                         </div>
                     ))}
                 </div>
-                <div className="messagesFeedRightColumn">
+                <div className="messagesFeedRightColumn" >
                     <MessagesChat message={selectedMessage} />
                 </div>
             </div>

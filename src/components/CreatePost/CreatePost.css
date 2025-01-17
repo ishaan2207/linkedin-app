@@ -64,6 +64,8 @@
 }
 
 .createPostInput button {
-    border: 1px solid black;
+    border: none;
+    background: none;
     margin: 0 7px;
+    color: #000000BF;
 }
