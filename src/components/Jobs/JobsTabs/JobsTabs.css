@@ -1,0 +1,59 @@
+.jobsTabsContainer {
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.jobTabsIconsContainer {
+    padding: 16px 0;
+}
+
+.jobsTabsContainer .separator {
+    margin: 0 24px;
+    width: 84%;
+}
+
+.jobsTabIcon {
+    display: flex;
+    align-items: center;
+    padding: 12px 24px;
+}
+
+.jobsTabIcon:hover {
+    background-color: #8C8C8C1A;
+}
+
+.jobsTabIcon p {
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #000000E6;
+}
+
+.jobsTabIcon span {
+    padding-right: 8px;
+}
+
+.jobsTabsPostJob {
+    display: flex;
+    align-items: center;
+    padding: 28px 24px;
+    color: #0A66C2;
+}
+
+.jobsTabsPostJob:hover {
+    background-color: #8C8C8C1A;
+}
+
+.jobsTabsPostJob p:hover {
+    text-decoration: underline;
+}
+
+.jobsTabsPostJob span {
+    padding-right: 5px;
+    margin-left: 1px;
+}
+
+.jobsTabsPostJob p {
+    margin-bottom: 5px;
+    font-weight: 600;
+}

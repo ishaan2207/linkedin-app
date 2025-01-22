@@ -1,0 +1,16 @@
+.jobsContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #F4F2EE;
+    padding: 24px 20%;
+    gap: 20px;
+}
+
+.jobsLeftPane {
+    flex: 0.27;
+}
+
+.jobsMainFeed {
+    flex: 0.73;
+}

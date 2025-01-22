@@ -16,14 +16,19 @@ import AttachFileOutlinedIcon from '@mui/icons-material/AttachFileOutlined';
 import GifOutlinedIcon from '@mui/icons-material/GifOutlined';
 import SentimentSatisfiedOutlinedIcon from '@mui/icons-material/SentimentSatisfiedOutlined';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
-function MessagesChat({ message }) {
+function MessagesChat({ message, handleBackToLeft, isMobile }) {
+
     return (
         <div className="messageChatContainer">
             <div className="messageChatHeader">
                 <div className="messageChatHeaderLeft">
-                    <p className="messageChatHeaderUsername">{message.firstName + ' ' + message.lastName}</p>
-                    <p className="messageChatHeaderUserStatus">Available on mobile</p>
+                    {isMobile ? <button onClick={handleBackToLeft}><ArrowBackIcon /></button> : ''}
+                    <div>
+                        <p className="messageChatHeaderUsername">{message.firstName + ' ' + message.lastName}</p>
+                        <p className="messageChatHeaderUserStatus">Available on mobile</p>
+                    </div>
                 </div>
                 <div className="messageChatHeaderRight">
                     <MoreHorizOutlinedIcon style={{ height: '30px', width: '30px', marginRight: '8px' }} />

@@ -1,5 +1,5 @@
 // deps
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // styles
 import './MessagesFeed.css';
@@ -18,11 +18,29 @@ function MessagesFeed({ messages }) {
     const [selectedMessage, setSelectedMessage] = useState(messages[0]);
 
     const [viewableColumn, setViewableColumn] = useState('left');
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 650);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 650);
+        }
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        }
+    }, []);
 
     const handleSelectedMessage = (message) => {
         setSelectedMessageId(message.id);
         setSelectedMessage(message);
-        console.log(selectedMessage)
+
+        if (isMobile) {
+            setViewableColumn('right');
+        }
+    }
+
+    const handleBackToLeft = () => {
+        setViewableColumn('left');
     }
 
     return (
@@ -49,26 +67,30 @@ function MessagesFeed({ messages }) {
             <div className="separator"></div>
 
             <div className="messagesFeedColumns">
-                <div className="messagesFeedLeftColumn">
-                    {messages.map(message => (
-                        <div
-                            key={message.id}
-                            className={`messagePreviewContainer ${selectedMessageId === message.id ? 'selected' : ''}`}
-                            onClick={() => handleSelectedMessage(message)}>
-                            <div className="messagePreviewUserImage"><img src={message.img} /></div>
-                            <div className="messageInformation">
-                                <div>
-                                    <p>{message.firstName + ' ' + message.lastName}</p>
-                                    <p className="messageInformationDate">{message.date}</p>
+                {(viewableColumn === 'left' || !isMobile) && (
+                    <div className="messagesFeedLeftColumn">
+                        {messages.map(message => (
+                            <div
+                                key={message.id}
+                                className={`messagePreviewContainer ${selectedMessageId === message.id ? 'selected' : ''}`}
+                                onClick={() => handleSelectedMessage(message)}>
+                                <div className="messagePreviewUserImage"><img src={message.img} /></div>
+                                <div className="messageInformation">
+                                    <div>
+                                        <p>{message.firstName + ' ' + message.lastName}</p>
+                                        <p className="messageInformationDate">{message.date}</p>
+                                    </div>
+                                    <p>{message.firstName + ': ' + (message.text.length > 35 ? (message.text.slice(0, 35) + '...') : message.text)}</p>
                                 </div>
-                                <p>{message.firstName + ': ' + (message.text.length > 35 ? (message.text.slice(0, 35) + '...') : message.text)}</p>
                             </div>
-                        </div>
-                    ))}
-                </div>
-                <div className="messagesFeedRightColumn" >
-                    <MessagesChat message={selectedMessage} />
-                </div>
+                        ))}
+                    </div>
+                )}
+                {(viewableColumn === 'right' || !isMobile) && (
+                    <div className="messagesFeedRightColumn" >
+                        <MessagesChat message={selectedMessage} handleBackToLeft={handleBackToLeft} isMobile={isMobile} />
+                    </div>
+                )}
             </div>
         </div>
     )

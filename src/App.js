@@ -23,6 +23,7 @@ import AdChoices from './pages/FooterPages/AdChoices/AdChoices';
 import Advertising from './pages/FooterPages/Advertising/Advertising';
 import MyNetwork from './pages/MyNetwork/MyNetwork';
 import Notifications from './pages/Notifications/Notifications';
+import Jobs from './pages/Jobs/Jobs';
 
 // components
 import MessageBox from './components/MessageBox/MessageBox';
@@ -66,6 +67,7 @@ function App() {
           <Route path='/advertising' element={<Advertising />} />
           <Route path='/my-network' element={<MyNetwork />} />
           <Route path='/notifications' element={<Notifications />} />
+          <Route path='/jobs' element={<Jobs />} />
         </Routes>
       </BrowserRouter>
     </MessageProvider>
