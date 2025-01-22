@@ -8,4 +8,24 @@ const fetchAllPosts = async () => {
     }
 }
 
-export default fetchAllPosts;
+const createPost = async (post) => {
+    try {
+        console.log(post);
+        const response = await fetch('http://localhost:9999/create-post', {
+            method: 'POST',
+            body: {
+                postId: post.postId,
+                postedBy: post.postedBy,
+                postContent: post.postContent,
+                userId: post.userId,
+            }
+        });
+
+        const data = await response.json();
+        console.log('Post creation successful: ', data);
+    } catch (err) {
+        console.error('Error in creating new post: ', err);
+    }
+}
+
+export { fetchAllPosts, createPost };

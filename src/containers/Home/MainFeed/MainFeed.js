@@ -11,28 +11,18 @@ import ProfileSummary from "../../../components/ProfileSummary/ProfileSummary";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 // constants
-import { allPostsArray } from "../../../constants/mocks/Home/homeMainFeed";
+// import { allPostsArray } from "../../../constants/mocks/Home/homeMainFeed";
 
 // apis
-import fetchAllPosts from "../../../utils/apis/posts";
+import { fetchAllPosts, createPost } from "../../../utils/apis/posts";
 
 function MainFeed() {
 
-    const [allPosts, setAllPosts] = useState();
+    const [allPosts, setAllPosts] = useState([]);
     const [createPostInput, setCreatePostInput] = useState('');
 
-    const fetchPosts = async () => {
-        console.log('fetch posts ran')
-        await fetch('http://localhost:9999/fetch-posts')
-            .then(data => data.json())
-            .then(response => {
-                setAllPosts(response);
-            })
-            .catch(err => console.error('Error in fetching posts: ', err));
-    }
-
     useEffect(() => {
-        fetchPosts();
+        fetchAllPosts().then(data => setAllPosts(data));
     }, [])
 
     function createNewPost() {
@@ -43,8 +33,10 @@ function MainFeed() {
             createdAt: '2024-12-10T17:00:00Z',
             likes: Math.floor(Math.random() * 161) + 40,
             comments: Math.floor(Math.random() * 41) + 15,
-            shares: Math.floor(Math.random() * 21) + 10
+            shares: Math.floor(Math.random() * 21) + 10,
+            userId: (allPosts.length + 1) + '',
         }
+        createPost(newPost);
         setAllPosts([newPost, ...allPosts])
         setCreatePostInput('');
     }
