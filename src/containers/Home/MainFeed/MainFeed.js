@@ -1,5 +1,5 @@
 // deps
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // styles
 import './MainFeed.css';
@@ -13,10 +13,27 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 // constants
 import { allPostsArray } from "../../../constants/mocks/Home/homeMainFeed";
 
+// apis
+import fetchAllPosts from "../../../utils/apis/posts";
+
 function MainFeed() {
 
-    const [allPosts, setAllPosts] = useState(allPostsArray);
+    const [allPosts, setAllPosts] = useState();
     const [createPostInput, setCreatePostInput] = useState('');
+
+    const fetchPosts = async () => {
+        console.log('fetch posts ran')
+        await fetch('http://localhost:9999/fetch-posts')
+            .then(data => data.json())
+            .then(response => {
+                setAllPosts(response);
+            })
+            .catch(err => console.error('Error in fetching posts: ', err));
+    }
+
+    useEffect(() => {
+        fetchPosts();
+    }, [])
 
     function createNewPost() {
         const newPost = {
