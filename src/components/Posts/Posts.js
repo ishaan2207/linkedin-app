@@ -14,14 +14,14 @@ import PostButtons from "./PostButtons/PostButtons";
 // contexts
 import { LikesProvider } from "../../Context/LikesContext";
 
-function Posts({ postInfo }) {
+function Posts({ postInfo, setAllPosts, deletePost, allPosts }) {
     const { postId, postedBy, postContent, createdAt, likes, comments, shares } = postInfo;
 
     const [postLikes, setPostLikes] = useState(likes);
 
     return (
         <div className="postContainer">
-            <PostHeader />
+            <PostHeader deletePost={deletePost} setAllPosts={setAllPosts} allPosts={allPosts} postId={postId} />
             <UserInfo postedBy={postedBy} createdAt={createdAt} />
             <PostContent postContent={postContent} />
             <LikesProvider>

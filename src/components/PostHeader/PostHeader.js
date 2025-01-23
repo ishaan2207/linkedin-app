@@ -11,7 +11,12 @@ import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined';
 // constants
 import { POST_HEADER } from "../../constants/mocks/Home/homePostHeader";
 
-function PostHeader() {
+function PostHeader({ deletePost, setAllPosts, allPosts, postId }) {
+    function removePost(id) {
+        const updatedPosts = allPosts.filter(post => post.postId !== id);
+        setAllPosts(updatedPosts);
+    }
+
     return (
         <div className="postHeader">
             <div className="postHeaderContainer">
@@ -20,8 +25,8 @@ function PostHeader() {
                     <p><b>{POST_HEADER.USER}</b> likes this</p>
                 </div>
                 <div className="postHeaderButtons">
-                    <MoreHorizOutlinedIcon style={{ paddingRight: '7px' }} />
-                    <CloseOutlinedIcon style={{ paddingRight: '7px' }} />
+                    <button><MoreHorizOutlinedIcon style={{ marginRight: '7px', height: '22px', width: '22px' }} /></button>
+                    <button onClick={() => deletePost(postId).then(() => removePost(postId))}><CloseOutlinedIcon style={{ marginRight: '7px', height: '22px', width: '22px' }} /></button>
                 </div>
             </div>
             <div className="separator"></div>

@@ -14,7 +14,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 // import { allPostsArray } from "../../../constants/mocks/Home/homeMainFeed";
 
 // apis
-import { fetchAllPosts, createPost } from "../../../utils/apis/posts";
+import { fetchAllPosts, createPost, deletePost } from "../../../utils/apis/posts";
 
 function MainFeed() {
 
@@ -36,9 +36,10 @@ function MainFeed() {
             shares: Math.floor(Math.random() * 21) + 10,
             userId: (allPosts.length + 1) + '',
         }
-        createPost(newPost);
-        setAllPosts([newPost, ...allPosts])
-        setCreatePostInput('');
+        createPost(newPost).then(() => {
+            setAllPosts([newPost, ...allPosts])
+            setCreatePostInput('');
+        })
     }
 
     return (
@@ -48,7 +49,7 @@ function MainFeed() {
                 <button className="hiddenShowMoreButton"><span>Show more</span><KeyboardArrowDownIcon /></button>
             </div>
             <CreatePost createNewPost={createNewPost} createPostInput={createPostInput} setCreatePostInput={setCreatePostInput} />
-            <AllPosts allPosts={allPosts} />
+            <AllPosts allPosts={allPosts} setAllPosts={setAllPosts} deletePost={deletePost} />
         </div>
     )
 }

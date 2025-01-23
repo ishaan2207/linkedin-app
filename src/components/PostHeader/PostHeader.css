@@ -24,6 +24,12 @@
     padding-right: 3px;
 }
 
+.postHeaderButtons button {
+    border: none;
+    background: none;
+    color: #000000BF;
+}
+
 .separator {
     margin-bottom: 12px;
     height: 1px;

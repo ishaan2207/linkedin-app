@@ -30,4 +30,17 @@ const createPost = async (post) => {
     }
 }
 
-export { fetchAllPosts, createPost };
+const deletePost = async (postId) => {
+    try {
+        const response = await fetch(`http://localhost:9999/delete-post/${postId}`, {
+            method: 'DELETE',
+        });
+
+        const data = response.json();
+        console.log('Deleted post: ', data);
+    } catch (err) {
+        console.error('Error in deleting post: ', err);
+    }
+}
+
+export { fetchAllPosts, createPost, deletePost };
