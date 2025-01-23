@@ -57,3 +57,9 @@
     margin-bottom: 5px;
     font-weight: 600;
 }
+
+@media only screen and (max-width: 750px) {
+    .jobsTabsContainer {
+        display: none;
+    }
+}

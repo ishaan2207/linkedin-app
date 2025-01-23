@@ -1,0 +1,41 @@
+.collapsedJobShow {
+    display: none;
+}
+
+.collapsedJobTabContainer {
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0 12px 12px;
+}
+
+.collapsedTabLeft,
+.collapsedTabRight {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+
+.collapsedTabLeft span {
+    margin-top: 2px;
+    padding-right: 8px;
+}
+
+.collapsedTabRight {
+    color: #000000BF;
+    padding: 10px 8px;
+    margin-right: 4px;
+}
+
+.collapsedTabRight span {
+    margin-top: 2px;
+}
+
+@media only screen and (max-width: 750px) {
+    .collapsedJobShow {
+        display: block;
+    }
+}

@@ -38,7 +38,7 @@ function VerifyBanner() {
                     </div>
                 </div>
                 <div className="verifyBannerRight">
-                    <button onClick={handleHideBanner}><CloseIcon style={{ height: '23px', width: '23px' }} /></button>
+                    <button onClick={handleHideBanner}><CloseIcon style={{ height: '20px', width: '20px' }} /></button>
                 </div>
             </div>
         </div>

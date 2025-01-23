@@ -10,15 +10,17 @@ const fetchAllPosts = async () => {
 
 const createPost = async (post) => {
     try {
-        console.log(post);
+        const reqBody = {
+            postId: post.postId,
+            postedBy: post.postedBy,
+            postContent: post.postContent,
+            userId: post.userId,
+        }
+
         const response = await fetch('http://localhost:9999/create-post', {
             method: 'POST',
-            body: {
-                postId: post.postId,
-                postedBy: post.postedBy,
-                postContent: post.postContent,
-                userId: post.userId,
-            }
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(reqBody),
         });
 
         const data = await response.json();

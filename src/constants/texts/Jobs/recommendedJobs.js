@@ -4,4 +4,10 @@ const RECOMMENDED_JOBS_TEXTS = {
     SHOW_ALL: 'Show all'
 }
 
-export { RECOMMENDED_JOBS_TEXTS };
+const RECOMMENDED_SOFTWARE_TEXTS = {
+    HEADER: 'Software engineer',
+    HEADER_SUB: 'Jobs in India',
+    SHOW_ALL: 'Show all'
+}
+
+export { RECOMMENDED_JOBS_TEXTS, RECOMMENDED_SOFTWARE_TEXTS };

@@ -3,14 +3,50 @@
     justify-content: center;
     width: 100%;
     background-color: #F4F2EE;
-    padding: 24px 20%;
+    padding: 24px 0;
     gap: 20px;
 }
 
 .jobsLeftPane {
-    flex: 0.27;
+    width: 300px;
 }
 
 .jobsMainFeed {
-    flex: 0.73;
+    width: 804px;
+}
+
+@media only screen and (max-width: 1190px) {
+    .jobsMainFeed {
+        width: 636px;
+    }
+}
+
+@media only screen and (max-width: 980px) {
+    .jobsMainFeed {
+        width: 396px;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .jobsContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .jobsLeftPane,
+    .jobsMainFeed {
+        width: 576px;
+    }
+
+    .jobsLeftPane .footer {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 580px) {
+
+    .jobsLeftPane,
+    .jobsMainFeed {
+        width: 100%;
+    }
 }

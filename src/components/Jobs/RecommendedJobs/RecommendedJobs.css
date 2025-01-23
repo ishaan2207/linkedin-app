@@ -1,0 +1,119 @@
+.recommendedJobsContainer {
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 12px;
+}
+
+.recommendedJobsContainer .separator {
+    margin: 0;
+}
+
+.recommendedJobsHeaderContainer {
+    padding: 24px 24px 0;
+    line-height: 1.3;
+}
+
+.recommendedJobsHeader {
+    font-size: 20px;
+}
+
+.recommendedJobsSubtext {
+    font-size: 14px;
+    color: #00000099;
+}
+
+.recommendedJobsList {
+    padding: 0 24px;
+}
+
+.recommendedJob {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+}
+
+.recommendedJobLeft {
+    display: flex;
+}
+
+.recommendedJobLeft img {
+    height: 56px;
+    width: 56px;
+}
+
+.recommendedJobInfo {
+    padding-left: 12px;
+    line-height: 1.4;
+}
+
+.recJobTitle {
+    display: flex;
+    align-items: center;
+}
+
+.recJobTitle span {
+    color: #0A66C2;
+    font-weight: 600;
+    margin-right: 4px;
+}
+
+.recJobCompanyLocation {
+    font-size: 14px;
+}
+
+.recJobCompanyLocation p {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.recJobLocationMain p span {
+    padding: 0 4px;
+}
+
+.recJobLocationMain {
+    font-size: 14px;
+    color: #00000099;
+}
+
+.recommendedJobRight button {
+    border: none;
+    background: none;
+    color: #000000BF;
+}
+
+.recJobsShowAll {
+    align-self: center;
+    padding: 8px;
+}
+
+.recJobsShowAll button {
+    border: none;
+    background: none;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000000BF;
+}
+
+.recJobsShowAll button span {
+    margin: 2px 0 0 2px
+}
+
+@media only screen and (max-width: 980px) {
+    .recJobCompanyLocation {
+        width: 250px;
+        word-wrap: break-word;
+        white-space: normal;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .recJobCompanyLocation {
+        width: 100%;
+    }
+}

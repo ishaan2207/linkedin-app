@@ -1,0 +1,52 @@
+.recentSearchesContainer {
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    background-color: white;
+    padding: 0 0 12px;
+    margin: 0 0 12px;
+}
+
+.recentSearchesHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 24px 0;
+}
+
+.recentSearchesHeader p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.recentSearchesHeader button {
+    border: none;
+    background: none;
+    font-size: 14px;
+    color: #000000BF;
+    font-weight: 600;
+}
+
+.recentJobSearch {
+    padding: 12px 24px 8px;
+}
+
+.recentJobTitle,
+.recentJobLocation {
+    display: flex;
+    align-items: center;
+}
+
+.recentJobTitle span {
+    font-weight: 600;
+}
+
+.recentJobTitle p {
+    font-size: 14px;
+    color: #01754F;
+}
+
+.recentJobLocation {
+    color: #00000099;
+    font-size: 14px;
+    line-height: 1.8;
+}

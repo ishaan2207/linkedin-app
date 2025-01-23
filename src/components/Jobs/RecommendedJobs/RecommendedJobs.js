@@ -8,40 +8,38 @@ import './RecommendedJobs.css';
 import CloseIcon from '@mui/icons-material/Close';
 import VerifiedUserOutlinedIcon from '@mui/icons-material/VerifiedUserOutlined';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-import CircleIcon from '@mui/icons-material/Circle';
 
-// constants
-import { RECOMMENDED_JOBS_TEXTS } from "../../../constants/texts/Jobs/recommendedJobs";
-import { RECOMMENDED_JOBS } from "../../../constants/mocks/Jobs/recommendedJobs";
-
-function RecommendedJobs() {
+function RecommendedJobs({ RECOMMENDED_JOBS, RECOMMENDED_JOBS_TEXTS }) {
     return (
         <div className="recommendedJobsContainer">
-            <div className="recommendedJobsHeader">
-                <p>{RECOMMENDED_JOBS_TEXTS.HEADER}</p>
-                <p>{RECOMMENDED_JOBS_TEXTS.HEADER_SUB}</p>
+            <div className="recommendedJobsHeaderContainer">
+                <p className="recommendedJobsHeader">{RECOMMENDED_JOBS_TEXTS.HEADER}</p>
+                <p className="recommendedJobsSubtext">{RECOMMENDED_JOBS_TEXTS.HEADER_SUB}</p>
             </div>
             <div className="recommendedJobsList">
                 {RECOMMENDED_JOBS.map((RECOMMENDED_JOB, key) => (
-                    <div className="recommendedJob">
-                        <div className="recommendedJobLeft">
-                            <img src={RECOMMENDED_JOB.image} alt="" />
-                            <div className="recommendedJobInfo">
-                                <p className="recJobTitle">{RECOMMENDED_JOB.title}<span><VerifiedUserOutlinedIcon /></span></p>
-                                <div className="recJobCompanyLocation">
-                                    <p>{RECOMMENDED_JOB.company}</p>
-                                    <CircleIcon />
-                                    <p>{RECOMMENDED_JOB.location}</p>
+                    <div key={key} className="recommendedJobContainer">
+                        <div className="recommendedJob">
+                            <div className="recommendedJobLeft">
+                                <img src={RECOMMENDED_JOB.image} alt="" />
+                                <div className="recommendedJobInfo">
+                                    <p className="recJobTitle"><span>{RECOMMENDED_JOB.title}</span><VerifiedUserOutlinedIcon style={{ height: '16px', width: '16px', color: '#00000099' }} /></p>
+                                    <div className="recJobCompanyLocation">
+                                        <p>{RECOMMENDED_JOB.company + ' - ' + RECOMMENDED_JOB.location}</p>
+                                    </div>
+                                    <p className="recJobLocationMain">{RECOMMENDED_JOB.location}</p>
                                 </div>
-                                <p className="recJobLocation">{RECOMMENDED_JOB.location}</p>
+                            </div>
+                            <div className="recommendedJobRight">
+                                <button><CloseIcon style={{ height: '20px', width: '20px' }} /></button>
                             </div>
                         </div>
-                        <div className="recommendedJobRight">
-                            <button><CloseIcon /></button>
-                        </div>
+                        {key !== RECOMMENDED_JOBS.length - 1 ? <div className="separator"></div> : ''}
                     </div>
+
                 ))}
             </div>
+            <div className="separator"></div>
             <div className="recJobsShowAll">
                 <button>Show all<span><ArrowRightAltIcon /></span></button>
             </div>
