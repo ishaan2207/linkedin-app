@@ -7,6 +7,7 @@ import './MainFeed.css';
 // components
 import CreatePost from "../../../components/CreatePost/CreatePost";
 import AllPosts from "../../../components/AllPosts/AllPosts";
+import UpdatePost from "../../../components/Posts/UpdatePost/UpdatePost";
 import ProfileSummary from "../../../components/ProfileSummary/ProfileSummary";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
@@ -20,10 +21,26 @@ function MainFeed() {
 
     const [allPosts, setAllPosts] = useState([]);
     const [createPostInput, setCreatePostInput] = useState('');
+    const [showUpdatePost, setShowUpdatePost] = useState('none');
+    const [selectedPost, setSelectedPost] = useState({});
+
+    const handleEditPost = (post) => {
+        setSelectedPost(post);
+        setShowUpdatePost('block');
+    }
 
     useEffect(() => {
         fetchAllPosts().then(data => setAllPosts(data));
     }, [])
+
+
+    const updatePostsArray = (updatedPost) => {
+        setAllPosts((prevPosts) =>
+            prevPosts.map((post) =>
+                post.postId === updatedPost.postId ? updatedPost : post
+            )
+        );
+    };
 
     function createNewPost() {
         const newPost = {
@@ -48,8 +65,13 @@ function MainFeed() {
                 <ProfileSummary />
                 <button className="hiddenShowMoreButton"><span>Show more</span><KeyboardArrowDownIcon /></button>
             </div>
+            <UpdatePost showUpdatePost={showUpdatePost} setShowUpdatePost={setShowUpdatePost} selectedPost={selectedPost}
+                setSelectedPost={setSelectedPost} updatePostsArray={updatePostsArray}
+            />
             <CreatePost createNewPost={createNewPost} createPostInput={createPostInput} setCreatePostInput={setCreatePostInput} />
-            <AllPosts allPosts={allPosts} setAllPosts={setAllPosts} deletePost={deletePost} />
+            <AllPosts allPosts={allPosts} setAllPosts={setAllPosts} deletePost={deletePost} selectedPost={selectedPost}
+                handleEditPost={handleEditPost}
+            />
         </div>
     )
 }

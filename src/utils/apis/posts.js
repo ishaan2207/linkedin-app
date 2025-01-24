@@ -43,4 +43,23 @@ const deletePost = async (postId) => {
     }
 }
 
-export { fetchAllPosts, createPost, deletePost };
+const updatePost = async (post) => {
+    try {
+        const reqBody = {
+            postContent: post.postContent,
+        }
+
+        const response = await fetch(`http://localhost:9999/update-post/${post.postId}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(reqBody),
+        })
+
+        const data = response.json();
+        console.log('Updated post successfully: ', data);
+    } catch (err) {
+        console.error('Error in updating post: ', err);
+    }
+}
+
+export { fetchAllPosts, createPost, deletePost, updatePost };

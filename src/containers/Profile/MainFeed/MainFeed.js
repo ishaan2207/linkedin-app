@@ -22,16 +22,6 @@ function MainFeed() {
     const [allExperiences, setAllExperiences] = useState(experiences);
     const [showAddExperience, setShowAddExperience] = useState('none');
 
-    // const [experienceTitle, setExperienceTitle] = useState('');
-    // const [experienceCompany, setExperienceCompany] = useState('');
-    // const [experienceCompanyImage, setExperienceCompanyImage] = useState('');
-    // const [experienceLocation, setExperienceLocation] = useState('');
-    // const [experienceStartMonth, setExperienceStartMonth] = useState('');
-    // const [experienceStartYear, setExperienceStartYear] = useState('');
-    // const [experienceEndMonth, setExperienceEndMonth] = useState('');
-    // const [experienceEndYear, setExperienceEndYear] = useState('');
-    // const [experienceDescriptions, setExperienceDescriptions] = useState([]);
-
     const [newExperienceFields, setNewExperienceFields] = useState({
         experienceTitle: '',
         experienceCompany: '',
@@ -43,32 +33,6 @@ function MainFeed() {
         experienceEndYear: '',
         experienceDescriptions: []
     })
-
-    // const newExperienceFields = {
-    //     experienceTitle: experienceTitle,
-    //     setExperienceTitle: setExperienceTitle,
-    //     experienceCompany: experienceCompany,
-    //     setExperienceCompany: setExperienceCompany,
-    //     experienceCompanyImage: experienceCompanyImage,
-    //     setExperienceCompanyImage: setExperienceCompanyImage,
-    //     experienceLocation: experienceLocation,
-    //     setExperienceLocation: setExperienceLocation,
-
-    //     experienceStartMonth: experienceStartMonth,
-    //     setExperienceStartMonth: setExperienceStartMonth,
-
-    //     experienceStartYear: experienceStartYear,
-    //     setExperienceStartYear: setExperienceStartYear,
-
-    //     experienceEndMonth: experienceEndMonth,
-    //     setExperienceEndMonth: setExperienceEndMonth,
-
-    //     experienceEndYear: experienceEndYear,
-    //     setExperienceEndYear: setExperienceEndYear,
-
-    //     experienceDescriptions: experienceDescriptions,
-    //     setExperienceDescriptions: setExperienceDescriptions
-    // }
 
     function addNewExperience() {
         const newExperience = {
@@ -92,9 +56,9 @@ function MainFeed() {
             <ProfileActivity />
             <ProfileExperience experiences={allExperiences} setShowAddExperience={setShowAddExperience} />
             <ProfileEducation />
-            <AddExperience 
+            <AddExperience
                 showAddExperience={showAddExperience} setShowAddExperience={setShowAddExperience}
-                newExperienceFields={newExperienceFields} setNewExperienceFields={setNewExperienceFields} 
+                newExperienceFields={newExperienceFields} setNewExperienceFields={setNewExperienceFields}
                 addNewExperience={addNewExperience} />
             <Skills />
         </div>
