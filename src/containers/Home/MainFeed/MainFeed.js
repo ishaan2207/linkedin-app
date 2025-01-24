@@ -52,6 +52,7 @@ function MainFeed() {
             comments: Math.floor(Math.random() * 41) + 15,
             shares: Math.floor(Math.random() * 21) + 10,
             userId: (allPosts.length + 1) + '',
+            likedByUser: false,
         }
         createPost(newPost).then(() => {
             setAllPosts([newPost, ...allPosts])

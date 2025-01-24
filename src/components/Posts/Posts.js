@@ -28,7 +28,7 @@ function Posts({ postInfo, setAllPosts, deletePost, allPosts, selectedPost, hand
             <PostContent postContent={postContent} />
             <LikesProvider>
                 <PostInteractions postLikes={postLikes} comments={comments} shares={shares} />
-                <PostButtons setPostLikes={setPostLikes} />
+                <PostButtons setPostLikes={setPostLikes} postInfo={postInfo} />
             </LikesProvider>
         </div>
     )

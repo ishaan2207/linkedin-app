@@ -1,5 +1,5 @@
 // dpes
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // styles
 import './TrendingNow.css';
@@ -10,10 +10,28 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 
 // constants
-import { TRENDING_TOPICS, TODAYS_PUZZLES } from "../../constants/mocks/Home/homeTrendingNow";
+import { TODAYS_PUZZLES } from "../../constants/mocks/Home/homeTrendingNow";
 import { TRENDING_NOW } from "../../constants/texts/Home/homeTrendingNow";
 
+// apis
+import { fetchTrendingNow } from "../../utils/apis/home";
+
 function TrendingNow() {
+    const [trendingNow, setTrendingNow] = useState([]);
+    const [viewableTopics, setViewableTopics] = useState(5);
+
+    const handleShowMore = () => {
+        if (viewableTopics === 5) {
+            setViewableTopics(10);
+        } else {
+            setViewableTopics(5);
+        }
+    }
+
+    useEffect(() => {
+        fetchTrendingNow().then(data => setTrendingNow(data));
+    })
+
     return (
         <div className="trendingSectionContainer">
             <div className="trendingSectionHeader">
@@ -21,18 +39,19 @@ function TrendingNow() {
                 <p id="trendingTag">{TRENDING_NOW.CURATED}</p>
             </div>
             <div className="trendingTopics">
-                {TRENDING_TOPICS.map((trendingTopic) => (
-                    <div className="topicsContainer">
+                {trendingNow.slice(0, viewableTopics).map((trendingTopic, key) => (
+
+                    <div className="topicsContainer" key={key}>
                         <p>{trendingTopic.title}</p>
                         <div className="topicInfo">
-                            <p>{trendingTopic.time}</p>
+                            <p>{trendingTopic.createdAt}</p>
                             <CircleIcon style={{ height: '3px', width: '3px', padding: '0 5px' }} />
                             <p>{trendingTopic.readers} readers</p>
                         </div>
                     </div>
                 ))}
                 <div className="showMoreContainer">
-                    <p>{TRENDING_NOW.SHOW_MORE}</p>
+                    <p onClick={handleShowMore}>{viewableTopics === 5 ? 'Show more' : 'Show less'}</p>
                     <KeyboardArrowDownIcon />
                 </div>
             </div>

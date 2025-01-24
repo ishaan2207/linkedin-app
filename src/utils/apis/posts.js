@@ -62,4 +62,22 @@ const updatePost = async (post) => {
     }
 }
 
-export { fetchAllPosts, createPost, deletePost, updatePost };
+const likePost = async (post) => {
+    try {
+        const reqBody = {
+            likedByUser: post.likedByUser,
+        }
+        const response = await fetch(`http://localhost:9999/update-post/${post.postId}/like`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(reqBody),
+        })
+
+        const data = response.json();
+        console.log('Updated likes successfully: ', data);
+    } catch (err) {
+        console.error('Error in liking post: ', err);
+    }
+}
+
+export { fetchAllPosts, createPost, deletePost, updatePost, likePost };
