@@ -1,14 +1,21 @@
-import React from "react";
+// deps
+import React, { useEffect, useState } from "react";
+
+// styles
 import './NotificationsFeed.css';
 
+// components
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import CircleIcon from '@mui/icons-material/Circle';
 
+// apis
+import { fetchNotifications } from "../../../utils/apis/notifications";
+
 function NotificationsFeed() {
-    const notifications = [
+    const notification = [
         {
             img: 'https://media.licdn.com/dms/image/v2/D4D03AQGYxNTXYJlddQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1699309825094?e=1741824000&v=beta&t=JVDGTfU7uu04WQ23sRKLcah6ZXPu7XM85Hqq9ZvQ9tA',
-            text: 'John Doe commented on your post: "Great insights, thank you for sharing!"',
+            text: 'John Doe commented on your post: "Great insights, thank you for sharing!',
             time: '1h',
             read: false,
         },
@@ -74,13 +81,19 @@ function NotificationsFeed() {
         },
     ];
 
+    const [notifications, setNotifications] = useState([]);
+
+    useEffect(() => {
+        fetchNotifications().then(data => setNotifications(data));
+    }, [])
+
     return (
         <div className="notificationsFeedContainer">
             <div className="notificationsFeed">
                 {notifications.map((notification, key) => (
                     <div className={`notification ${notification.read ? '' : 'unread'}`}>
                         {notification.read ? '' : <CircleIcon style={{ height: '10px', width: '10px', color: '#0A66C2', marginLeft: '-4px' }} />}
-                        <img src={notification.img} />
+                        <img src={notification.image} alt="" />
                         <span className="notificationText">{notification.text}</span>
                         <div className="notificationRight">
                             <span>{notification.time}</span>
