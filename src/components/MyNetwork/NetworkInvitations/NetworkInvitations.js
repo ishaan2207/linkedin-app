@@ -1,7 +1,14 @@
-import React, { useState } from "react";
+// deps
+import React, { useEffect, useState } from "react";
+
+// styles
 import './NetworkInvitations.css';
+
+// components
 import AcceptedInvitation from './AcceptedInvitation/AcceptedInvitation';
 
+// apis
+import { fetchNetworkInvites } from "../../../utils/apis/networks";
 
 function NetworkInvitations() {
     const invitesArray = [
@@ -40,6 +47,10 @@ function NetworkInvitations() {
     const [acceptedInvites, setAcceptedInvites] = useState([]);
     const [invites, setInvites] = useState(invitesArray)
 
+    useEffect(() => {
+        fetchNetworkInvites().then(data => setInvites(data));
+    }, [])
+
     const handleAccept = (invite) => {
         setAcceptedInvites([...acceptedInvites, invite]);
         const updatedInvites = invites.filter(item => item !== invite);
@@ -72,7 +83,7 @@ function NetworkInvitations() {
                         <div className="networkInvite">
                             <div className="inviteUserInformationContainer">
                                 <div className="inviteUserImage">
-                                    <img src={invite.img} />
+                                    <img src={invite.image} alt="" />
                                 </div>
                                 <div className="inviteUserInformation">
                                     <div className="inviteUsername"><strong>{invite.name}</strong> is inviting you to connect</div>
