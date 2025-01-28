@@ -11,41 +11,41 @@ import AcceptedInvitation from './AcceptedInvitation/AcceptedInvitation';
 import { fetchNetworkInvites, deleteNetworkInvite } from "../../../utils/apis/networks";
 
 function NetworkInvitations() {
-    const invitesArray = [
-        {
-            img: 'https://media.licdn.com/dms/image/v2/D4D03AQGYxNTXYJlddQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1699309825094?e=1738800000&v=beta&t=GMjdzIp5w0bjGYgLxVA3xmmgdlHNjsN00N224VioXm8',
-            name: 'Shivam Mishra',
-            bio: 'Frontend | React, Javascript, Angular | Leetcode 700+',
-            mutuals: 'Harshit Kumar and 125 other mutual connections'
-        },
-        {
-            img: 'https://media.licdn.com/dms/image/v2/D4D03AQGYxNTXYJlddQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1699309825094?e=1738800000&v=beta&t=GMjdzIp5w0bjGYgLxVA3xmmgdlHNjsN00N224VioXm8',
-            name: 'Sudha Kumawat',
-            bio: 'Maulana Azad national institute of technology Bhopal',
-            mutuals: 'Ashish Bansal and 83 other mutual connections'
-        },
-        {
-            img: 'https://media.licdn.com/dms/image/v2/D4D03AQGYxNTXYJlddQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1699309825094?e=1738800000&v=beta&t=GMjdzIp5w0bjGYgLxVA3xmmgdlHNjsN00N224VioXm8',
-            name: 'Aryan Agarwal',
-            bio: 'Computer Science graduate eager to design impactful web solutions. Always learning and ready to contribute to innovative teams.',
-            mutuals: 'Nikita Rungta and 11 other mutual connections'
-        },
-        {
-            img: 'https://media.licdn.com/dms/image/v2/D4D03AQGYxNTXYJlddQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1699309825094?e=1738800000&v=beta&t=GMjdzIp5w0bjGYgLxVA3xmmgdlHNjsN00N224VioXm8',
-            name: 'Ishaan Gupta',
-            bio: 'UBC Computer Science graduate with expertise in front-end development and user-focused design. Dedicated to building modern, accessible digital solutions.',
-            mutuals: 'Adit Mitra and 23 other mutual connections'
-        },
-        {
-            img: 'https://media.licdn.com/dms/image/v2/D4D03AQGYxNTXYJlddQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1699309825094?e=1738800000&v=beta&t=GMjdzIp5w0bjGYgLxVA3xmmgdlHNjsN00N224VioXm8',
-            name: 'Rishabh Jain',
-            bio: 'I create functional, beautiful websites with a passion for clean code and great design. Always excited to collaborate and innovate.',
-            mutuals: 'Pranav Jain and 51 other mutual connections'
-        }
-    ]
+    // const invitesArray = [
+    //     {
+    //         img: 'https://media.licdn.com/dms/image/v2/D4D03AQGYxNTXYJlddQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1699309825094?e=1738800000&v=beta&t=GMjdzIp5w0bjGYgLxVA3xmmgdlHNjsN00N224VioXm8',
+    //         name: 'Shivam Mishra',
+    //         bio: 'Frontend | React, Javascript, Angular | Leetcode 700+',
+    //         mutuals: 'Harshit Kumar and 125 other mutual connections'
+    //     },
+    //     {
+    //         img: 'https://media.licdn.com/dms/image/v2/D4D03AQGYxNTXYJlddQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1699309825094?e=1738800000&v=beta&t=GMjdzIp5w0bjGYgLxVA3xmmgdlHNjsN00N224VioXm8',
+    //         name: 'Sudha Kumawat',
+    //         bio: 'Maulana Azad national institute of technology Bhopal',
+    //         mutuals: 'Ashish Bansal and 83 other mutual connections'
+    //     },
+    //     {
+    //         img: 'https://media.licdn.com/dms/image/v2/D4D03AQGYxNTXYJlddQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1699309825094?e=1738800000&v=beta&t=GMjdzIp5w0bjGYgLxVA3xmmgdlHNjsN00N224VioXm8',
+    //         name: 'Aryan Agarwal',
+    //         bio: 'Computer Science graduate eager to design impactful web solutions. Always learning and ready to contribute to innovative teams.',
+    //         mutuals: 'Nikita Rungta and 11 other mutual connections'
+    //     },
+    //     {
+    //         img: 'https://media.licdn.com/dms/image/v2/D4D03AQGYxNTXYJlddQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1699309825094?e=1738800000&v=beta&t=GMjdzIp5w0bjGYgLxVA3xmmgdlHNjsN00N224VioXm8',
+    //         name: 'Ishaan Gupta',
+    //         bio: 'UBC Computer Science graduate with expertise in front-end development and user-focused design. Dedicated to building modern, accessible digital solutions.',
+    //         mutuals: 'Adit Mitra and 23 other mutual connections'
+    //     },
+    //     {
+    //         img: 'https://media.licdn.com/dms/image/v2/D4D03AQGYxNTXYJlddQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1699309825094?e=1738800000&v=beta&t=GMjdzIp5w0bjGYgLxVA3xmmgdlHNjsN00N224VioXm8',
+    //         name: 'Rishabh Jain',
+    //         bio: 'I create functional, beautiful websites with a passion for clean code and great design. Always excited to collaborate and innovate.',
+    //         mutuals: 'Pranav Jain and 51 other mutual connections'
+    //     }
+    // ]
 
     const [acceptedInvites, setAcceptedInvites] = useState([]);
-    const [invites, setInvites] = useState(invitesArray)
+    const [invites, setInvites] = useState([])
 
     useEffect(() => {
         fetchNetworkInvites().then(data => setInvites(data));

@@ -8,6 +8,16 @@ const fetchNetworkInvites = async () => {
     }
 }
 
+const fetchNetworkProfiles = async () => {
+    try {
+        const response = await fetch('http://localhost:9999/fetch-network/profiles');
+        const data = response.json();
+        return data;
+    } catch (err) {
+        console.error('Error in fetching network profiles: ', err);
+    }
+}
+
 const deleteNetworkInvite = async (invite) => {
     try {
         const response = await fetch(`http://localhost:9999/delete-network/${invite._id}`, {
@@ -21,4 +31,4 @@ const deleteNetworkInvite = async (invite) => {
     }
 }
 
-export { fetchNetworkInvites, deleteNetworkInvite };
+export { fetchNetworkInvites, deleteNetworkInvite, fetchNetworkProfiles };
