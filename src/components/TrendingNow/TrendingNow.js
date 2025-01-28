@@ -30,7 +30,7 @@ function TrendingNow() {
 
     useEffect(() => {
         fetchTrendingNow().then(data => setTrendingNow(data));
-    })
+    }, [])
 
     return (
         <div className="trendingSectionContainer">

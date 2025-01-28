@@ -8,4 +8,17 @@ const fetchNotifications = async () => {
     }
 }
 
-export { fetchNotifications }
+const updateNotifications = async (notification) => {
+    try {
+        const response = await fetch(`http://localhost:9999/update-notifs/${notification._id}`, {
+            method: 'PUT',
+        });
+
+        const data = response.json();
+        console.log('Notification updated successfully: ', data);
+    } catch (err) {
+        console.error('Error in updating notification: ', err);
+    }
+}
+
+export { fetchNotifications, updateNotifications };
