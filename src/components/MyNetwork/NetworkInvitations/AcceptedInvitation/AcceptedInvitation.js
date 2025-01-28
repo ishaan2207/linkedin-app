@@ -13,7 +13,7 @@ function AcceptedInvitation({ invite, acceptedInvites, setAcceptedInvites, accep
         <div className="acceptedInvitationContainer">
             <div className="separator"></div>
             <div className="acceptedInvitation">
-                <img src={invite.img} className="acceptedInviteImage" />
+                <img src={invite.image} alt="" className="acceptedInviteImage" />
                 <p>{invite.name} is now a connection. <strong>Message {invite.name}</strong></p>
                 <button className="removeAcceptedInvite" onClick={() => handleCloseAccept(acceptedInvite)}><CloseIcon /></button>
             </div>

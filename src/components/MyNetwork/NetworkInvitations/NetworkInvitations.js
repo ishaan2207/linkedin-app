@@ -8,7 +8,7 @@ import './NetworkInvitations.css';
 import AcceptedInvitation from './AcceptedInvitation/AcceptedInvitation';
 
 // apis
-import { fetchNetworkInvites } from "../../../utils/apis/networks";
+import { fetchNetworkInvites, deleteNetworkInvite } from "../../../utils/apis/networks";
 
 function NetworkInvitations() {
     const invitesArray = [
@@ -55,11 +55,13 @@ function NetworkInvitations() {
         setAcceptedInvites([...acceptedInvites, invite]);
         const updatedInvites = invites.filter(item => item !== invite);
         setInvites(updatedInvites);
+        deleteNetworkInvite(invite);
     }
 
     const handleIgnore = (invite) => {
         const updatedInvites = invites.filter(item => item !== invite)
         setInvites(updatedInvites);
+        deleteNetworkInvite(invite);
     }
 
     return (
@@ -77,8 +79,8 @@ function NetworkInvitations() {
                 </div>
             )}
             <div className="invitationsContainer">
-                {invites.slice(0, 3).map((invite, index) => (
-                    <div>
+                {invites.slice(0, 3).map((invite, key) => (
+                    <div key={key}>
                         <div className="separator"></div>
                         <div className="networkInvite">
                             <div className="inviteUserInformationContainer">
