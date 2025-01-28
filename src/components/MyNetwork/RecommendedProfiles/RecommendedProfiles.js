@@ -9,7 +9,7 @@ import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 
 // apis
-import { fetchNetworkProfiles } from "../../../utils/apis/networks";
+import { fetchNetworkProfiles, deleteNetworkProfile } from "../../../utils/apis/networks";
 
 function RecommendedProfiles() {
     // const allProfiles = [
@@ -104,6 +104,7 @@ function RecommendedProfiles() {
     const handleRemoveProfile = (profile) => {
         const updatedProfiles = profiles.filter(item => item !== profile);
         setProfiles(updatedProfiles);
+        deleteNetworkProfile(profile);
     }
 
     return (

@@ -31,4 +31,17 @@ const deleteNetworkInvite = async (invite) => {
     }
 }
 
-export { fetchNetworkInvites, deleteNetworkInvite, fetchNetworkProfiles };
+const deleteNetworkProfile = async (profile) => {
+    try {
+        const response = await fetch(`http://localhost:9999/delete-network/profile/${profile._id}`, {
+            method: 'DELETE',
+        })
+
+        const data = response.json();
+        console.log('Successfully removed network profile: ', data);
+    } catch (err) {
+        console.error('Error in deleting network profile: ', err);
+    }
+}
+
+export { fetchNetworkInvites, deleteNetworkInvite, fetchNetworkProfiles, deleteNetworkProfile };
