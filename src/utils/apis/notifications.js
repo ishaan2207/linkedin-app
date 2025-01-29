@@ -8,9 +8,9 @@ const fetchNotifications = async () => {
     }
 }
 
-const updateNotifications = async (notification) => {
+const updateNotifications = async (notificationId) => {
     try {
-        const response = await fetch(`http://localhost:9999/update-notifs/${notification._id}`, {
+        const response = await fetch(`http://localhost:9999/update-notifs/${notificationId}`, {
             method: 'PUT',
         });
 
@@ -21,4 +21,17 @@ const updateNotifications = async (notification) => {
     }
 }
 
-export { fetchNotifications, updateNotifications };
+const deleteNotification = async (notificationId) => {
+    try {
+        const response = await fetch(`http://localhost:9999/delete-notifs/${notificationId}`, {
+            method: 'DELETE',
+        });
+
+        const data = response.json();
+        console.log('Notification successfully deleted: ', data);
+    } catch (err) {
+        console.error('Error in deleting notification: ', err);
+    }
+}
+
+export { fetchNotifications, updateNotifications, deleteNotification };

@@ -1,0 +1,23 @@
+.notificationOptionsContainer {
+    border: 1px solid lightgrey;
+    border-radius: 6px;
+    background-color: white;
+    padding: 5px 0;
+    color: #00000099;
+    width: 200px;
+}
+
+.notificationOptionButton {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    padding: 0 12px;
+}
+
+.notificationOptionButton:hover {
+    background-color: whitesmoke;
+}
+
+.notificationOptionButton span {
+    margin: 5px 8px 0 0;
+}

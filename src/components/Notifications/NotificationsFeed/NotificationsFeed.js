@@ -7,9 +7,10 @@ import './NotificationsFeed.css';
 // components
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import CircleIcon from '@mui/icons-material/Circle';
+import NotificationOptions from "./NotificationOptions/NotificationOptions";
 
 // apis
-import { fetchNotifications, updateNotifications } from "../../../utils/apis/notifications";
+import { fetchNotifications, updateNotifications, deleteNotification } from "../../../utils/apis/notifications";
 
 function NotificationsFeed({ selectedToggle }) {
     // const notification = [
@@ -83,31 +84,51 @@ function NotificationsFeed({ selectedToggle }) {
 
     const [notifications, setNotifications] = useState([]);
 
+    const [selectedNotification, setSelectedNotification] = useState('');
+
     useEffect(() => {
         fetchNotifications().then(data => setNotifications(data));
     }, [])
 
+    const handleNotificationMenu = (notification) => {
+        setSelectedNotification(notification);
+    }
+
+    const handleDelete = (notificationId) => {
+        const newNotifs = notifications.filter(notif => notif._id !== notificationId);
+        setNotifications(newNotifs);
+        deleteNotification(notificationId);
+    }
+
     const markAsRead = (updateNotification) => {
         if (!updateNotification.read) {
             setNotifications(prev => prev.map(obj => obj._id === updateNotification._id ? { ...obj, read: true } : obj));
-            updateNotifications(updateNotification);
+            updateNotifications(updateNotification._id);
         }
     }
 
     return (
         <div className="notificationsFeedContainer">
             <div className="notificationsFeed">
-                {notifications.filter(notification => selectedToggle === 'all' || notification.type === selectedToggle).map((notification, key) => (
-                    <div className={`notification ${notification.read ? '' : 'unread'}`} key={key}>
-                        {notification.read ? '' : <CircleIcon style={{ height: '10px', width: '10px', color: '#0A66C2', marginLeft: '-4px' }} />}
-                        <img src={notification.image} alt="" />
-                        <span className="notificationText">{notification.text}</span>
-                        <div className="notificationRight">
-                            <span>{notification.time}</span>
-                            <button onClick={() => markAsRead(notification)}><MoreHorizIcon /></button>
+                {notifications.filter(notification => selectedToggle === 'all' || notification.type === selectedToggle)
+                    .map((notification, key) => (
+                        <div className="notificationContainer">
+                            <div className={`notification ${notification.read ? '' : 'unread'}`} key={key}>
+                                {notification.read ? '' : <CircleIcon style={{ height: '10px', width: '10px', color: '#0A66C2', marginLeft: '-4px' }} />}
+                                <img src={notification.image} alt="" />
+                                <span className="notificationText">{notification.text}</span>
+                                <div className="notificationRight">
+                                    <span>{notification.time}</span>
+                                    <button onClick={() => handleNotificationMenu(notification)}><MoreHorizIcon /></button>
+                                </div>
+                            </div>
+                            <div className="notificationOptions">
+                                <NotificationOptions selectedNotification={selectedNotification}
+                                    notificationId={notification._id} markAsRead={markAsRead}
+                                    handleDelete={handleDelete} />
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
             </div>
         </div>
     )
