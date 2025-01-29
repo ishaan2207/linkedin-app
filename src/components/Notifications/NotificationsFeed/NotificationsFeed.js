@@ -11,7 +11,7 @@ import CircleIcon from '@mui/icons-material/Circle';
 // apis
 import { fetchNotifications, updateNotifications } from "../../../utils/apis/notifications";
 
-function NotificationsFeed() {
+function NotificationsFeed({ selectedToggle }) {
     // const notification = [
     //     {
     //         img: 'https://media.licdn.com/dms/image/v2/D4D03AQGYxNTXYJlddQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1699309825094?e=1741824000&v=beta&t=JVDGTfU7uu04WQ23sRKLcah6ZXPu7XM85Hqq9ZvQ9tA',
@@ -97,7 +97,7 @@ function NotificationsFeed() {
     return (
         <div className="notificationsFeedContainer">
             <div className="notificationsFeed">
-                {notifications.map((notification, key) => (
+                {notifications.filter(notification => selectedToggle === 'all' || notification.type === selectedToggle).map((notification, key) => (
                     <div className={`notification ${notification.read ? '' : 'unread'}`} key={key}>
                         {notification.read ? '' : <CircleIcon style={{ height: '10px', width: '10px', color: '#0A66C2', marginLeft: '-4px' }} />}
                         <img src={notification.image} alt="" />
