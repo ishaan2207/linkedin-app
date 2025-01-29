@@ -46,7 +46,7 @@
 }
 
 .notificationContainer {
-    position: static;
+    position: relative;
     display: flex;
     flex-direction: column;
 }
@@ -55,4 +55,5 @@
     position: absolute;
     align-self: flex-end;
     margin-top: 65px;
+    z-index: 10;
 }
