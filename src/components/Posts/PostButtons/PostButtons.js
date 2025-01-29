@@ -55,8 +55,9 @@ function PostButtons({ setPostLikes, postInfo }) {
 
     return (
         <div className="postButtonsContainer">
-            {postButtons.map(postButton => (
-                <div className="postButtons" onClick={postButton.onClick}>
+            {postButtons.map((postButton, key) => (
+                <div className="postButtons" key={key} onClick={postButton.onClick}
+                    style={{ color: postButton.text === 'Like' && likedByUser ? '#0A66C2' : '' }}>
                     <div className="postButtonIcon">{postButton.icon}</div>
                     <div className="postButtonText">{postButton.text}</div>
                 </div>
