@@ -1,5 +1,5 @@
 // deps
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // styles
 import './ProfileInformation.css';
@@ -9,18 +9,27 @@ import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import CircleIcon from '@mui/icons-material/Circle';
 
 // constants
-import { PROFILE_INFO } from "../../../constants/texts/Profile/profileInformation";
+// import { PROFILE_INFO } from "../../../constants/texts/Profile/profileInformation";
+
+// apis
+import { fetchProfileInformation } from "../../../utils/apis/profile";
 
 function ProfileInformation() {
+
+    const [profileInformation, setProfileInformation] = useState([]);
+
+    useEffect(() => {
+        fetchProfileInformation().then(data => setProfileInformation(data));
+    }, [])
 
     return (
         <div className="profileInformationContainer">
             <div className="profileBannerContainer">
-                <img src={PROFILE_INFO.BANNER_IMG} alt="profileBanner" />
+                <img src={profileInformation.bannerImg} alt="profileBanner" />
             </div>
             <div className="profileUserInformationContainer">
                 <div id="userImageAndEditIcon">
-                    <img src={PROFILE_INFO.IMAGE} alt="profileImage" />
+                    <img src={profileInformation.image} alt="profileImage" />
                     <div className="mainFeedEditIcon">
                         <EditOutlinedIcon />
                     </div>
@@ -28,23 +37,23 @@ function ProfileInformation() {
                 <div className="userInformation">
                     <div className="userInfoLeftColumn">
                         <div className="userNameContainer">
-                            <p id="profileUsername">{PROFILE_INFO.USERNAME}</p>
-                            <p id="profilePronouns">{PROFILE_INFO.PRONOUNS}</p>
+                            <p id="profileUsername">{profileInformation.name}</p>
+                            <p id="profilePronouns">{profileInformation.pronouns}</p>
                         </div>
-                        <p id="profileAbout">{PROFILE_INFO.ABOUT}</p>
-                        <p id="profileUniversityHidden">{PROFILE_INFO.UNIVERSITY_NAME}</p>
+                        <p id="profileAbout">{profileInformation.about}</p>
+                        <p id="profileUniversityHidden">{profileInformation.universityName}</p>
                         <div className="userLocationContainer">
-                            <p id="profileLocation">{PROFILE_INFO.LOCATION}</p>
+                            <p id="profileLocation">{profileInformation.location}</p>
                             <CircleIcon style={{ height: '3px', width: '3px', color: 'grey' }} />
-                            <p id="profileContactInfo">{PROFILE_INFO.CONTACT_INFO}</p>
+                            <p id="profileContactInfo">{profileInformation.contactInfo}</p>
                         </div>
                         <div className="profileConnections">
-                            {PROFILE_INFO.NUM_CONNECTIONS}
+                            {profileInformation.numConnections}
                         </div>
                     </div>
                     <div className="userInfoRightColumn">
-                        <img src={PROFILE_INFO.UNIVERSITY_IMG} alt="" />
-                        <p>{PROFILE_INFO.UNIVERSITY_NAME}</p>
+                        <img src={profileInformation.universityImg} alt="" />
+                        <p>{profileInformation.universityName}</p>
                     </div>
                 </div>
             </div>

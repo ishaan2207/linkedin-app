@@ -1,5 +1,5 @@
 // deps
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // styles
 import './ProfileAnalytics.css';
@@ -14,7 +14,16 @@ import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 // constants
 import { PROFILE_ANALYTICS } from "../../../constants/texts/Profile/profileAnalytics";
 
+// apis
+import { fetchProfileInformation } from "../../../utils/apis/profile";
+
 function ProfileAnalytics() {
+    const [profileAnalytics, setProfileAnalytics] = useState([]);
+
+    useEffect(() => {
+        fetchProfileInformation().then(data => setProfileAnalytics(data));
+    }, []);
+
     return (
         <div className="profileAnalyticsContainer">
             <p>{PROFILE_ANALYTICS.ANALYTICS}</p>
@@ -26,14 +35,14 @@ function ProfileAnalytics() {
                 <div className="profileViewsAnalyticsContainer">
                     <PeopleAltIcon />
                     <div className="profileViewsAnalytics">
-                        <p>{PROFILE_ANALYTICS.PROFILE_VIEWS}</p>
+                        <p>{profileAnalytics.profileViews + ' profile views'}</p>
                         <p>{PROFILE_ANALYTICS.VIEWED_BY}</p>
                     </div>
                 </div>
                 <div className="postImpressionsAnalyticsContainer">
                     <BarChartIcon />
                     <div className="postImpressionsAnalytics">
-                        <p>{PROFILE_ANALYTICS.POST_IMPRESSIONS}</p>
+                        <p>{profileAnalytics.postImpressions + ' post impressions'}</p>
                         <p>{PROFILE_ANALYTICS.START_POST}</p>
                         <p>{PROFILE_ANALYTICS.IMPRESSIONS_TIME}</p>
                     </div>
@@ -41,7 +50,7 @@ function ProfileAnalytics() {
                 <div className="searchAppearancesAnalyticsContainer">
                     <SearchIcon />
                     <div className="searchAppearancesAnalytics">
-                        <p>{PROFILE_ANALYTICS.SEARCH_APPEARANCES}</p>
+                        <p>{profileAnalytics.searchAppearances + ' search appearances'}</p>
                         <p>{PROFILE_ANALYTICS.APPEARANCES_OFTEN}</p>
                     </div>
                 </div>
