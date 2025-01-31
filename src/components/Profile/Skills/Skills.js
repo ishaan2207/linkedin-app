@@ -22,8 +22,6 @@ function Skills() {
         fetchProfileInformation().then(data => setProfileSkills(data[0].skills));
     }, [])
 
-    console.log(profileSkills)
-
     return (
         <div className="skillsContainer">
             <div className="skillsHeader">

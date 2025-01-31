@@ -1,5 +1,5 @@
 // deps
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // styles
 import './MainFeed.css';
@@ -13,14 +13,25 @@ import ProfileAbout from "../../../components/Profile/ProfileAbout/ProfileAbout"
 import ProfileActivity from "../../../components/Profile/ProfileActivity/ProfileActivity";
 import ProfileEducation from "../../../components/Profile/ProfileEducation/ProfileEducation";
 import Skills from "../../../components/Profile/Skills/Skills";
+import EditProfileAbout from "../../../components/Profile/ProfileAbout/EditProfileAbout/EditProfileAbout";
 
 // constants
 import { experiences } from "../../../constants/mocks/Profile/profileMainFeed";
+
+// apis
+import { createProfileExperience, fetchProfileInformation } from "../../../utils/apis/profile";
 
 function MainFeed() {
 
     const [allExperiences, setAllExperiences] = useState(experiences);
     const [showAddExperience, setShowAddExperience] = useState('none');
+
+    const [profileAbout, setProfileAbout] = useState('');
+    const [showEditAbout, setShowEditAbout] = useState('none');
+
+    useEffect(() => {
+        fetchProfileInformation().then(data => setProfileAbout(data[0].about));
+    }, [])
 
     const [newExperienceFields, setNewExperienceFields] = useState({
         experienceTitle: '',
@@ -46,13 +57,16 @@ function MainFeed() {
             descriptions: newExperienceFields.experienceDescriptions
         }
         setAllExperiences([...allExperiences, newExperience]);
+        createProfileExperience(newExperience);
     }
 
     return (
         <div className="profileMainFeedContainer">
             <ProfileInformation />
             <ProfileAnalytics />
-            <ProfileAbout />
+            <EditProfileAbout profileAbout={profileAbout} setProfileAbout={setProfileAbout} showEditAbout={showEditAbout}
+                setShowEditAbout={setShowEditAbout} />
+            <ProfileAbout profileAbout={profileAbout} setShowEditAbout={setShowEditAbout} />
             <ProfileActivity />
             <ProfileExperience experiences={allExperiences} setShowAddExperience={setShowAddExperience} />
             <ProfileEducation />

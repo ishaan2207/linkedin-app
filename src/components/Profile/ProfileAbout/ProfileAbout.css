@@ -19,6 +19,11 @@
     font-weight: 600;
 }
 
+.profileAboutHeader button {
+    border: none;
+    background: none;
+}
+
 .profileAboutText {
     padding: 12px 24px;
     font-size: 14px;

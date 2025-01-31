@@ -1,5 +1,5 @@
 // deps
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 // styles
 import './ProfileAbout.css';
@@ -12,24 +12,16 @@ import DiamondRoundedIcon from '@mui/icons-material/DiamondRounded';
 // constants
 import { PROFILE_ABOUT } from "../../../constants/texts/Profile/profileAbout";
 
-// apis
-import { fetchProfileInformation } from "../../../utils/apis/profile";
-
-function ProfileAbout() {
-    const [profileInfo, setProfileInfo] = useState([]);
-
-    useEffect(() => {
-        fetchProfileInformation().then(data => setProfileInfo(data[0]));
-    }, [])
+function ProfileAbout({ profileAbout, setShowEditAbout }) {
 
     return (
         <div className="profileAboutContainer">
             <div className="profileAboutHeader">
                 <p>{PROFILE_ABOUT.ABOUT}</p>
-                <EditRoundedIcon />
+                <button onClick={() => setShowEditAbout('block')}><EditRoundedIcon /></button>
             </div>
             <div className="profileAboutText">
-                <p>{profileInfo.about}</p>
+                <p>{profileAbout}</p>
             </div>
             <div className="profileAboutSkillsContainer">
                 <div>

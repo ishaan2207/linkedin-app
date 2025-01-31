@@ -36,6 +36,31 @@ const fetchProfileEducation = async () => {
     } catch (err) {
         console.error('Error in fetching profile education: ', err);
     }
-}
+};
 
-export { fetchRecommendedProfiles, fetchProfileInformation, fetchProfileExperience, fetchProfileEducation };
+const createProfileExperience = async (experience) => {
+    try {
+        console.log('title: ', experience.title);
+        const reqBody = {
+            title: experience.title,
+            company: experience.company,
+            location: experience.location,
+            startDate: experience.startDate,
+            endDate: experience.endDate,
+            descriptions: experience.descriptions,
+        };
+
+        const response = await fetch('http://localhost:9999/create-profile/experience', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(reqBody),
+        });
+
+        const data = await response.json();
+        console.log('Profile experience created successfully: ', data);
+    } catch (err) {
+        console.error('Error in creating new profile experience: ', err);
+    }
+};
+
+export { fetchRecommendedProfiles, fetchProfileInformation, fetchProfileExperience, fetchProfileEducation, createProfileExperience };

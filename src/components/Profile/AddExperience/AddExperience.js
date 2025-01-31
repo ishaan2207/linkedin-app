@@ -19,6 +19,11 @@ function AddExperience({ showAddExperience, setShowAddExperience, newExperienceF
         console.log(setShowAddExperience(hide));
     }
 
+    function handleSubmit() {
+        addNewExperience();
+        setShowAddExperience('none');
+    }
+
     return (
         <div className="addExperienceContainer" style={{ display: showAddExperience }}>
             <div className="addExperienceHeader">
@@ -34,7 +39,7 @@ function AddExperience({ showAddExperience, setShowAddExperience, newExperienceF
                     <p>{ADD_EXPERIENCE.TITLE}</p>
                     <input type="text" placeholder="Ex: Retail Sales Manager"
                         value={newExperienceFields.experienceTitle}
-                        onChange={(event) => setNewExperienceFields({...newExperienceFields, experienceTitle: event.target.value})} />
+                        onChange={(event) => setNewExperienceFields({ ...newExperienceFields, experienceTitle: event.target.value })} />
                 </div>
 
                 <div className="addExperienceEmploymentType addExperienceTextForm">
@@ -46,7 +51,7 @@ function AddExperience({ showAddExperience, setShowAddExperience, newExperienceF
                     <p>{ADD_EXPERIENCE.COMPANY}</p>
                     <input type="text" placeholder="Ex: Microsoft"
                         value={newExperienceFields.experienceCompany}
-                        onChange={(event) => setNewExperienceFields({...newExperienceFields, experienceCompany: event.target.value})} />
+                        onChange={(event) => setNewExperienceFields({ ...newExperienceFields, experienceCompany: event.target.value })} />
                 </div>
 
                 <div className="currentlyWorkingHereCheckbox">
@@ -59,10 +64,10 @@ function AddExperience({ showAddExperience, setShowAddExperience, newExperienceF
                     <div className="datesInputContainer">
                         <input type="text" placeholder="Month"
                             value={newExperienceFields.experienceStartMonth}
-                            onChange={(event) => setNewExperienceFields({...newExperienceFields, experienceStartMonth: event.target.value})} />
+                            onChange={(event) => setNewExperienceFields({ ...newExperienceFields, experienceStartMonth: event.target.value })} />
                         <input type="text" placeholder="Year"
                             value={newExperienceFields.experienceStartYear}
-                            onChange={(event) => setNewExperienceFields({...newExperienceFields, experienceStartYear: event.target.value})} />
+                            onChange={(event) => setNewExperienceFields({ ...newExperienceFields, experienceStartYear: event.target.value })} />
                     </div>
                 </div>
 
@@ -71,10 +76,10 @@ function AddExperience({ showAddExperience, setShowAddExperience, newExperienceF
                     <div className="datesInputContainer">
                         <input type="text" placeholder="Month"
                             value={newExperienceFields.experienceEndMonth}
-                            onChange={(event) => setNewExperienceFields({...newExperienceFields, experienceEndMonth: event.target.value})} />
+                            onChange={(event) => setNewExperienceFields({ ...newExperienceFields, experienceEndMonth: event.target.value })} />
                         <input type="text" placeholder="Year"
                             value={newExperienceFields.experienceEndYear}
-                            onChange={(event) => setNewExperienceFields({...newExperienceFields, experienceEndYear: event.target.value})} />
+                            onChange={(event) => setNewExperienceFields({ ...newExperienceFields, experienceEndYear: event.target.value })} />
                     </div>
                 </div>
 
@@ -82,11 +87,11 @@ function AddExperience({ showAddExperience, setShowAddExperience, newExperienceF
                     <p>{ADD_EXPERIENCE.LOCATION}</p>
                     <input type="text" placeholder="Ex: London, United Kingdom"
                         value={newExperienceFields.experienceLocation}
-                        onChange={(event) => setNewExperienceFields({...newExperienceFields, experienceLocation: event.target.value})} />
+                        onChange={(event) => setNewExperienceFields({ ...newExperienceFields, experienceLocation: event.target.value })} />
                 </div>
 
                 <div className="addExperienceLocationType addExperienceTextForm">
-                    <p>{ADD_EXPERIENCE.LOCATION}</p>
+                    <p>{ADD_EXPERIENCE.LOCATION_TYPE}</p>
                     <input type="text" placeholder="Ex: On-site" />
                 </div>
 
@@ -98,7 +103,7 @@ function AddExperience({ showAddExperience, setShowAddExperience, newExperienceF
                             placeholder="List your major duties and successes, highlighting specific projects"
                             value={newExperienceFields.experienceDescriptions}
                             onChange={(event) => {
-                                setNewExperienceFields({...newExperienceFields, experienceTitle: [event.target.value]});
+                                setNewExperienceFields({ ...newExperienceFields, experienceDescriptions: [event.target.value] });
                                 setExperienceDescriptionLength(event.target.value.length)
                             }}
                         />
@@ -141,7 +146,7 @@ function AddExperience({ showAddExperience, setShowAddExperience, newExperienceF
             <div className="separator addExperienceBottomSeparator"></div>
 
             <div className="experienceSaveButtonContainer">
-                <button onClick={addNewExperience}><span>Save</span></button>
+                <button onClick={handleSubmit}><span>Save</span></button>
             </div>
         </div>
     )
