@@ -21,7 +21,7 @@ function ProfileAnalytics() {
     const [profileAnalytics, setProfileAnalytics] = useState([]);
 
     useEffect(() => {
-        fetchProfileInformation().then(data => setProfileAnalytics(data));
+        fetchProfileInformation().then(data => setProfileAnalytics(data[0]));
     }, []);
 
     return (

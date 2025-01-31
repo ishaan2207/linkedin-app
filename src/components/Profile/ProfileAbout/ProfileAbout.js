@@ -1,5 +1,5 @@
 // deps
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // styles
 import './ProfileAbout.css';
@@ -12,7 +12,16 @@ import DiamondRoundedIcon from '@mui/icons-material/DiamondRounded';
 // constants
 import { PROFILE_ABOUT } from "../../../constants/texts/Profile/profileAbout";
 
+// apis
+import { fetchProfileInformation } from "../../../utils/apis/profile";
+
 function ProfileAbout() {
+    const [profileInfo, setProfileInfo] = useState([]);
+
+    useEffect(() => {
+        fetchProfileInformation().then(data => setProfileInfo(data[0]));
+    }, [])
+
     return (
         <div className="profileAboutContainer">
             <div className="profileAboutHeader">
@@ -20,7 +29,7 @@ function ProfileAbout() {
                 <EditRoundedIcon />
             </div>
             <div className="profileAboutText">
-                <p>{PROFILE_ABOUT.ABOUT_TEXT}</p>
+                <p>{profileInfo.about}</p>
             </div>
             <div className="profileAboutSkillsContainer">
                 <div>

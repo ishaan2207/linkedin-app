@@ -19,7 +19,7 @@ function ProfileInformation() {
     const [profileInformation, setProfileInformation] = useState([]);
 
     useEffect(() => {
-        fetchProfileInformation().then(data => setProfileInformation(data));
+        fetchProfileInformation().then(data => setProfileInformation(data[0]));
     }, [])
 
     return (
@@ -40,7 +40,7 @@ function ProfileInformation() {
                             <p id="profileUsername">{profileInformation.name}</p>
                             <p id="profilePronouns">{profileInformation.pronouns}</p>
                         </div>
-                        <p id="profileAbout">{profileInformation.about}</p>
+                        <p id="profileAbout">{profileInformation.bio}</p>
                         <p id="profileUniversityHidden">{profileInformation.universityName}</p>
                         <div className="userLocationContainer">
                             <p id="profileLocation">{profileInformation.location}</p>

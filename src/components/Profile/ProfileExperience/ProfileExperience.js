@@ -1,5 +1,5 @@
 // deps
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // styles
 import './ProfileExperience.css';
@@ -8,7 +8,16 @@ import './ProfileExperience.css';
 import AddIcon from '@mui/icons-material/Add';
 import EditIcon from '@mui/icons-material/Edit';
 
-function ProfileExperience({ setShowAddExperience, experiences }) {
+// apis
+import { fetchProfileExperience } from "../../../utils/apis/profile";
+
+function ProfileExperience({ setShowAddExperience }) {
+
+    const [experiences, setExperiences] = useState([]);
+
+    useEffect(() => {
+        fetchProfileExperience().then(data => setExperiences(data))
+    })
 
     function handleShowExperience(show) {
         setShowAddExperience(show);

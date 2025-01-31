@@ -1,5 +1,5 @@
 // deps
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // styles
 import './Skills.css';
@@ -12,7 +12,18 @@ import EastIcon from '@mui/icons-material/East';
 // constants
 import { PROFILE_SKILLS } from "../../../constants/texts/Profile/profileSkills";
 
+// apis 
+import { fetchProfileInformation } from "../../../utils/apis/profile";
+
 function Skills() {
+    const [profileSkills, setProfileSkills] = useState();
+
+    useEffect(() => {
+        fetchProfileInformation().then(data => setProfileSkills(data));
+    }, [])
+
+    console.log(profileSkills)
+
     return (
         <div className="skillsContainer">
             <div className="skillsHeader">
@@ -23,13 +34,13 @@ function Skills() {
                 </div>
             </div>
             <div className="skillInformationContainer">
-                {PROFILE_SKILLS.KNOWN_SKILLS.map((KNOWN_SKILL, key) => (
+                {profileSkills.skills.map((skill, key) => (
                     <div>
                         <div className="skillInformation" key={key}>
-                            <div className="skillTitle">{KNOWN_SKILL.SKILL}</div>
+                            <div className="skillTitle">{skill.skill}</div>
                             <div className="skillLearntFrom">
-                                <img src={KNOWN_SKILL.IMG} />
-                                <span>{KNOWN_SKILL.LEARNT_FROM}</span>
+                                <img src={skill.image} alt="" />
+                                <span>{skill.learntFrom}</span>
                             </div>
                         </div>
                         {key !== PROFILE_SKILLS.KNOWN_SKILLS.length - 1 ? <div className="separator"></div> : ''}
