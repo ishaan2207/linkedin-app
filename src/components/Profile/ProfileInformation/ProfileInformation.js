@@ -1,5 +1,5 @@
 // deps
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 // styles
 import './ProfileInformation.css';
@@ -8,52 +8,40 @@ import './ProfileInformation.css';
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import CircleIcon from '@mui/icons-material/Circle';
 
-// constants
-// import { PROFILE_INFO } from "../../../constants/texts/Profile/profileInformation";
-
-// apis
-import { fetchProfileInformation } from "../../../utils/apis/profile";
-
-function ProfileInformation() {
-
-    const [profileInformation, setProfileInformation] = useState([]);
-
-    useEffect(() => {
-        fetchProfileInformation().then(data => setProfileInformation(data[0]));
-    }, [])
+function ProfileInformation({ profileInfo, setShowEditInfo }) {
 
     return (
         <div className="profileInformationContainer">
             <div className="profileBannerContainer">
-                <img src={profileInformation.bannerImg} alt="profileBanner" />
+                <img src={profileInfo.bannerImg} alt="profileBanner" />
             </div>
             <div className="profileUserInformationContainer">
                 <div id="userImageAndEditIcon">
-                    <img src={profileInformation.image} alt="profileImage" />
+                    <img src={profileInfo.image} alt="profileImage" />
                     <div className="mainFeedEditIcon">
-                        <EditOutlinedIcon />
+                        <button onClick={() => setShowEditInfo('block')}><EditOutlinedIcon style={{ margin: '2px 0 0 3px' }} /></button>
                     </div>
                 </div>
                 <div className="userInformation">
                     <div className="userInfoLeftColumn">
                         <div className="userNameContainer">
-                            <p id="profileUsername">{profileInformation.name}</p>
-                            <p id="profilePronouns">{profileInformation.pronouns}</p>
+                            <p id="profileUsername">{profileInfo.name}</p>
+                            <p id="profilePronouns">{profileInfo.pronouns}</p>
                         </div>
-                        <p id="profileAbout">{profileInformation.bio}</p>
-                        <p id="profileUniversityHidden">{profileInformation.universityName}</p>
+                        <p id="profileAbout">{profileInfo.bio}</p>
+                        <p id="profileUniversityHidden">{profileInfo.universityName}</p>
                         <div className="userLocationContainer">
-                            <p id="profileLocation">{profileInformation.location}</p>
+                            <p id="profileLocation">{profileInfo.location}</p>
                             <CircleIcon style={{ height: '3px', width: '3px', color: 'grey' }} />
-                            <p id="profileContactInfo">{profileInformation.contactInfo}</p>
+                            <p id="profileContactInfo">{profileInfo.contactInfo}</p>
                         </div>
                         <div className="profileConnections">
-                            {profileInformation.numConnections}
+                            {profileInfo.numConnections}
                         </div>
                     </div>
                     <div className="userInfoRightColumn">
-                        <img src={profileInformation.universityImg} alt="" />
-                        <p>{profileInformation.universityName}</p>
+                        <img src={profileInfo.universityImg} alt="" />
+                        <p>{profileInfo.universityName}</p>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,72 @@
 .editProfileAboutContainer {
+    position: absolute;
     border: 1px solid lightgrey;
     border-radius: 8px;
     background-color: white;
+    width: 804px;
+}
+
+.editProfileAboutHeader {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    padding: 16px 24px 2px;
+}
+
+.editProfileAboutHeader button {
+    border: none;
+    background: none;
+}
+
+.editProfileAboutBody {
+    padding: 12px 24px 0;
+}
+
+.editProfileAboutBody textarea {
+    width: 100% !important;
+    height: 100px !important;
+    font-family: 'Arial', sans-serif;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.editProfileAboutFooter {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 10px;
+}
+
+.editProfileAboutFooter button {
+    border: none;
+    border-radius: 24px;
+    background-color: #0A66C2;
+    color: white;
+    font-size: 16px;
+    padding: 6px 16px;
+    margin-right: 24px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .editProfileAboutContainer {
+        width: 636px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .editProfileAboutContainer {
+        width: 396px;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    .editProfileAboutContainer {
+        width: 576px;
+    }
+}
+
+@media only screen and (max-width: 615px) {
+    .editProfileAboutContainer {
+        width: 100%;
+    }
 }

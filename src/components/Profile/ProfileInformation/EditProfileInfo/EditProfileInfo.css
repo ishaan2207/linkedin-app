@@ -1,0 +1,63 @@
+.editProfileInfoContainer {
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.editProfileInfoHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px 2px;
+}
+
+.editProfileInfoHeader p {
+    font-size: 20px;
+}
+
+.editProfileInfoHeader button {
+    border: none;
+    background: none;
+}
+
+.editProfileInfoBody {
+    padding: 16px 24px;
+}
+
+.editProfileInfoField {
+    padding: 0 0 24px;
+}
+
+.editProfileInfoField p {
+    font-size: 14px;
+    color: #00000099;
+    padding: 0 0 2px;
+}
+
+.editProfileInfoField input {
+    width: 100%;
+    height: 32px;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding-left: 4px;
+}
+
+.secondSep {
+    margin: 0;
+}
+
+.editProfileInfoFooter {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 16px 24px;
+}
+
+.editProfileInfoFooter button {
+    border: none;
+    border-radius: 22px;
+    background-color: #0A66C2;
+    color: white;
+    font-size: 16px;
+    padding: 6px 16px;
+}

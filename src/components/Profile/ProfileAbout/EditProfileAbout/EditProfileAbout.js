@@ -7,10 +7,14 @@ import './EditProfileAbout.css';
 // components
 import CloseIcon from '@mui/icons-material/Close';
 
-function EditProfileAbout({ profileAbout, setProfileAbout, showEditAbout, setShowEditAbout }) {
+// apis
+import { updateProfileAbout } from "../../../../utils/apis/profile";
+
+function EditProfileAbout({ profileInfo, setProfileInfo, showEditAbout, setShowEditAbout, id }) {
 
     const handleSubmit = () => {
-
+        setShowEditAbout('none')
+        updateProfileAbout(id, profileInfo.about);
     }
 
     return (
@@ -21,10 +25,11 @@ function EditProfileAbout({ profileAbout, setProfileAbout, showEditAbout, setSho
             </div>
             <div className="editProfileAboutBody">
                 <p>About</p>
-                <textarea value={profileAbout} onChange={(event) => setProfileAbout(event.target.value)} />
+                <textarea value={profileInfo.about} onChange={(event) => setProfileInfo({ ...profileInfo, about: event.target.value })} />
             </div>
+            <div className="separator"></div>
             <div className="editProfileAboutFooter">
-                <button>Save</button>
+                <button onClick={() => handleSubmit()}>Save</button>
             </div>
         </div>
     )

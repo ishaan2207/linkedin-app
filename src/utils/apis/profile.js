@@ -63,4 +63,24 @@ const createProfileExperience = async (experience) => {
     }
 };
 
-export { fetchRecommendedProfiles, fetchProfileInformation, fetchProfileExperience, fetchProfileEducation, createProfileExperience };
+const updateProfileAbout = async (id, about) => {
+    const reqBody = {
+        about: about
+    };
+    console.log('id', id)
+    console.log('about', about)
+    try {
+        const response = await fetch(`http://localhost:9999/update-profile/${id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(reqBody),
+        })
+
+        const data = await response.json();
+        console.log('Profile about updated successfully: ', data);
+    } catch (err) {
+        console.error('Error in updating profile about: ', err);
+    }
+};
+
+export { fetchRecommendedProfiles, fetchProfileInformation, fetchProfileExperience, fetchProfileEducation, createProfileExperience, updateProfileAbout };
