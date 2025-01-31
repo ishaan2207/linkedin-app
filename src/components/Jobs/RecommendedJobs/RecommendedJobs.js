@@ -1,5 +1,5 @@
 // deps
-import React from "react";
+import React, { useState } from "react";
 
 // styles
 import './RecommendedJobs.css';
@@ -10,6 +10,12 @@ import VerifiedUserOutlinedIcon from '@mui/icons-material/VerifiedUserOutlined';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 
 function RecommendedJobs({ RECOMMENDED_JOBS, RECOMMENDED_JOBS_TEXTS }) {
+    const [showJob, setShowJob] = useState([]);
+
+    const handleHideJob = (job) => {
+        setShowJob(prev => [...prev, job]);
+    }
+
     return (
         <div className="recommendedJobsContainer">
             <div className="recommendedJobsHeaderContainer">
@@ -18,7 +24,7 @@ function RecommendedJobs({ RECOMMENDED_JOBS, RECOMMENDED_JOBS_TEXTS }) {
             </div>
             <div className="recommendedJobsList">
                 {RECOMMENDED_JOBS.map((RECOMMENDED_JOB, key) => (
-                    <div key={key} className="recommendedJobContainer">
+                    <div key={key} className="recommendedJobContainer" style={{ display: showJob.includes(key) ? 'none' : 'block' }}>
                         <div className="recommendedJob">
                             <div className="recommendedJobLeft">
                                 <img src={RECOMMENDED_JOB.image} alt="" />
@@ -31,7 +37,7 @@ function RecommendedJobs({ RECOMMENDED_JOBS, RECOMMENDED_JOBS_TEXTS }) {
                                 </div>
                             </div>
                             <div className="recommendedJobRight">
-                                <button><CloseIcon style={{ height: '20px', width: '20px' }} /></button>
+                                <button onClick={() => handleHideJob(key)}><CloseIcon style={{ height: '20px', width: '20px' }} /></button>
                             </div>
                         </div>
                         {key !== RECOMMENDED_JOBS.length - 1 ? <div className="separator"></div> : ''}

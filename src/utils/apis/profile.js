@@ -22,11 +22,20 @@ const fetchProfileExperience = async () => {
     try {
         const response = await fetch('http://localhost:9999/fetch-profile/experience');
         const data = response.json();
-        console.log('api: ', data);
         return data;
     } catch (err) {
         console.error('Error in fetching profile experiences: ', err);
     }
+};
+
+const fetchProfileEducation = async () => {
+    try {
+        const response = await fetch('http://localhost:9999/fetch-profile/education');
+        const data = response.json();
+        return data;
+    } catch (err) {
+        console.error('Error in fetching profile education: ', err);
+    }
 }
 
-export { fetchRecommendedProfiles, fetchProfileInformation, fetchProfileExperience };
+export { fetchRecommendedProfiles, fetchProfileInformation, fetchProfileExperience, fetchProfileEducation };

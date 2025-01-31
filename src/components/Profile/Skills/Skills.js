@@ -16,10 +16,10 @@ import { PROFILE_SKILLS } from "../../../constants/texts/Profile/profileSkills";
 import { fetchProfileInformation } from "../../../utils/apis/profile";
 
 function Skills() {
-    const [profileSkills, setProfileSkills] = useState();
+    const [profileSkills, setProfileSkills] = useState([]);
 
     useEffect(() => {
-        fetchProfileInformation().then(data => setProfileSkills(data));
+        fetchProfileInformation().then(data => setProfileSkills(data[0].skills));
     }, [])
 
     console.log(profileSkills)
@@ -34,7 +34,7 @@ function Skills() {
                 </div>
             </div>
             <div className="skillInformationContainer">
-                {profileSkills.skills.map((skill, key) => (
+                {profileSkills.map((skill, key) => (
                     <div>
                         <div className="skillInformation" key={key}>
                             <div className="skillTitle">{skill.skill}</div>

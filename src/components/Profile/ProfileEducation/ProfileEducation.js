@@ -1,5 +1,5 @@
 // deps
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // styles
 import './ProfileEducation.css';
@@ -12,7 +12,15 @@ import DiamondOutlinedIcon from '@mui/icons-material/DiamondOutlined';
 // constants
 import { EDUCATIONS, PROFILE_EDUCATION } from "../../../constants/texts/Profile/profileEducation";
 
+// apis
+import { fetchProfileEducation } from "../../../utils/apis/profile";
+
 function ProfileEducation() {
+    const [educations, setEducations] = useState([]);
+
+    useEffect(() => {
+        fetchProfileEducation().then(data => setEducations(data));
+    }, []);
 
     return (
         <div className="profileEducationContainer">
@@ -24,11 +32,11 @@ function ProfileEducation() {
                 </div>
             </div>
             <div className="profileEducation">
-                {EDUCATIONS.map((education, index) => (
+                {educations.map((education, index) => (
                     <div>
                         <div className="educationsContainer">
                             <div className="profileEducationImage">
-                                <img src={education.image} />
+                                <img src={education.image} alt="" />
                             </div>
                             <div className="profileEducationDescription">
                                 <div className="educationLocation">{education.location}</div>

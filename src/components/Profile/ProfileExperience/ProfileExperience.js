@@ -17,7 +17,7 @@ function ProfileExperience({ setShowAddExperience }) {
 
     useEffect(() => {
         fetchProfileExperience().then(data => setExperiences(data))
-    })
+    }, [])
 
     function handleShowExperience(show) {
         setShowAddExperience(show);
