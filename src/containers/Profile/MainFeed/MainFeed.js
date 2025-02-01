@@ -9,6 +9,7 @@ import ProfileInformation from "../../../components/Profile/ProfileInformation/P
 import ProfileAnalytics from "../../../components/Profile/ProfileAnalytics/ProfileAnalytics";
 import ProfileExperience from "../../../components/Profile/ProfileExperience/ProfileExperience";
 import AddExperience from "../../../components/Profile/AddExperience/AddExperience";
+import AddEducation from "../../../components/Profile/ProfileEducation/AddEducation/AddEducation";
 import ProfileAbout from "../../../components/Profile/ProfileAbout/ProfileAbout";
 import ProfileActivity from "../../../components/Profile/ProfileActivity/ProfileActivity";
 import ProfileEducation from "../../../components/Profile/ProfileEducation/ProfileEducation";
@@ -20,12 +21,15 @@ import EditProfileInfo from "../../../components/Profile/ProfileInformation/Edit
 import { experiences } from "../../../constants/mocks/Profile/profileMainFeed";
 
 // apis
-import { createProfileExperience, fetchProfileInformation } from "../../../utils/apis/profile";
+import { createProfileExperience, createProfileEducation, fetchProfileInformation, fetchProfileEducation } from "../../../utils/apis/profile";
 
 function MainFeed() {
 
     const [allExperiences, setAllExperiences] = useState(experiences);
     const [showAddExperience, setShowAddExperience] = useState('none');
+
+    const [allEducations, setAllEducations] = useState([]);
+    const [showAddEducation, setShowAddEducation] = useState('none');
 
     const [profileInfo, setProfileInfo] = useState([]);
 
@@ -34,6 +38,7 @@ function MainFeed() {
 
     useEffect(() => {
         fetchProfileInformation().then(data => setProfileInfo(data[0]));
+        fetchProfileEducation().then(data => setAllEducations(data));
     }, [])
 
     const [newExperienceFields, setNewExperienceFields] = useState({
@@ -47,6 +52,24 @@ function MainFeed() {
         experienceEndYear: '',
         experienceDescriptions: []
     })
+
+    const [newEducation, setNewEducation] = useState({
+        location: '',
+        field: '',
+        dates: '',
+    })
+
+    const addNewEducation = () => {
+        const education = {
+            userId: '1',
+            image: 'https://t3.ftcdn.net/jpg/04/91/76/62/360_F_491766294_h4j7LbW2YgfbNHhq7F8GboIc1XyBSEY5.jpg',
+            location: newEducation.location,
+            field: newEducation.field,
+            dates: newEducation.dates,
+        };
+        setAllEducations([...allEducations, education]);
+        createProfileEducation(education);
+    }
 
     function addNewExperience() {
         const newExperience = {
@@ -68,17 +91,24 @@ function MainFeed() {
             <EditProfileInfo profileInfo={profileInfo} setProfileInfo={setProfileInfo} showEditInfo={showEditInfo}
                 setShowEditInfo={setShowEditInfo} />
             <ProfileInformation profileInfo={profileInfo} setShowEditInfo={setShowEditInfo} />
+
             <ProfileAnalytics />
+
             <EditProfileAbout profileInfo={profileInfo} setProfileInfo={setProfileInfo} showEditAbout={showEditAbout}
                 setShowEditAbout={setShowEditAbout} id={profileInfo._id} />
             <ProfileAbout profileAbout={profileInfo.about} setShowEditAbout={setShowEditAbout} />
+
             <ProfileActivity />
+
             <ProfileExperience experiences={allExperiences} setShowAddExperience={setShowAddExperience} />
-            <ProfileEducation />
-            <AddExperience
-                showAddExperience={showAddExperience} setShowAddExperience={setShowAddExperience}
+            <AddExperience showAddExperience={showAddExperience} setShowAddExperience={setShowAddExperience}
                 newExperienceFields={newExperienceFields} setNewExperienceFields={setNewExperienceFields}
                 addNewExperience={addNewExperience} />
+
+            <AddEducation showAddEducation={showAddEducation} setShowAddEducation={setShowAddEducation}
+                newEducation={newEducation} setNewEducation={setNewEducation} addNewEducation={addNewEducation} />
+            <ProfileEducation allEducations={allEducations} setShowAddEducation={setShowAddEducation} />
+
             <Skills />
         </div>
     )

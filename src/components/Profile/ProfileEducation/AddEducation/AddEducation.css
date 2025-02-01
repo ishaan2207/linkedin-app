@@ -1,0 +1,67 @@
+.addEducationContainer {
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    background-color: white;
+    position: absolute;
+    width: 804px;
+}
+
+.addEducationHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px 2px;
+}
+
+.addEducationHeader p {
+    font-size: 20px;
+}
+
+.addEducationHeader button {
+    border: none;
+    background: none;
+}
+
+.addEducationBody {
+    padding: 16px 24px;
+}
+
+.addEducationFooter {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 16px 24px;
+}
+
+.addEducationFooter button {
+    border: none;
+    border-radius: 22px;
+    background-color: #0A66C2;
+    color: white;
+    font-size: 16px;
+    padding: 6px 16px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .addEducationContainer {
+        width: 636px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .addEducationContainer {
+        width: 396px;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    .addEducationContainer {
+        width: 576px;
+    }
+}
+
+@media only screen and (max-width: 615px) {
+    .addEducationContainer {
+        width: 100%;
+    }
+}

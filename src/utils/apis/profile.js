@@ -40,7 +40,6 @@ const fetchProfileEducation = async () => {
 
 const createProfileExperience = async (experience) => {
     try {
-        console.log('title: ', experience.title);
         const reqBody = {
             title: experience.title,
             company: experience.company,
@@ -62,6 +61,27 @@ const createProfileExperience = async (experience) => {
         console.error('Error in creating new profile experience: ', err);
     }
 };
+
+const createProfileEducation = async (education) => {
+    try {
+        const reqBody = {
+            location: education.location,
+            field: education.field,
+            dates: education.dates,
+        };
+
+        const response = await fetch('http://localhost:9999/create-profile/education', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(reqBody),
+        });
+
+        const data = await response.json();
+        console.log('Profile education created successfully: ', data);
+    } catch (err) {
+        console.error('Error in creating new profile education: ', err);
+    }
+}
 
 const updateProfileInfo = async (id, info) => {
     const reqBody = {
@@ -105,4 +125,4 @@ const updateProfileAbout = async (id, about) => {
     }
 };
 
-export { fetchRecommendedProfiles, fetchProfileInformation, fetchProfileExperience, fetchProfileEducation, createProfileExperience, updateProfileInfo, updateProfileAbout };
+export { fetchRecommendedProfiles, fetchProfileInformation, fetchProfileExperience, fetchProfileEducation, createProfileExperience, createProfileEducation, updateProfileInfo, updateProfileAbout };

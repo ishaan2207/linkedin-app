@@ -1,5 +1,5 @@
 // deps
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 // styles
 import './ProfileEducation.css';
@@ -10,29 +10,21 @@ import EditIcon from '@mui/icons-material/Edit';
 import DiamondOutlinedIcon from '@mui/icons-material/DiamondOutlined';
 
 // constants
-import { EDUCATIONS, PROFILE_EDUCATION } from "../../../constants/texts/Profile/profileEducation";
+import { PROFILE_EDUCATION } from "../../../constants/texts/Profile/profileEducation";
 
-// apis
-import { fetchProfileEducation } from "../../../utils/apis/profile";
-
-function ProfileEducation() {
-    const [educations, setEducations] = useState([]);
-
-    useEffect(() => {
-        fetchProfileEducation().then(data => setEducations(data));
-    }, []);
+function ProfileEducation({ allEducations, setShowAddEducation }) {
 
     return (
         <div className="profileEducationContainer">
             <div className="profileEducationHeader">
                 <p>{PROFILE_EDUCATION.EDUCATION}</p>
                 <div className="profileHeaderButtons">
-                    <button><AddIcon style={{ height: '30px', width: '30px', marginRight: '20px' }} /></button>
+                    <button onClick={() => setShowAddEducation('block')}><AddIcon style={{ height: '30px', width: '30px', marginRight: '20px' }} /></button>
                     <button><EditIcon /></button>
                 </div>
             </div>
             <div className="profileEducation">
-                {educations.map((education, index) => (
+                {allEducations.map((education, index) => (
                     <div>
                         <div className="educationsContainer">
                             <div className="profileEducationImage">
@@ -48,9 +40,7 @@ function ProfileEducation() {
                                 </div>
                             </div>
                         </div>
-                        {index !== EDUCATIONS.length - 1 && (
-                            <div className="separator"></div>
-                        )}
+                        <div className="separator"></div>
                     </div>
                 ))}
             </div>
