@@ -1,5 +1,5 @@
 // deps
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 // styles
 import './Skills.css';
@@ -12,27 +12,19 @@ import EastIcon from '@mui/icons-material/East';
 // constants
 import { PROFILE_SKILLS } from "../../../constants/texts/Profile/profileSkills";
 
-// apis 
-import { fetchProfileInformation } from "../../../utils/apis/profile";
-
-function Skills() {
-    const [profileSkills, setProfileSkills] = useState([]);
-
-    useEffect(() => {
-        fetchProfileInformation().then(data => setProfileSkills(data[0].skills));
-    }, [])
+function Skills({ allSkills, setShowAddSkills }) {
 
     return (
         <div className="skillsContainer">
             <div className="skillsHeader">
                 <span>{PROFILE_SKILLS.SKILLS}</span>
                 <div className="skillsHeaderButtons">
-                    <button><AddIcon style={{ height: '30px', width: '30px', marginRight: '20px' }} /></button>
+                    <button onClick={() => setShowAddSkills('block')}><AddIcon style={{ height: '30px', width: '30px', marginRight: '20px' }} /></button>
                     <button><EditIcon /></button>
                 </div>
             </div>
             <div className="skillInformationContainer">
-                {profileSkills.map((skill, key) => (
+                {allSkills.map((skill, key) => (
                     <div>
                         <div className="skillInformation" key={key}>
                             <div className="skillTitle">{skill.skill}</div>
@@ -41,7 +33,7 @@ function Skills() {
                                 <span>{skill.learntFrom}</span>
                             </div>
                         </div>
-                        {key !== PROFILE_SKILLS.KNOWN_SKILLS.length - 1 ? <div className="separator"></div> : ''}
+                        {key !== allSkills.length - 1 ? <div className="separator"></div> : ''}
                     </div>
                 ))}
             </div>

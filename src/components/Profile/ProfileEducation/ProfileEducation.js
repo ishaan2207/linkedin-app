@@ -24,8 +24,8 @@ function ProfileEducation({ allEducations, setShowAddEducation }) {
                 </div>
             </div>
             <div className="profileEducation">
-                {allEducations.map((education, index) => (
-                    <div>
+                {allEducations.map((education, key) => (
+                    <div key={key}>
                         <div className="educationsContainer">
                             <div className="profileEducationImage">
                                 <img src={education.image} alt="" />

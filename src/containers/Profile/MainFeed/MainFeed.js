@@ -14,6 +14,7 @@ import ProfileAbout from "../../../components/Profile/ProfileAbout/ProfileAbout"
 import ProfileActivity from "../../../components/Profile/ProfileActivity/ProfileActivity";
 import ProfileEducation from "../../../components/Profile/ProfileEducation/ProfileEducation";
 import Skills from "../../../components/Profile/Skills/Skills";
+import AddSkill from "../../../components/Profile/Skills/AddSkill/AddSkill";
 import EditProfileAbout from "../../../components/Profile/ProfileAbout/EditProfileAbout/EditProfileAbout";
 import EditProfileInfo from "../../../components/Profile/ProfileInformation/EditProfileInfo/EditProfileInfo";
 
@@ -21,7 +22,7 @@ import EditProfileInfo from "../../../components/Profile/ProfileInformation/Edit
 import { experiences } from "../../../constants/mocks/Profile/profileMainFeed";
 
 // apis
-import { createProfileExperience, createProfileEducation, fetchProfileInformation, fetchProfileEducation } from "../../../utils/apis/profile";
+import { createProfileExperience, createProfileEducation, createProfileSkill, fetchProfileInformation, fetchProfileEducation } from "../../../utils/apis/profile";
 
 function MainFeed() {
 
@@ -31,6 +32,9 @@ function MainFeed() {
     const [allEducations, setAllEducations] = useState([]);
     const [showAddEducation, setShowAddEducation] = useState('none');
 
+    const [allSkills, setAllSkills] = useState([]);
+    const [showAddSkills, setShowAddSkills] = useState('none');
+
     const [profileInfo, setProfileInfo] = useState([]);
 
     const [showEditInfo, setShowEditInfo] = useState('none');
@@ -39,6 +43,7 @@ function MainFeed() {
     useEffect(() => {
         fetchProfileInformation().then(data => setProfileInfo(data[0]));
         fetchProfileEducation().then(data => setAllEducations(data));
+        fetchProfileInformation().then(data => setAllSkills(data[0].skills));
     }, [])
 
     const [newExperienceFields, setNewExperienceFields] = useState({
@@ -59,6 +64,11 @@ function MainFeed() {
         dates: '',
     })
 
+    const [newSkill, setNewSkill] = useState({
+        skill: '',
+        learntFrom: '',
+    });
+
     const addNewEducation = () => {
         const education = {
             userId: '1',
@@ -71,7 +81,7 @@ function MainFeed() {
         createProfileEducation(education);
     }
 
-    function addNewExperience() {
+    const addNewExperience = () => {
         const newExperience = {
             id: (allExperiences.length) + 1 + '',
             title: newExperienceFields.experienceTitle,
@@ -84,6 +94,16 @@ function MainFeed() {
         }
         setAllExperiences([...allExperiences, newExperience]);
         createProfileExperience(newExperience);
+    }
+
+    const addNewSkill = () => {
+        const skill = {
+            skill: newSkill.skill,
+            image: 'https://as1.ftcdn.net/v2/jpg/02/43/26/70/1000_F_243267032_PCinzxeQsYZiV1sfmApbRPsT86HeZsSo.jpg',
+            learntFrom: newSkill.learntFrom,
+        };
+        setAllSkills([...allSkills, skill]);
+        createProfileSkill(profileInfo._id, skill);
     }
 
     return (
@@ -109,7 +129,9 @@ function MainFeed() {
                 newEducation={newEducation} setNewEducation={setNewEducation} addNewEducation={addNewEducation} />
             <ProfileEducation allEducations={allEducations} setShowAddEducation={setShowAddEducation} />
 
-            <Skills />
+            <AddSkill showAddSkills={showAddSkills} setShowAddSkills={setShowAddSkills} newSkill={newSkill}
+                setNewSkill={setNewSkill} addNewSkill={addNewSkill} />
+            <Skills allSkills={allSkills} setShowAddSkills={setShowAddSkills} />
         </div>
     )
 }

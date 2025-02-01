@@ -83,6 +83,27 @@ const createProfileEducation = async (education) => {
     }
 }
 
+const createProfileSkill = async (id, skill) => {
+    try {
+        const reqBody = {
+            skill: skill.skill,
+            image: skill.image,
+            learntFrom: skill.learntFrom,
+        };
+
+        const response = await fetch(`http://localhost:9999/create-profile/skill/${id}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(reqBody),
+        });
+
+        const data = await response.json();
+        console.log('Profile skill created successfully: ', data);
+    } catch (err) {
+        console.error('Error in creating new profile skill: ', err);
+    }
+}
+
 const updateProfileInfo = async (id, info) => {
     const reqBody = {
         name: info.name,
@@ -125,4 +146,7 @@ const updateProfileAbout = async (id, about) => {
     }
 };
 
-export { fetchRecommendedProfiles, fetchProfileInformation, fetchProfileExperience, fetchProfileEducation, createProfileExperience, createProfileEducation, updateProfileInfo, updateProfileAbout };
+export {
+    fetchRecommendedProfiles, fetchProfileInformation, fetchProfileExperience, fetchProfileEducation, createProfileExperience,
+    createProfileEducation, createProfileSkill, updateProfileInfo, updateProfileAbout
+};

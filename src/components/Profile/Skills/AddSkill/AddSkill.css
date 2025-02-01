@@ -1,0 +1,67 @@
+.addSkillContainer {
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    background-color: white;
+    position: absolute;
+    width: 804px;
+}
+
+.addSkillHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px 2px;
+}
+
+.addSkillHeader p {
+    font-size: 20px;
+}
+
+.addSkillHeader button {
+    border: none;
+    background: none;
+}
+
+.addSkillBody {
+    padding: 16px 24px;
+}
+
+.addSkillFooter {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 16px 24px;
+}
+
+.addSkillFooter button {
+    border: none;
+    border-radius: 22px;
+    background-color: #0A66C2;
+    color: white;
+    font-size: 16px;
+    padding: 6px 16px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .addSkillContainer {
+        width: 636px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .addSkillContainer {
+        width: 396px;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    .addSkillContainer {
+        width: 576px;
+    }
+}
+
+@media only screen and (max-width: 615px) {
+    .addSkillContainer {
+        width: 100%;
+    }
+}
