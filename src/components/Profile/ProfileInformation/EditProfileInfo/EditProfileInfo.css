@@ -2,6 +2,8 @@
     border: 1px solid lightgrey;
     border-radius: 8px;
     background-color: white;
+    position: absolute;
+    width: 804px;
 }
 
 .editProfileInfoHeader {
@@ -60,4 +62,28 @@
     color: white;
     font-size: 16px;
     padding: 6px 16px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .editProfileInfoContainer {
+        width: 636px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .editProfileInfoContainer {
+        width: 396px;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    .editProfileInfoContainer {
+        width: 576px;
+    }
+}
+
+@media only screen and (max-width: 615px) {
+    .editProfileInfoContainer {
+        width: 100%;
+    }
 }

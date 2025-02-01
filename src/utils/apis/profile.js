@@ -63,14 +63,36 @@ const createProfileExperience = async (experience) => {
     }
 };
 
+const updateProfileInfo = async (id, info) => {
+    const reqBody = {
+        name: info.name,
+        pronouns: info.pronouns,
+        bio: info.bio,
+        location: info.location,
+        universityName: info.universityName,
+        image: info.image,
+        bannerImg: info.bannerImg,
+    }
+    try {
+        const response = await fetch(`http://localhost:9999/update-profile/${id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(reqBody),
+        })
+
+        const data = response.json();
+        console.log('Profile information updated successfully: ', data);
+    } catch (err) {
+        console.error('Error in updating profile information: ', err);
+    }
+}
+
 const updateProfileAbout = async (id, about) => {
     const reqBody = {
         about: about
     };
-    console.log('id', id)
-    console.log('about', about)
     try {
-        const response = await fetch(`http://localhost:9999/update-profile/${id}`, {
+        const response = await fetch(`http://localhost:9999/update-profile/about/${id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(reqBody),
@@ -83,4 +105,4 @@ const updateProfileAbout = async (id, about) => {
     }
 };
 
-export { fetchRecommendedProfiles, fetchProfileInformation, fetchProfileExperience, fetchProfileEducation, createProfileExperience, updateProfileAbout };
+export { fetchRecommendedProfiles, fetchProfileInformation, fetchProfileExperience, fetchProfileEducation, createProfileExperience, updateProfileInfo, updateProfileAbout };

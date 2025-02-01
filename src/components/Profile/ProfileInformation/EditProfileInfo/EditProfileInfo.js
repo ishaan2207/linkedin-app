@@ -7,7 +7,16 @@ import './EditProfileInfo.css';
 // components
 import CloseIcon from '@mui/icons-material/Close';
 
+// apis
+import { updateProfileInfo } from "../../../../utils/apis/profile";
+
 function EditProfileInfo({ profileInfo, setProfileInfo, showEditInfo, setShowEditInfo }) {
+
+    const handleSubmit = () => {
+        setShowEditInfo('none');
+        updateProfileInfo(profileInfo._id, profileInfo);
+    }
+
     return (
         <div className="editProfileInfoContainer" style={{ display: showEditInfo }}>
             <div className="editProfileInfoHeader">
@@ -54,7 +63,7 @@ function EditProfileInfo({ profileInfo, setProfileInfo, showEditInfo, setShowEdi
             </div>
             <div className="separator secondSep"></div>
             <div className="editProfileInfoFooter">
-                <button>Save</button>
+                <button onClick={handleSubmit}>Save</button>
             </div>
         </div>
     )
