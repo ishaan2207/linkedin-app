@@ -28,27 +28,30 @@ function ProfileExperience({ setShowAddExperience }) {
             <div className="profileExperienceHeader">
                 <p>Experience</p>
                 <div className="profileHeaderButtons">
-                    <button onClick={() => handleShowExperience('block')}><AddIcon style={{ height: '30px', width: '30px', marginRight: '20px' }} /></button>
-                    <button><EditIcon /></button>
+                    <button onClick={() => handleShowExperience('block')}><AddIcon style={{ height: '30px', width: '30px' }} /></button>
                 </div>
             </div>
             <div className="profileExperience">
-                {experiences.map(experience => (
-                    <div className="experiencesContainer">
-                        <div className="profileExperienceImage">
-                            <img src={experience.companyImage} alt="" />
+                {experiences.map((experience, key) => (
+                    <div key={key}>
+                        <div className="experiencesContainer" key={key}>
+                            <div className="profileExperienceImage">
+                                <img src={experience.companyImage} alt="" />
+                            </div>
+                            <div className="profileExperienceDescription">
+                                <div className="experienceTitle">{experience.title}</div>
+                                <div className="experienceCompany">{experience.company}</div>
+                                <div className="experienceStartEndDates">{experience.startDate} to {experience.endDate}</div>
+                                <div className="experienceLocation">{experience.location}</div>
+                                <ul className="experienceDescription">
+                                    {experience.descriptions.map(description => (
+                                        <li>{description}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <button className="editProfileEntry"><EditIcon /></button>
                         </div>
-                        <div className="profileExperienceDescription">
-                            <div className="experienceTitle">{experience.title}</div>
-                            <div className="experienceCompany">{experience.company}</div>
-                            <div className="experienceStartEndDates">{experience.startDate} to {experience.endDate}</div>
-                            <div className="experienceLocation">{experience.location}</div>
-                            <ul className="experienceDescription">
-                                {experience.descriptions.map(description => (
-                                    <li>{description}</li>
-                                ))}
-                            </ul>
-                        </div>
+                        {key !== experiences.length - 1 ? <div className="separator"></div> : ''}
                     </div>
                 ))}
             </div>

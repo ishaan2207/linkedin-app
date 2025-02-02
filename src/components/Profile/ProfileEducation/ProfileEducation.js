@@ -19,8 +19,7 @@ function ProfileEducation({ allEducations, setShowAddEducation }) {
             <div className="profileEducationHeader">
                 <p>{PROFILE_EDUCATION.EDUCATION}</p>
                 <div className="profileHeaderButtons">
-                    <button onClick={() => setShowAddEducation('block')}><AddIcon style={{ height: '30px', width: '30px', marginRight: '20px' }} /></button>
-                    <button><EditIcon /></button>
+                    <button onClick={() => setShowAddEducation('block')}><AddIcon style={{ height: '30px', width: '30px' }} /></button>
                 </div>
             </div>
             <div className="profileEducation">
@@ -39,8 +38,9 @@ function ProfileEducation({ allEducations, setShowAddEducation }) {
                                     <span>{PROFILE_EDUCATION.SKILLS}</span>
                                 </div>
                             </div>
+                            <button className="editProfileEntry"><EditIcon /></button>
                         </div>
-                        <div className="separator"></div>
+                        {key !== allEducations.length - 1 ? <div className="separator"></div> : ''}
                     </div>
                 ))}
             </div>

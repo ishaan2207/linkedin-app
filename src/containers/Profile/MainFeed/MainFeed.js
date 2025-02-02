@@ -23,6 +23,7 @@ import { experiences } from "../../../constants/mocks/Profile/profileMainFeed";
 
 // apis
 import { createProfileExperience, createProfileEducation, createProfileSkill, fetchProfileInformation, fetchProfileEducation } from "../../../utils/apis/profile";
+import UpdateSkill from "../../../components/Profile/Skills/UpdateSkill/UpdateSkill";
 
 function MainFeed() {
 
@@ -34,6 +35,8 @@ function MainFeed() {
 
     const [allSkills, setAllSkills] = useState([]);
     const [showAddSkills, setShowAddSkills] = useState('none');
+    const [showUpdateSkills, setShowUpdateSkills] = useState('none');
+    const [editSkill, setEditSkill] = useState({});
 
     const [profileInfo, setProfileInfo] = useState([]);
 
@@ -131,7 +134,10 @@ function MainFeed() {
 
             <AddSkill showAddSkills={showAddSkills} setShowAddSkills={setShowAddSkills} newSkill={newSkill}
                 setNewSkill={setNewSkill} addNewSkill={addNewSkill} />
-            <Skills allSkills={allSkills} setShowAddSkills={setShowAddSkills} />
+            <UpdateSkill setAllSkills={setAllSkills} showUpdateSkills={showUpdateSkills} setShowUpdateSkills={setShowUpdateSkills}
+                editSkill={editSkill} setEditSkill={setEditSkill} />
+            <Skills allSkills={allSkills} setShowAddSkills={setShowAddSkills} setShowUpdateSkills={setShowUpdateSkills}
+                setEditSkill={setEditSkill} />
         </div>
     )
 }

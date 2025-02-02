@@ -90,3 +90,7 @@
 .showAllSkillsButton:hover {
     background-color: #8C8C8C1A;
 }
+
+.skillInformation {
+    display: flex;
+}

@@ -146,7 +146,29 @@ const updateProfileAbout = async (id, about) => {
     }
 };
 
+const updateProfileSkill = async (skill) => {
+    const reqBody = {
+        skillId: skill.id,
+        skill: skill.skill,
+        image: skill.image,
+        learntFrom: skill.learntFrom,
+    };
+    console.log(skill.id);
+    try {
+        const response = await fetch(`http://localhost:9999/update-profile/skill/679b06280daa86b9790c50c3`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(reqBody),
+        })
+
+        const data = await response.json();
+        console.log('Profile skill updated successfully: ', data);
+    } catch (err) {
+        console.error('Error in updating profile skill: ', err);
+    }
+}
+
 export {
     fetchRecommendedProfiles, fetchProfileInformation, fetchProfileExperience, fetchProfileEducation, createProfileExperience,
-    createProfileEducation, createProfileSkill, updateProfileInfo, updateProfileAbout
+    createProfileEducation, createProfileSkill, updateProfileInfo, updateProfileAbout, updateProfileSkill
 };
