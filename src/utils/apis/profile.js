@@ -146,6 +146,27 @@ const updateProfileAbout = async (id, about) => {
     }
 };
 
+const updateProfileEducation = async (education) => {
+    const reqBody = {
+        image: education.image,
+        location: education.location,
+        field: education.field,
+        dates: education.dates,
+    };
+    try {
+        const response = await fetch(`http://localhost:9999/update-profile/education/${education._id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(reqBody),
+        })
+
+        const data = response.json();
+        console.log('Successfully updated profile education: ', data);
+    } catch (err) {
+        console.error('Error in updating profile eduation: ', err);
+    }
+}
+
 const updateProfileSkill = async (skill) => {
     const reqBody = {
         skillId: skill.id,
@@ -153,7 +174,6 @@ const updateProfileSkill = async (skill) => {
         image: skill.image,
         learntFrom: skill.learntFrom,
     };
-    console.log(skill.id);
     try {
         const response = await fetch(`http://localhost:9999/update-profile/skill/679b06280daa86b9790c50c3`, {
             method: 'PUT',
@@ -170,5 +190,5 @@ const updateProfileSkill = async (skill) => {
 
 export {
     fetchRecommendedProfiles, fetchProfileInformation, fetchProfileExperience, fetchProfileEducation, createProfileExperience,
-    createProfileEducation, createProfileSkill, updateProfileInfo, updateProfileAbout, updateProfileSkill
+    createProfileEducation, createProfileSkill, updateProfileInfo, updateProfileAbout, updateProfileEducation, updateProfileSkill
 };

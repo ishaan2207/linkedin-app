@@ -24,6 +24,7 @@ import { experiences } from "../../../constants/mocks/Profile/profileMainFeed";
 // apis
 import { createProfileExperience, createProfileEducation, createProfileSkill, fetchProfileInformation, fetchProfileEducation } from "../../../utils/apis/profile";
 import UpdateSkill from "../../../components/Profile/Skills/UpdateSkill/UpdateSkill";
+import EditEducation from "../../../components/Profile/ProfileEducation/EditEduation/EditEducation";
 
 function MainFeed() {
 
@@ -32,6 +33,8 @@ function MainFeed() {
 
     const [allEducations, setAllEducations] = useState([]);
     const [showAddEducation, setShowAddEducation] = useState('none');
+    const [showEditEducation, setShowEditEducation] = useState('none');
+    const [editEducation, setEditEducation] = useState({});
 
     const [allSkills, setAllSkills] = useState([]);
     const [showAddSkills, setShowAddSkills] = useState('none');
@@ -130,7 +133,10 @@ function MainFeed() {
 
             <AddEducation showAddEducation={showAddEducation} setShowAddEducation={setShowAddEducation}
                 newEducation={newEducation} setNewEducation={setNewEducation} addNewEducation={addNewEducation} />
-            <ProfileEducation allEducations={allEducations} setShowAddEducation={setShowAddEducation} />
+            <EditEducation setAllEducations={setAllEducations} showEditEducation={showEditEducation}
+                setShowEditEducation={setShowEditEducation} editEducation={editEducation} setEditEducation={setEditEducation} />
+            <ProfileEducation allEducations={allEducations} setShowAddEducation={setShowAddEducation}
+                setShowEditEducation={setShowEditEducation} setEditEducation={setEditEducation} />
 
             <AddSkill showAddSkills={showAddSkills} setShowAddSkills={setShowAddSkills} newSkill={newSkill}
                 setNewSkill={setNewSkill} addNewSkill={addNewSkill} />

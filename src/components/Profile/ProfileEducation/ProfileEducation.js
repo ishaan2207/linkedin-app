@@ -12,7 +12,12 @@ import DiamondOutlinedIcon from '@mui/icons-material/DiamondOutlined';
 // constants
 import { PROFILE_EDUCATION } from "../../../constants/texts/Profile/profileEducation";
 
-function ProfileEducation({ allEducations, setShowAddEducation }) {
+function ProfileEducation({ allEducations, setShowAddEducation, setShowEditEducation, setEditEducation }) {
+
+    const handleEditEducation = (education) => {
+        setShowEditEducation('block');
+        setEditEducation(education);
+    }
 
     return (
         <div className="profileEducationContainer">
@@ -38,7 +43,7 @@ function ProfileEducation({ allEducations, setShowAddEducation }) {
                                     <span>{PROFILE_EDUCATION.SKILLS}</span>
                                 </div>
                             </div>
-                            <button className="editProfileEntry"><EditIcon /></button>
+                            <button className="editProfileEntry" onClick={() => handleEditEducation(education)}><EditIcon /></button>
                         </div>
                         {key !== allEducations.length - 1 ? <div className="separator"></div> : ''}
                     </div>
