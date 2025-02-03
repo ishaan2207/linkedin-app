@@ -11,11 +11,16 @@ import EditNoteOutlinedIcon from '@mui/icons-material/EditNoteOutlined';
 import ArrowDropDownOutlinedIcon from '@mui/icons-material/ArrowDropDownOutlined';
 import MessagesChat from "./MessagesChat/MessagesChat";
 
+// apis
+import { fetchProfileInformation } from "../../../utils/apis/profile";
+
 function MessagesFeed({ messages }) {
     const messageFeedButtons = ['Unread', 'My Connections', 'InMail', 'Starred'];
 
-    const [selectedMessageId, setSelectedMessageId] = useState(messages[0]);
+    const [selectedMessageId, setSelectedMessageId] = useState(messages[0]._id);
     const [selectedMessage, setSelectedMessage] = useState(messages[0]);
+
+    const [messageUser, setMessageUser] = useState({});
 
     const [viewableColumn, setViewableColumn] = useState('left');
     const [isMobile, setIsMobile] = useState(window.innerWidth < 650);
@@ -31,7 +36,7 @@ function MessagesFeed({ messages }) {
     }, []);
 
     const handleSelectedMessage = (message) => {
-        setSelectedMessageId(message.id);
+        setSelectedMessageId(message._id);
         setSelectedMessage(message);
 
         if (isMobile) {
@@ -62,19 +67,21 @@ function MessagesFeed({ messages }) {
             <div className="messagesFeedButtons">
                 <button className="messagesFeedFocusedButton"><span>Focused</span> <ArrowDropDownOutlinedIcon /></button>
                 <div className="divider"></div>
-                {messageFeedButtons.map(messageFeedButton => <button className="messagesFeedButtonShared">{messageFeedButton}</button>)}
+                {messageFeedButtons.map(messageFeedButton => <button className="messagesFeedButtonShared">{messageFeedButton}
+                </button>)}
             </div>
             <div className="separator"></div>
 
             <div className="messagesFeedColumns">
                 {(viewableColumn === 'left' || !isMobile) && (
                     <div className="messagesFeedLeftColumn">
-                        {messages.map(message => (
+                        {messages.map((message, key) => (
                             <div
-                                key={message.id}
-                                className={`messagePreviewContainer ${selectedMessageId === message.id ? 'selected' : ''}`}
+                                key={key}
+                                className={`messagePreviewContainer ${selectedMessageId === message._id ? 'selected' : ''}`}
                                 onClick={() => handleSelectedMessage(message)}>
-                                <div className="messagePreviewUserImage"><img src={message.img} /></div>
+                                {/* {fetchProfileInformation(message.user2).then(s)} */}
+                                <div className="messagePreviewUserImage"><img src={message.img} alt="" /></div>
                                 <div className="messageInformation">
                                     <div>
                                         <p>{message.firstName + ' ' + message.lastName}</p>

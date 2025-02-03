@@ -8,9 +8,9 @@ const fetchRecommendedProfiles = async () => {
     }
 };
 
-const fetchProfileInformation = async () => {
+const fetchProfileInformation = async (id) => {
     try {
-        const response = await fetch('http://localhost:9999/fetch-profile/info');
+        const response = await fetch(`http://localhost:9999/fetch-profile/info/${id}`);
         const data = response.json();
         return data;
     } catch (err) {
