@@ -1,5 +1,5 @@
 // deps
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 // styles
 import './ProfileExperience.css';
@@ -8,18 +8,14 @@ import './ProfileExperience.css';
 import AddIcon from '@mui/icons-material/Add';
 import EditIcon from '@mui/icons-material/Edit';
 
-// apis
-import { fetchProfileExperience } from "../../../utils/apis/profile";
+function ProfileExperience({ experiences, setShowAddExperience, setShowEditExperience, setEditExperience }) {
 
-function ProfileExperience({ setShowAddExperience }) {
+    const handleEditExperience = (experience) => {
+        setShowEditExperience('block')
+        setEditExperience(experience);
+    }
 
-    const [experiences, setExperiences] = useState([]);
-
-    useEffect(() => {
-        fetchProfileExperience().then(data => setExperiences(data))
-    }, [])
-
-    function handleShowExperience(show) {
+    const handleShowExperience = (show) => {
         setShowAddExperience(show);
     }
 
@@ -34,6 +30,7 @@ function ProfileExperience({ setShowAddExperience }) {
             <div className="profileExperience">
                 {experiences.map((experience, key) => (
                     <div key={key}>
+                        {console.log('experience', experience)}
                         <div className="experiencesContainer" key={key}>
                             <div className="profileExperienceImage">
                                 <img src={experience.companyImage} alt="" />
@@ -49,7 +46,7 @@ function ProfileExperience({ setShowAddExperience }) {
                                     ))}
                                 </ul>
                             </div>
-                            <button className="editProfileEntry"><EditIcon /></button>
+                            <button className="editProfileEntry" onClick={() => handleEditExperience(experience)}><EditIcon /></button>
                         </div>
                         {key !== experiences.length - 1 ? <div className="separator"></div> : ''}
                     </div>

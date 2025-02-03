@@ -146,6 +146,30 @@ const updateProfileAbout = async (id, about) => {
     }
 };
 
+const updateProfileExperience = async (experience) => {
+    const reqBody = {
+        title: experience.title,
+        company: experience.company,
+        companyImage: experience.companyImage,
+        location: experience.location,
+        startDate: experience.startDate,
+        endDate: experience.endDate,
+        descriptions: experience.descriptions,
+    };
+    try {
+        const response = await fetch(`http://localhost:9999/update-profile/experience/${experience._id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(reqBody),
+        })
+
+        const data = response.json();
+        console.log('Successfully updated profile experience: ', data);
+    } catch (err) {
+        console.error('Error in udating profile experience: ', err);
+    }
+}
+
 const updateProfileEducation = async (education) => {
     const reqBody = {
         image: education.image,
@@ -190,5 +214,6 @@ const updateProfileSkill = async (skill) => {
 
 export {
     fetchRecommendedProfiles, fetchProfileInformation, fetchProfileExperience, fetchProfileEducation, createProfileExperience,
-    createProfileEducation, createProfileSkill, updateProfileInfo, updateProfileAbout, updateProfileEducation, updateProfileSkill
+    createProfileEducation, createProfileSkill, updateProfileInfo, updateProfileAbout, updateProfileExperience,
+    updateProfileEducation, updateProfileSkill
 };

@@ -17,6 +17,8 @@ import Skills from "../../../components/Profile/Skills/Skills";
 import AddSkill from "../../../components/Profile/Skills/AddSkill/AddSkill";
 import EditProfileAbout from "../../../components/Profile/ProfileAbout/EditProfileAbout/EditProfileAbout";
 import EditProfileInfo from "../../../components/Profile/ProfileInformation/EditProfileInfo/EditProfileInfo";
+import EditEducation from "../../../components/Profile/ProfileEducation/EditEduation/EditEducation";
+import EditExperience from "../../../components/Profile/ProfileExperience/EditExperience/EditExperience";
 
 // constants
 import { experiences } from "../../../constants/mocks/Profile/profileMainFeed";
@@ -24,12 +26,13 @@ import { experiences } from "../../../constants/mocks/Profile/profileMainFeed";
 // apis
 import { createProfileExperience, createProfileEducation, createProfileSkill, fetchProfileInformation, fetchProfileEducation } from "../../../utils/apis/profile";
 import UpdateSkill from "../../../components/Profile/Skills/UpdateSkill/UpdateSkill";
-import EditEducation from "../../../components/Profile/ProfileEducation/EditEduation/EditEducation";
 
 function MainFeed() {
 
     const [allExperiences, setAllExperiences] = useState(experiences);
     const [showAddExperience, setShowAddExperience] = useState('none');
+    const [showEditExperience, setShowEditExperience] = useState('none');
+    const [editExperience, setEditExperience] = useState({});
 
     const [allEducations, setAllEducations] = useState([]);
     const [showAddEducation, setShowAddEducation] = useState('none');
@@ -126,10 +129,14 @@ function MainFeed() {
 
             <ProfileActivity />
 
-            <ProfileExperience experiences={allExperiences} setShowAddExperience={setShowAddExperience} />
             <AddExperience showAddExperience={showAddExperience} setShowAddExperience={setShowAddExperience}
                 newExperienceFields={newExperienceFields} setNewExperienceFields={setNewExperienceFields}
                 addNewExperience={addNewExperience} />
+            <EditExperience setAllExperiences={setAllExperiences} showEditExperience={showEditExperience}
+                setShowEditExperience={setShowEditExperience} editExperience={editExperience} setEditExperience={setEditExperience} />
+            <ProfileExperience experiences={allExperiences} setShowAddExperience={setShowAddExperience}
+                setShowEditExperience={setShowEditExperience} setEditExperience={setEditExperience} />
+
 
             <AddEducation showAddEducation={showAddEducation} setShowAddEducation={setShowAddEducation}
                 newEducation={newEducation} setNewEducation={setNewEducation} addNewEducation={addNewEducation} />
