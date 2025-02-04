@@ -1,6 +1,8 @@
+import { PRODUCTION_URL } from "./constants";
+
 const fetchNetworkInvites = async () => {
     try {
-        const response = await fetch('http://localhost:9999/fetch-network');
+        const response = await fetch(`${PRODUCTION_URL}/fetch-network`);
         const data = response.json();
         return data;
     } catch (err) {
@@ -10,7 +12,7 @@ const fetchNetworkInvites = async () => {
 
 const fetchNetworkProfiles = async () => {
     try {
-        const response = await fetch('http://localhost:9999/fetch-network/profiles');
+        const response = await fetch(`${PRODUCTION_URL}/fetch-network/profiles`);
         const data = response.json();
         return data;
     } catch (err) {
@@ -20,7 +22,7 @@ const fetchNetworkProfiles = async () => {
 
 const deleteNetworkInvite = async (invite) => {
     try {
-        const response = await fetch(`http://localhost:9999/delete-network/${invite._id}`, {
+        const response = await fetch(`${PRODUCTION_URL}/delete-network/${invite._id}`, {
             method: 'DELETE',
         })
 
@@ -33,7 +35,7 @@ const deleteNetworkInvite = async (invite) => {
 
 const deleteNetworkProfile = async (profile) => {
     try {
-        const response = await fetch(`http://localhost:9999/delete-network/profile/${profile._id}`, {
+        const response = await fetch(`${PRODUCTION_URL}/delete-network/profile/${profile._id}`, {
             method: 'DELETE',
         })
 

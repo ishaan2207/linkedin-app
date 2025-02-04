@@ -1,6 +1,8 @@
+import { PRODUCTION_URL } from "./constants";
+
 const fetchJobs = async () => {
     try {
-        const response = await fetch('http://localhost:9999/fetch-jobs');
+        const response = await fetch(`${PRODUCTION_URL}/fetch-jobs`);
         const data = response.json();
         return data;
     } catch (err) {

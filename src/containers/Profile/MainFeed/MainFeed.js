@@ -47,10 +47,10 @@ function MainFeed() {
     const [showEditAbout, setShowEditAbout] = useState('none');
 
     useEffect(() => {
-        fetchProfileInformation().then(data => setProfileInfo(data[0]));
+        fetchProfileInformation('1').then(data => setProfileInfo(data));
         fetchProfileExperience().then(data => setAllExperiences(data));
         fetchProfileEducation().then(data => setAllEducations(data));
-        fetchProfileInformation().then(data => setAllSkills(data[0].skills));
+        fetchProfileInformation('1').then(data => setAllSkills(data.skills));
     }, [])
 
     const [newExperienceFields, setNewExperienceFields] = useState({

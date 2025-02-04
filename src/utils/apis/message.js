@@ -1,6 +1,8 @@
+import { PRODUCTION_URL } from "./constants";
+
 const fetchMessages = async (userId) => {
     try {
-        const response = await fetch(`http://localhost:9999/fetch-message/${userId}`);
+        const response = await fetch(`${PRODUCTION_URL}/fetch-message/${userId}`);
         const data = response.json();
         return data;
     } catch(err) {

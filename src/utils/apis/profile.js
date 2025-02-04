@@ -1,6 +1,8 @@
+import { PRODUCTION_URL } from "./constants";
+
 const fetchRecommendedProfiles = async () => {
     try {
-        const response = await fetch('http://localhost:9999/fetch-profile');
+        const response = await fetch(`${PRODUCTION_URL}/fetch-profile`);
         const data = response.json();
         return data;
     } catch (err) {
@@ -10,7 +12,7 @@ const fetchRecommendedProfiles = async () => {
 
 const fetchProfileInformation = async (id) => {
     try {
-        const response = await fetch(`http://localhost:9999/fetch-profile/info/${id}`);
+        const response = await fetch(`${PRODUCTION_URL}/fetch-profile/info/${id}`);
         const data = response.json();
         return data;
     } catch (err) {
@@ -20,7 +22,7 @@ const fetchProfileInformation = async (id) => {
 
 const fetchProfileExperience = async () => {
     try {
-        const response = await fetch('http://localhost:9999/fetch-profile/experience');
+        const response = await fetch(`${PRODUCTION_URL}/fetch-profile/experience`);
         const data = response.json();
         return data;
     } catch (err) {
@@ -30,7 +32,7 @@ const fetchProfileExperience = async () => {
 
 const fetchProfileEducation = async () => {
     try {
-        const response = await fetch('http://localhost:9999/fetch-profile/education');
+        const response = await fetch(`${PRODUCTION_URL}/fetch-profile/education`);
         const data = response.json();
         return data;
     } catch (err) {
@@ -49,7 +51,7 @@ const createProfileExperience = async (experience) => {
             descriptions: experience.descriptions,
         };
 
-        const response = await fetch('http://localhost:9999/create-profile/experience', {
+        const response = await fetch(`${PRODUCTION_URL}/create-profile/experience`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(reqBody),
@@ -70,7 +72,7 @@ const createProfileEducation = async (education) => {
             dates: education.dates,
         };
 
-        const response = await fetch('http://localhost:9999/create-profile/education', {
+        const response = await fetch(`${PRODUCTION_URL}/create-profile/education`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(reqBody),
@@ -91,7 +93,7 @@ const createProfileSkill = async (id, skill) => {
             learntFrom: skill.learntFrom,
         };
 
-        const response = await fetch(`http://localhost:9999/create-profile/skill/${id}`, {
+        const response = await fetch(`${PRODUCTION_URL}/create-profile/skill/${id}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(reqBody),
@@ -115,7 +117,7 @@ const updateProfileInfo = async (id, info) => {
         bannerImg: info.bannerImg,
     }
     try {
-        const response = await fetch(`http://localhost:9999/update-profile/${id}`, {
+        const response = await fetch(`${PRODUCTION_URL}/update-profile/${id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(reqBody),
@@ -133,7 +135,7 @@ const updateProfileAbout = async (id, about) => {
         about: about
     };
     try {
-        const response = await fetch(`http://localhost:9999/update-profile/about/${id}`, {
+        const response = await fetch(`${PRODUCTION_URL}/update-profile/about/${id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(reqBody),
@@ -157,7 +159,7 @@ const updateProfileExperience = async (experience) => {
         descriptions: experience.descriptions,
     };
     try {
-        const response = await fetch(`http://localhost:9999/update-profile/experience/${experience._id}`, {
+        const response = await fetch(`${PRODUCTION_URL}/update-profile/experience/${experience._id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(reqBody),
@@ -178,7 +180,7 @@ const updateProfileEducation = async (education) => {
         dates: education.dates,
     };
     try {
-        const response = await fetch(`http://localhost:9999/update-profile/education/${education._id}`, {
+        const response = await fetch(`${PRODUCTION_URL}/update-profile/education/${education._id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(reqBody),
@@ -199,7 +201,7 @@ const updateProfileSkill = async (skill) => {
         learntFrom: skill.learntFrom,
     };
     try {
-        const response = await fetch(`http://localhost:9999/update-profile/skill/679b06280daa86b9790c50c3`, {
+        const response = await fetch(`${PRODUCTION_URL}/update-profile/skill/679b06280daa86b9790c50c3`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(reqBody),

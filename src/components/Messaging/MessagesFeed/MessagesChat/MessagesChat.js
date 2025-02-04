@@ -19,14 +19,14 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 function MessagesChat({ message, handleBackToLeft, isMobile }) {
-
+    console.log('message', message);
     return (
         <div className="messageChatContainer">
             <div className="messageChatHeader">
                 <div className="messageChatHeaderLeft">
                     {isMobile ? <button onClick={handleBackToLeft}><ArrowBackIcon /></button> : ''}
                     <div>
-                        <p className="messageChatHeaderUsername">{message.firstName + ' ' + message.lastName}</p>
+                        <p className="messageChatHeaderUsername">{message?.user2?.firstName + ' ' + message?.user2?.lastName}</p>
                         <p className="messageChatHeaderUserStatus">Available on mobile</p>
                     </div>
                 </div>
@@ -40,34 +40,38 @@ function MessagesChat({ message, handleBackToLeft, isMobile }) {
             <div className="messageChatExtendingContainer">
                 <div className="messageChatUserInfoContainer">
                     <div>
-                        <img src={message.img} />
+                        <img src={message?.user2?.image} alt=""/>
                     </div>
                     <div className="messageChatUserInfo">
                         <p className="messageChatUsername">
-                            <span>{message.firstName + ' ' + message.lastName}</span>
+                            <span>{message?.user2?.firstName + ' ' + message?.user2?.lastName}</span>
                             <VerifiedUserOutlinedIcon style={{ height: '16px', width: '16px', color: '#00000099', margin: '0 0 0 4px' }} />
                             <CircleIcon style={{ height: '2px', width: '2px', color: '#00000099', margin: '0 4px' }} />
                             <span className="degreeOfConnection">1st</span>
                         </p>
-                        <p className="messageChatUserBio">{message.userBio}</p>
+                        <p className="messageChatUserBio">{message?.user2?.bio}</p>
                     </div>
                 </div>
                 <div className="messageChatDateContainer">
                     <div className="separator"></div>
-                    <div className="messageChatDate">{message.date}</div>
+                    <div className="messageChatDate">{message?.messages.length > 0 ? message?.messages[0]?.timeSent : ''}</div>
                     <div className="separator"></div>
                 </div>
                 <div className="messageChatBody">
                     <div className="messageChatBodyLeft">
-                        <img src={message.img} />
+                        <img src={message?.user2?.image} alt=""/>
                     </div>
                     <div className="messageChatBodyRight">
-                        <div className="messageSender">
-                            <span>{message.firstName + ' ' + message.lastName}</span>
-                            <CircleIcon style={{ height: '3px', width: '3px', color: '#00000099', margin: '0 4px' }} />
-                            <span className="messageChatTimeStamp">{message.timeSent}</span>
-                        </div>
-                        <div className="messageBody">{message.text}</div>
+                        {message?.messages.map((chat, key) => (
+                            <div key={key}>
+                                <div className="messageSender">
+                                    <span>{chat.senderName}</span>
+                                    <CircleIcon style={{ height: '3px', width: '3px', color: '#00000099', margin: '0 4px' }} />
+                                    <span className="messageChatTimeStamp">{chat.timeSent}</span>
+                                </div>
+                                <div className="messageBody">{chat.text}</div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>

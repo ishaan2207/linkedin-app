@@ -6,7 +6,7 @@ import OpenedMessage from "./OpenedMessage/OpenedMessage";
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import EditNoteIcon from '@mui/icons-material/EditNote';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+// import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import SearchIcon from '@mui/icons-material/Search';
 import TuneIcon from '@mui/icons-material/Tune';
 
@@ -84,8 +84,8 @@ function MessageBox() {
                         <button className="toggleOther" onClick={handleOthersClick}>Other</button>
                     </div>
                     <div className="messageBoxMessagesContainer">
-                        {selectedMessages.map(message => (
-                            <div className="messageBoxMessage" onClick={() => handleOpenMessage(message)}>
+                        {selectedMessages.map((message, key) => (
+                            <div className="messageBoxMessage" key={key} onClick={() => handleOpenMessage(message)}>
                                 <img src={message.img} />
                                 <div className="messageBoxMessageRight">
                                     <div className="messageSender">

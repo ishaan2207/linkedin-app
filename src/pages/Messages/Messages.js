@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import './Messages.css';
 
 // contexts
-import { MessageProvider, useMessage } from '../../Context/MessageContext';
+// import { MessageProvider, useMessage } from '../../Context/MessageContext';
 
 // components
 import MessagingPage from "./MessagingPage/MessagingPage";
@@ -14,7 +14,7 @@ import MessagingPage from "./MessagingPage/MessagingPage";
 import fetchMessages from "../../utils/apis/message";
 
 function Messages() {
-    const { messages } = useMessage();
+    // const { messages } = useMessage();
     const [allMessages, setAllMessages] = useState([]);
 
     useEffect(() => {

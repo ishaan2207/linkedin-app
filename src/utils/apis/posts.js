@@ -1,6 +1,8 @@
+import { PRODUCTION_URL } from "./constants";
+
 const fetchAllPosts = async () => {
     try {
-        const response = await fetch('http://localhost:9999/fetch-posts');
+        const response = await fetch(`${PRODUCTION_URL}/fetch-posts`);
         const data = response.json();
         return data;
     } catch (err) {
@@ -17,7 +19,7 @@ const createPost = async (post) => {
             userId: post.userId,
         }
 
-        const response = await fetch('http://localhost:9999/create-post', {
+        const response = await fetch(`${PRODUCTION_URL}/create-post`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(reqBody),
@@ -32,7 +34,7 @@ const createPost = async (post) => {
 
 const deletePost = async (postId) => {
     try {
-        const response = await fetch(`http://localhost:9999/delete-post/${postId}`, {
+        const response = await fetch(`${PRODUCTION_URL}/delete-post/${postId}`, {
             method: 'DELETE',
         });
 
@@ -49,7 +51,7 @@ const updatePost = async (post) => {
             postContent: post.postContent,
         }
 
-        const response = await fetch(`http://localhost:9999/update-post/${post.postId}`, {
+        const response = await fetch(`${PRODUCTION_URL}/update-post/${post.postId}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(reqBody),
@@ -67,7 +69,7 @@ const likePost = async (post) => {
         const reqBody = {
             likedByUser: post.likedByUser,
         }
-        const response = await fetch(`http://localhost:9999/update-post/${post.postId}/like`, {
+        const response = await fetch(`${PRODUCTION_URL}/update-post/${post.postId}/like`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(reqBody),

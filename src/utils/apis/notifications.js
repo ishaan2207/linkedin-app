@@ -1,6 +1,8 @@
+import { PRODUCTION_URL } from "./constants";
+
 const fetchNotifications = async () => {
     try {
-        const response = await fetch('http://localhost:9999/fetch-notifs');
+        const response = await fetch(`${PRODUCTION_URL}/fetch-notifs`);
         const data = response.json();
         return data;
     } catch (err) {
@@ -10,7 +12,7 @@ const fetchNotifications = async () => {
 
 const updateNotifications = async (notificationId) => {
     try {
-        const response = await fetch(`http://localhost:9999/update-notifs/${notificationId}`, {
+        const response = await fetch(`${PRODUCTION_URL}/update-notifs/${notificationId}`, {
             method: 'PUT',
         });
 
@@ -23,7 +25,7 @@ const updateNotifications = async (notificationId) => {
 
 const deleteNotification = async (notificationId) => {
     try {
-        const response = await fetch(`http://localhost:9999/delete-notifs/${notificationId}`, {
+        const response = await fetch(`${PRODUCTION_URL}/delete-notifs/${notificationId}`, {
             method: 'DELETE',
         });
 
