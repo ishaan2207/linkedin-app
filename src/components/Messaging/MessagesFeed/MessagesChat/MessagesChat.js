@@ -34,10 +34,10 @@ function MessagesChat({ message, setAllMessages, handleBackToLeft, isMobile }) {
         };
         updateMessage(message?._id, newMessage);
         setAllMessages(prevMessages =>
-            [...prevMessages.map(prevMessage =>
+            prevMessages.map(prevMessage =>
                 prevMessage._id === message._id ?
                     { ...prevMessage, messages: [...prevMessage.messages, newMessage] } : prevMessage
-            )]
+            )
         );
     };
 

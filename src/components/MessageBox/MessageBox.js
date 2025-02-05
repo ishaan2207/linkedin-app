@@ -1,20 +1,34 @@
-import React, { useState } from "react";
-import './MessageBox.css';
-import { useMessage } from "../../Context/MessageContext";
-import OpenedMessage from "./OpenedMessage/OpenedMessage";
+// deps
+import React, { useEffect, useState } from "react";
 
+// styles
+import './MessageBox.css';
+
+// components
+import OpenedMessage from "./OpenedMessage/OpenedMessage";
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import EditNoteIcon from '@mui/icons-material/EditNote';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-// import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import SearchIcon from '@mui/icons-material/Search';
 import TuneIcon from '@mui/icons-material/Tune';
 
-function MessageBox() {
-    const { messages } = useMessage();
+// apis
+import { fetchMessages } from "../../utils/apis/message";
 
-    const [focusedMessages, setFocusedMessages] = useState(messages.slice(0, messages.length / 2));
-    const [otherMessages, setOtherMessages] = useState(messages.slice(messages.length / 2, messages.length - 1));
+function MessageBox() {
+
+    const [messages, setMessages] = useState([]);
+
+    const [focusedMessages, setFocusedMessages] = useState([]);
+    const [otherMessages, setOtherMessages] = useState([]);
+
+    useEffect(() => {
+        fetchMessages('1').then(data => {
+            setMessages(data);
+            setFocusedMessages(data.slice(0, data.length / 2));
+            setOtherMessages(data.slice(data.length / 2, data.length - 1));
+        });
+    }, [])
 
     const [selectedMessages, setSelectedMessages] = useState(focusedMessages);
     const [openedMessages, setOpenedMessages] = useState([]);
@@ -48,11 +62,11 @@ function MessageBox() {
         <div className="messagesWidget">
             <div className="openedMessagesContainer">
                 {openedMessages.map((openedMessage, index) => (
-                    <div className="openedMessage">
-                        {console.log(openedMessages.length, index, openedMessages.length - 4)}
+                    <div className="openedMessage" key={index}>
                         <OpenedMessage
                             message={openedMessage} setOpenedMessages={setOpenedMessages} openedMessages={openedMessages}
                             minimized={openedMessages.length > 3 && index <= openedMessages.length - 4}
+                            setFocusedMessages={setFocusedMessages} setOtherMessages={setOtherMessages}
                         />
                     </div>
                 ))}
@@ -86,14 +100,17 @@ function MessageBox() {
                     <div className="messageBoxMessagesContainer">
                         {selectedMessages.map((message, key) => (
                             <div className="messageBoxMessage" key={key} onClick={() => handleOpenMessage(message)}>
-                                <img src={message.img} />
+                                <img src={message?.user2?.image} />
                                 <div className="messageBoxMessageRight">
                                     <div className="messageSender">
-                                        <span className="messageSenderName">{message.firstName + ' ' + message.lastName}</span>
-                                        <span>{message.date}</span>
+                                        <span className="messageSenderName">
+                                            {message?.user2?.firstName + ' ' + message?.user2?.lastName}
+                                        </span>
+                                        <span>{message ? message?.messages[0]?.timeSent : ''}</span>
                                     </div>
                                     <p className="messageBoxMessageText">
-                                        {message.text.length > 50 ? message.firstName + ": " + message.text.slice(0, 50) + '...' : message.firstName + ": " + message.text}
+                                        {message?.user2.firstName + ': ' + (message?.messages[0].text.length > 50
+                                            ? (message?.messages[0].text.slice(0, 50) + '...') : message?.messages[0].text)}
                                     </p>
                                 </div>
                             </div>

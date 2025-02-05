@@ -6,6 +6,7 @@
     width: 450px;
     font-family: 'Arial', sans-serif;
     margin-left: 20px;
+    z-index: 1000;
 }
 
 .openedMessageHeader {
