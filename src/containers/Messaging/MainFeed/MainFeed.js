@@ -7,10 +7,10 @@ import './MainFeed.css';
 // components
 import MessagesFeed from "../../../components/Messaging/MessagesFeed/MessagesFeed";
 
-function MainFeed({ messages }) {
+function MainFeed({ messages, setAllMessages }) {
     return (
         <div className="messagingMainFeedContainer">
-            <MessagesFeed messages={messages} />
+            <MessagesFeed messages={messages} setAllMessages={setAllMessages} />
         </div>
     )
 }

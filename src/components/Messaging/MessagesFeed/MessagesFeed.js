@@ -11,7 +11,7 @@ import EditNoteOutlinedIcon from '@mui/icons-material/EditNoteOutlined';
 import ArrowDropDownOutlinedIcon from '@mui/icons-material/ArrowDropDownOutlined';
 import MessagesChat from "./MessagesChat/MessagesChat";
 
-function MessagesFeed({ messages }) {
+function MessagesFeed({ messages, setAllMessages }) {
 
     const messageFeedButtons = ['Unread', 'My Connections', 'InMail', 'Starred'];
 
@@ -82,7 +82,7 @@ function MessagesFeed({ messages }) {
                                         <p>{message?.user2.firstName + ' ' + message?.user2.lastName}</p>
                                         <p className="messageInformationDate">{message?.messages[0].timeSent}</p>
                                     </div>
-                                    <p>{message?.user2.firstName + ': ' + (message?.messages[0].text.length > 35 
+                                    <p>{message?.user2.firstName + ': ' + (message?.messages[0].text.length > 35
                                         ? (message?.messages[0].text.slice(0, 35) + '...') : message?.messages[0].text)}</p>
                                 </div>
                             </div>
@@ -91,7 +91,8 @@ function MessagesFeed({ messages }) {
                 )}
                 {(viewableColumn === 'right' || !isMobile) && (
                     <div className="messagesFeedRightColumn" >
-                        <MessagesChat message={selectedMessage} handleBackToLeft={handleBackToLeft} isMobile={isMobile} />
+                        <MessagesChat message={selectedMessage} setAllMessages={setAllMessages} handleBackToLeft={handleBackToLeft}
+                            isMobile={isMobile} />
                     </div>
                 )}
             </div>

@@ -213,3 +213,34 @@
 .messageChatButtonsRight button:hover {
     background-color: #004182;
 }
+
+.messageContainer {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+    align-items: flex-start;
+}
+
+#sentByUser {
+    flex-direction: row-reverse;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.messageContentContainer {
+    max-width: 80%;
+}
+
+#sentByUser .messageContentContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#sentByUser .messageSender {
+    margin-left: auto;
+}
+
+#sentByUser .messageBody {
+    margin-left: auto;
+}

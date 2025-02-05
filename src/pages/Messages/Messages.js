@@ -11,7 +11,7 @@ import './Messages.css';
 import MessagingPage from "./MessagingPage/MessagingPage";
 
 // apis
-import fetchMessages from "../../utils/apis/message";
+import { fetchMessages } from "../../utils/apis/message";
 
 function Messages() {
     // const { messages } = useMessage();
@@ -23,7 +23,7 @@ function Messages() {
 
     return (
         <div className="messagesContainer">
-            <MessagingPage messages={allMessages} />
+            <MessagingPage messages={allMessages} setAllMessages={setAllMessages} />
         </div>
     )
 }

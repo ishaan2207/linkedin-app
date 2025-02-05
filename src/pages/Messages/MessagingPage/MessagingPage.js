@@ -8,11 +8,11 @@ import './MessagingPage.css';
 import MainFeed from "../../../containers/Messaging/MainFeed/MainFeed";
 import RightPane from "../../../containers/Messaging/RightPane/RightPane";
 
-function MessagingPage({ messages }) {
+function MessagingPage({ messages, setAllMessages }) {
     return (
         <div className="messagingPageContainer">
             <div className="messagingMainFeed">
-                <MainFeed messages={messages} />
+                <MainFeed messages={messages} setAllMessages={setAllMessages} />
             </div>
             <div className="messagingRightPane">
                 <RightPane />
