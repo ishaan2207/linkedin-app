@@ -14,7 +14,7 @@ import AppsIcon from '@mui/icons-material/Apps';
 import SquareIcon from '@mui/icons-material/Square';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
-function Navbar() {
+function Navbar({ user }) {
     const navigate = useNavigate();
 
     const [collapseIcons, setCollapseIcons] = useState(window.innerWidth > 450);
@@ -56,7 +56,7 @@ function Navbar() {
         {
             id: 6,
             icon: <AccountCircleIcon style={styles} />,
-            text: "Me",
+            text: user ? user?.name : 'Me',
             path: '/profile'
         }
     ]

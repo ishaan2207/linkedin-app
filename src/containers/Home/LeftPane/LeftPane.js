@@ -1,5 +1,5 @@
 // deps
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // styles
 import './LeftPane.js';
@@ -10,12 +10,25 @@ import PremiumAd from "../../../components/PremiumAd/PremiumAd";
 import ProfileStatistics from "../../../components/ProfileStatistics/ProfileStatistics";
 import BottomLeftPanel from "../../../components/BottomLeftPanel/BottomLeftPanel";
 
+// contexts
+import { useUser } from "../../../Context/UserContext.js";
+
+// apis 
+import { fetchProfileInformation } from "../../../utils/apis/profile.js";
+
 function LeftPane() {
+    const [userProfile, setUserProfile] = useState([]);
+    const { userId } = useUser();
+
+    useEffect(() => {
+        fetchProfileInformation('1').then(data => setUserProfile(data));
+    }, []);
+
     return (
         <div className="leftPaneContainer">
-            <ProfileSummary />
+            <ProfileSummary user={userProfile} />
             <PremiumAd />
-            <ProfileStatistics />
+            <ProfileStatistics user={userProfile} />
             <BottomLeftPanel />
         </div>
     )

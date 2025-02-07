@@ -8,10 +8,8 @@ import './ProfileStatistics.css';
 // constants
 import { PROFILE_STATS } from "../../constants/texts/Home/homeProfileStatistics";
 
-function ProfileStatistics() {
+function ProfileStatistics({ user }) {
     const navigate = useNavigate();
-
-    const profileViews = 14;
 
     function goToAnalytics() {
         navigate('/analytics')
@@ -21,7 +19,7 @@ function ProfileStatistics() {
         <div className="profileStatisticsContainer" onClick={goToAnalytics}>
             <div className="profileViewsContainer">
                 <p>{PROFILE_STATS.NUM_VIEWS}</p>
-                <p id="viewsValue">{profileViews}</p>
+                <p id="viewsValue">{user.profileViews}</p>
             </div>
             <p>{PROFILE_STATS.VIEW_ALL}</p>
         </div>

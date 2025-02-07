@@ -31,6 +31,13 @@ function MessagesFeed({ messages, setAllMessages }) {
         }
     }, []);
 
+    useEffect(() => {
+        if (messages.length > 0) {
+            setSelectedMessage(messages[0]);
+            setSelectedMessageId(messages[0]._id);
+        }
+    }, [messages, setSelectedMessage, setSelectedMessageId]);
+
     const handleSelectedMessage = (message) => {
         setSelectedMessageId(message?._id);
         setSelectedMessage(message);

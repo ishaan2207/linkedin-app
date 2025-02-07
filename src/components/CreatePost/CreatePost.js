@@ -23,8 +23,8 @@ function CreatePost({ createNewPost, createPostInput, setCreatePostInput }) {
                 <button onClick={createNewPost}><SendIcon /></button>
             </div>
             <div className="createPostButtonsContainer">
-                {CREATE_POST_ICONS.map(createPostIcon => (
-                    <div className="createPostButton">
+                {CREATE_POST_ICONS.map((createPostIcon, key) => (
+                    <div className="createPostButton" key={key}>
                         <div className="postButtonIcon">{createPostIcon.icon}</div>
                         <p className="postButtonText">{createPostIcon.text}</p>
                     </div>

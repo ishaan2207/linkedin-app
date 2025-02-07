@@ -1,9 +1,0 @@
-1. Make messages model in backend.
-- Each message will have a message text array of objects. Each object will contain the message text, time sent, and the user id 
-of the sender.
-- Array will be in order of the sending of messages.
-
-2. Make get controller and route in backend.
-3. Create get api for messages from frontend.
-4. Make post controller and route in backend to append new messages.
-5. Create post api to send new messages to backend. 

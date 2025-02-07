@@ -1,0 +1,55 @@
+.loginContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+}
+
+.loginPageLeft {
+    width: 620px;
+}
+
+.loginPageLeft h1 {
+    font-size: 48px;
+    color: #526A6E;
+    line-height: 1.25;
+    font-weight: 300;
+}
+
+.loginButton {
+    margin: 24px 0;
+    background: none;
+    border: 1px solid black;
+    border-radius: 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000000BF;
+    width: 400px;
+    padding: 8px 24px;
+}
+
+.loginButton:hover {
+    background-color: #0000000A;
+}
+
+.loginFooter {
+    font-size: 12px;
+    color: #00000099;
+    text-align: center;
+    line-height: 1.5;
+    width: 400px;
+}
+
+.loginFooter span {
+    color: #0A66C2;
+    font-weight: 600;
+}
+
+.loginFooter span:hover {
+    text-decoration: underline;
+}
+
+.loginPageRight img {
+    height: 560px;
+    width: 700px;
+}

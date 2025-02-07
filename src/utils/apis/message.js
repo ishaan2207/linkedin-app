@@ -2,7 +2,7 @@ import { PRODUCTION_URL, LOCAL_URL } from "./constants";
 
 const fetchMessages = async (userId) => {
     try {
-        const response = await fetch(`${LOCAL_URL}/fetch-message/${userId}`);
+        const response = await fetch(`${PRODUCTION_URL}/fetch-message/${userId}`);
         const data = response.json();
         return data;
     } catch (err) {
@@ -18,7 +18,7 @@ const updateMessage = async (id, message) => {
         senderName: message.senderName,
     };
     try {
-        const response = await fetch(`${LOCAL_URL}/update-message/${id}`, {
+        const response = await fetch(`${PRODUCTION_URL}/update-message/${id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(reqBody),

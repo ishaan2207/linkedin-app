@@ -58,8 +58,8 @@ function TrendingNow() {
             <div className="todaysPuzzles">
                 <p>{TRENDING_NOW.PUZZLES}</p>
                 <div className="invidualPuzzles">
-                    {TODAYS_PUZZLES.map(todaysPuzzle => (
-                        <div className="individualPuzzlesContainer">
+                    {TODAYS_PUZZLES.map((todaysPuzzle, key) => (
+                        <div className="individualPuzzlesContainer" key={key}>
                             <img src={todaysPuzzle.source} alt='' />
                             <div className="puzzleDescription">
                                 <p className="puzzleTitle">{todaysPuzzle.title}</p>

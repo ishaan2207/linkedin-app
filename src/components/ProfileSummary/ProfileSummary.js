@@ -8,10 +8,7 @@ import './ProfileSummary.css'
 // components
 import AddIcon from '@mui/icons-material/Add';
 
-// constants
-import { PROFILE_SUMMARY } from "../../constants/mocks/Home/homeProfileSummary";
-
-function ProfileSummary() {
+function ProfileSummary({ user }) {
     const navigate = useNavigate();
 
     function goToProfile() {
@@ -21,13 +18,13 @@ function ProfileSummary() {
     return (
         <div className="profileSummaryContainer" onClick={goToProfile}>
             <div className="bannerImageContainer">
-                <img src={PROFILE_SUMMARY.BANNER_IMG} alt="profileBannerImage" />
+                <img src={user?.bannerImg} alt="profileBannerImage" />
             </div>
             <div className="userInformationContainer">
-                <img className="userImage" src={PROFILE_SUMMARY.IMG} alt="profileImage" />
-                <p id="username">{PROFILE_SUMMARY.USERNAME}</p>
-                <p id="about">{PROFILE_SUMMARY.ABOUT}</p>
-                <p id="location">{PROFILE_SUMMARY.LOCATION}</p>
+                <img className="userImage" src={user?.image} alt="profileImage" />
+                <p id="username">{user?.name}</p>
+                <p id="about">{user?.bio}</p>
+                <p id="location">{user?.location}</p>
                 <button className="addExperienceButton">
                     <AddIcon style={{ paddingRight: '3px', height: '22px', width: '22px' }} />
                     Experience
