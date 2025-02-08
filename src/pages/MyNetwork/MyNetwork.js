@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import './MyNetwork.css';
 import LeftPane from "../../containers/MyNetwork/LeftPane/LeftPane";
 import MainFeed from "../../containers/MyNetwork/MainFeed/MainFeed";

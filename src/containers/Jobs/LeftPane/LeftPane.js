@@ -1,5 +1,5 @@
 // deps
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 // styles
 import './LeftPane.css';
@@ -10,10 +10,23 @@ import JobsTabs from "../../../components/Jobs/JobsTabs/JobsTabs";
 import Footer from "../../../components/Footer/Footer";
 import CollapsedJobTab from "../../../components/Jobs/CollapsedJobTab/CollapsedJobTab";
 
+// contexts
+import { useUser } from "../../../Context/UserContext";
+
+// apis
+import { fetchProfileInformation } from "../../../utils/apis/profile";
+
 function LeftPane() {
+    const [userProfile, setUserProfile] = useState([]);
+    const { userId } = useUser();
+
+    useEffect(() => {
+        fetchProfileInformation(userId).then(data => setUserProfile(data));
+    }, []);
+
     return (
         <div className="jobsLeftPaneContainer">
-            <ProfileSummary />
+            <ProfileSummary user={userProfile} />
             <JobsTabs />
             <CollapsedJobTab />
             <Footer />
