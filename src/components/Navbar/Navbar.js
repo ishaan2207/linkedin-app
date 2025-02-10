@@ -17,6 +17,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import AppsIcon from '@mui/icons-material/Apps';
 import SquareIcon from '@mui/icons-material/Square';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import NavModal from './NavModal/NavModal';
 
 function Navbar({ user }) {
     const navigate = useNavigate();
@@ -25,6 +26,12 @@ function Navbar({ user }) {
 
     const ICON_DIMENSIONS = collapseIcons ? '28px' : '23px';
     const styles = { height: ICON_DIMENSIONS, width: ICON_DIMENSIONS, color: 'gray', hover: 'black' }
+
+    const [showModal, setShowModal] = useState('none');
+
+    const handleToggleModal = () => {
+        setShowModal(prev => prev === 'none' ? 'block' : 'none');
+    }
 
     const navItems = [
         {
@@ -108,9 +115,20 @@ function Navbar({ user }) {
             <div className='navRight'>
                 <div className='navItems'>
                     {navItems.map((navItem, key) => (
-                        <div className='navItemsContainer' key={key} onClick={() => goToPage(navItem.path)}>
-                            <div className='navItemsIcon'>{navItem.icon}</div>
-                            <p className='navItemsText'>{navItem.text}</p>
+                        <div className='navItemsParentContainer' key={key}>
+                            {navItem.path !== '/profile' ?
+                                <div className='navItemsContainer' onClick={() => goToPage(navItem.path)}>
+                                    <div className='navItemsIcon'>{navItem.icon}</div>
+                                    <p className='navItemsText'>{navItem.text}</p>
+                                </div> :
+                                <div className='navItemProfile'>
+                                    <div className='navItemsContainer' onClick={handleToggleModal}>
+                                        <div className='navItemsIcon'>{navItem.icon}</div>
+                                        <p className='navItemsText'>{navItem.text}</p>
+                                    </div>
+                                    <NavModal showModal={showModal} setShowModal={setShowModal} />
+                                </div>
+                            }
                         </div>
                     ))}
                 </div>
