@@ -2,7 +2,7 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 
 // authentication
-import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from 'firebase/auth';
+import { getAuth, signInWithPopup, setPersistence, browserLocalPersistence, signOut, onAuthStateChanged } from 'firebase/auth';
 import { provider } from "../firebase";
 
 // apis
@@ -13,29 +13,46 @@ const UserContext = createContext();
 const UserProvider = ({ children }) => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [user, setUser] = useState({});
-    const [loading, setLoading] = useState(true);
+
     const auth = getAuth();
 
     useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, currentUser => {
-            setUser(currentUser);
-            setLoading(false);
-        });
+        setPersistence(auth, browserLocalPersistence)
+            .then(() => {
+                const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+                    if (currentUser) {
+                        const loggedInUser = {
+                            name: currentUser.displayName,
+                            image: currentUser.photoURL,
+                            userId: currentUser.uid,
+                        };
+                        setUser(loggedInUser);
+                        setIsLoggedIn(true);
+                    } else {
+                        setUser({});
+                        setIsLoggedIn(false);
+                    }
+                });
+                return () => unsubscribe();
+            })
+            .catch(err => console.error('Error setting persistence: ', err));
+    }, [auth])
 
-        return () => unsubscribe();
-    }, [])
-
-    const handleLogin = () => {
-        signInWithPopup(auth, provider).then(result => {
+    const handleLogin = async () => {
+        try {
+            const result = await signInWithPopup(auth, provider);
             const newUser = {
                 name: result?.user?.displayName,
                 image: result?.user?.photoURL,
                 userId: result?.user?.uid,
             };
             setUser(newUser);
+            createUser(newUser);
             setIsLoggedIn(true);
-        }).catch(err => console.error('Error: ', err));
-    }
+        } catch (err) {
+            console.error('Error in logging in: ', err);
+        }
+    };
 
     const handeLogout = async () => {
         try {
@@ -46,12 +63,8 @@ const UserProvider = ({ children }) => {
         }
     };
 
-    useEffect(() => {
-        createUser(user);
-    }, [user])
-
     return (
-        <UserContext.Provider value={{ isLoggedIn, setIsLoggedIn, user, setUser, loading, setLoading, handleLogin, handeLogout }}>
+        <UserContext.Provider value={{ isLoggedIn, setIsLoggedIn, user, setUser, handleLogin, handeLogout }}>
             {children}
         </UserContext.Provider>
     )

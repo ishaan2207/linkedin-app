@@ -1,7 +1,11 @@
+// deps
 import React, { useEffect, useState } from 'react';
-import './Navbar.css';
 import { useNavigate } from 'react-router-dom';
 
+// styles
+import './Navbar.css';
+
+// components
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import HomeIcon from '@mui/icons-material/Home';
 import PeopleIcon from '@mui/icons-material/People';
