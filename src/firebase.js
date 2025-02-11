@@ -8,8 +8,11 @@ import { GoogleAuthProvider } from "firebase/auth";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+const apiKey = process.env.REACT_APP_API_KEY;
+
 const firebaseConfig = {
-    apiKey: "AIzaSyBieroSRdGOjkjMaxhl5iGfTjXKOA2kOYA",
+    apiKey: apiKey,
     authDomain: "linkedin-1602c.firebaseapp.com",
     projectId: "linkedin-1602c",
     storageBucket: "linkedin-1602c.firebasestorage.app",
