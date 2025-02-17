@@ -38,7 +38,7 @@ const UserProvider = ({ children }) => {
             .catch(err => console.error('Error setting persistence: ', err));
     }, [auth])
 
-    const handleLogin = async () => {
+    const handleLogin = async (navigate) => {
         try {
             const result = await signInWithPopup(auth, provider);
             const newUser = {
@@ -49,22 +49,26 @@ const UserProvider = ({ children }) => {
             setUser(newUser);
             createUser(newUser);
             setIsLoggedIn(true);
+            navigate('/');
         } catch (err) {
             console.error('Error in logging in: ', err);
         }
     };
 
-    const handeLogout = async () => {
+    const handleLogout = async (navigate) => {
         try {
             await signOut(auth);
             setUser({});
+            setIsLoggedIn(false);
+            console.log('logged in', isLoggedIn);
+            // navigate('/login');
         } catch (err) {
             console.error('Error in logging out: ', err);
         }
     };
 
     return (
-        <UserContext.Provider value={{ isLoggedIn, setIsLoggedIn, user, setUser, handleLogin, handeLogout }}>
+        <UserContext.Provider value={{ isLoggedIn, setIsLoggedIn, user, setUser, handleLogin, handleLogout }}>
             {children}
         </UserContext.Provider>
     )

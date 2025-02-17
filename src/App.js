@@ -1,6 +1,5 @@
 // deps
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
 
 // contexsts
 import { MessageProvider } from './Context/MessageContext';
@@ -31,48 +30,14 @@ import Login from './pages/Login/Login.js';
 // components
 import MessageBox from './components/MessageBox/MessageBox';
 import Navbar from './components/Navbar/Navbar';
-import { Button } from '@mui/material';
-import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from 'firebase/auth';
-import { provider } from './firebase.js';
-
 
 function App() {
   const { isLoggedIn, user } = useUser();
-  // const [isLoggedIn, setIsLoggedIn] = useState(false);
-  // const [user, setUser] = useState({})
-  // const auth = getAuth();
-
-  // const handleLogin = () => {
-  //   signInWithPopup(auth, provider).then(result => {
-  //     console.log('Result', result);
-  //     setUser({
-  //       name: result?.user?.displayName,
-  //       photo: result?.user?.photoURL,
-  //       userId: result?.user?.uid
-  //     });
-  //     setIsLoggedIn(true);
-  //   }).catch(err => console.log('Error: ', err));
-  // }
 
   return (
     <MessageProvider>
       <BrowserRouter>
         {!isLoggedIn ? (
-          // <div style={{
-          //   height: '100vh',
-          //   width: '100vw',
-          //   alignItems: 'center',
-          //   display: 'flex',
-          //   justifyContent: 'center',
-          //   background: 'black',
-          // }}>
-          //   <Button style={{
-          //     color: 'white',
-          //     padding: '20px'
-          //   }} onClick={handleLogin}>
-          //     Login
-          //   </Button>
-          // </div>
           <Login />
         ) : (
           <div>

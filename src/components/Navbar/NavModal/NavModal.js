@@ -20,14 +20,14 @@ function NavModal({ showModal, setShowModal }) {
 
     const handleClickSignOut = () => {
         setShowModal('none');
-        handleLogout();
+        handleLogout(navigate);
     }
 
     return (
         <div className="navModalContainer" style={{ display: showModal }}>
             <div className="navModalProfile">
                 <div className="navModalProfileInfo">
-                    <img src={user.image} />
+                    <img src={user.image} alt='' />
                     <div className="navModalProfileText">
                         <p className="usersName">{user.name}</p>
                         <p className="usersBio">{user.bio ? user.bio : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}</p>

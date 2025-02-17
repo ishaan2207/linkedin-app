@@ -11,7 +11,7 @@ function UserInfo({ postedBy, createdAt }) {
     return (
         <div className="userInfoContainer">
             <div className="userProfilePicture">
-                <img src="https://media.licdn.com/dms/image/v2/D4D03AQGYxNTXYJlddQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1699309825094?e=1739404800&v=beta&t=DMt5wdHJBrrvZ16Bvq--C9FrmNCYj64W9z1_zA1lsOo" alt="" />
+                <img src="https://media.licdn.com/dms/image/v2/D4D03AQGYxNTXYJlddQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1699309825094?e=1740614400&v=beta&t=mZFI7qaZgbNl4g8ilVpeQX5YXM3bTesolnDTaZlLdRA" alt="" />
             </div>
             <div className="userProfileInformation">
                 <div className="userPostTitle">

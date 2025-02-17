@@ -14,7 +14,7 @@ function CreatePost({ createNewPost, createPostInput, setCreatePostInput }) {
     return (
         <div className="createPostContainer">
             <div className="createPostInput">
-                <img src="https://media.licdn.com/dms/image/v2/D4D03AQGYxNTXYJlddQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1699309825094?e=1739404800&v=beta&t=DMt5wdHJBrrvZ16Bvq--C9FrmNCYj64W9z1_zA1lsOo" alt="userProfileImage" />
+                <img src="https://media.licdn.com/dms/image/v2/D4D03AQGYxNTXYJlddQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1699309825094?e=1740614400&v=beta&t=mZFI7qaZgbNl4g8ilVpeQX5YXM3bTesolnDTaZlLdRA" alt="userProfileImage" />
                 <input
                     type="text" placeholder="Start a post, try writing with AI"
                     value={createPostInput}

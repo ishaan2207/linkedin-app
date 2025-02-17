@@ -1,5 +1,5 @@
 const POST_HEADER = {
-    IMG: 'https://media.licdn.com/dms/image/v2/D5603AQGhx5m18CwgLg/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1704628438898?e=1739404800&v=beta&t=kuBst9Mkt7bDk1Ja-zjBTP-20O0IKX9bcThk1bGNAk8',
+    IMG: 'https://media.licdn.com/dms/image/v2/D4D03AQGYxNTXYJlddQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1699309825094?e=1740614400&v=beta&t=mZFI7qaZgbNl4g8ilVpeQX5YXM3bTesolnDTaZlLdRA',
     USER: 'Advait Joshi'
 }
 
