@@ -17,11 +17,11 @@ import { useUser } from "../../../Context/UserContext.js";
 import { fetchProfileInformation } from "../../../utils/apis/profile.js";
 
 function LeftPane() {
-    const [userProfile, setUserProfile] = useState([]);
-    const { userId } = useUser();
+    const [userProfile, setUserProfile] = useState({});
+    const { user } = useUser();
 
     useEffect(() => {
-        fetchProfileInformation('1').then(data => setUserProfile(data));
+        fetchProfileInformation(user.userId).then(data => setUserProfile(data));
     }, []);
 
     return (

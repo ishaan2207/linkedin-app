@@ -5,17 +5,17 @@ import PublicOutlinedIcon from '@mui/icons-material/PublicOutlined';
 import CircleIcon from '@mui/icons-material/Circle';
 import AddIcon from '@mui/icons-material/Add';
 
-function UserInfo({ postedBy, createdAt }) {
+function UserInfo({ createdAt, userProfile }) {
     const userDesignation = 'Founder & CEO @ People Group | Tech & D2C Builder & Investor 🦈 @Shark Tank India';
 
     return (
         <div className="userInfoContainer">
             <div className="userProfilePicture">
-                <img src="https://media.licdn.com/dms/image/v2/D4D03AQGYxNTXYJlddQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1699309825094?e=1740614400&v=beta&t=mZFI7qaZgbNl4g8ilVpeQX5YXM3bTesolnDTaZlLdRA" alt="" />
+                <img src={userProfile.image} alt="" />
             </div>
             <div className="userProfileInformation">
                 <div className="userPostTitle">
-                    <div className="userProfileName">{postedBy}</div>
+                    <div className="userProfileName">{userProfile.name}</div>
                     <CircleIcon style={{ fontSize: '4px', color: 'grey' }} />
                     <div className="connectionDegree">3rd+</div>
                 </div>

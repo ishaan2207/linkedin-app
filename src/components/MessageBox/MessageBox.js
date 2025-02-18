@@ -12,15 +12,23 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import SearchIcon from '@mui/icons-material/Search';
 import TuneIcon from '@mui/icons-material/Tune';
 
+// contexts
+import { useUser } from "../../Context/UserContext";
+
 // apis
 import { fetchMessages } from "../../utils/apis/message";
+import { fetchProfileInformation } from "../../utils/apis/profile";
 
 function MessageBox() {
 
     const [messages, setMessages] = useState([]);
 
+    const [userProfile, setUserProfile] = useState({});
+
     const [focusedMessages, setFocusedMessages] = useState([]);
     const [otherMessages, setOtherMessages] = useState([]);
+
+    const { user } = useUser();
 
     useEffect(() => {
         fetchMessages('1').then(data => {
@@ -28,6 +36,7 @@ function MessageBox() {
             setFocusedMessages(data.slice(0, data.length / 2));
             setOtherMessages(data.slice(data.length / 2, data.length - 1));
         });
+        fetchProfileInformation(user.userId).then(data => setUserProfile(data));
     }, [])
 
     const [selectedMessages, setSelectedMessages] = useState(focusedMessages);
@@ -45,6 +54,12 @@ function MessageBox() {
             return prev;
         })
     }
+
+    useEffect(() => {
+        if (showBody) {
+            setSelectedMessages(focusedMessages)
+        }
+    }, [showBody, setSelectedMessages]);
 
     const handleFocusedClick = () => {
         setSelectedMessages(focusedMessages);
@@ -74,7 +89,7 @@ function MessageBox() {
             <div className="messageBoxContainer">
                 <div className="messageBoxHeader">
                     <div className="messageBoxHeaderLeft">
-                        <img src="https://media.licdn.com/dms/image/v2/D4D03AQGYxNTXYJlddQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1699309825094?e=1740614400&v=beta&t=bWv9b_Ra7d2SHm0f-_h8R0s7tOpCyv1gftdU5Litv6U" />
+                        <img src={userProfile.image} alt="" />
                         <p>Messaging</p>
                     </div>
                     <div className="messageBoxHeaderRight">

@@ -1,4 +1,4 @@
-const { LOCAL_URL } = require('./constants');
+const { PRODUCTION_URL } = require('./constants');
 
 const createUser = async (user) => {
     console.log('user', user);
@@ -8,7 +8,7 @@ const createUser = async (user) => {
             name: user.name,
             image: user.image,
         };
-        const response = await fetch(`${LOCAL_URL}/create-user`, {
+        const response = await fetch(`${PRODUCTION_URL}/create-user`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(reqBody),

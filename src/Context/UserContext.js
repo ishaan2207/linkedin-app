@@ -47,7 +47,8 @@ const UserProvider = ({ children }) => {
                 userId: result?.user?.uid,
             };
             setUser(newUser);
-            createUser(newUser);
+            await createUser(newUser);
+            console.log('Created user');
             setIsLoggedIn(true);
             navigate('/');
         } catch (err) {
@@ -55,13 +56,11 @@ const UserProvider = ({ children }) => {
         }
     };
 
-    const handleLogout = async (navigate) => {
+    const handleLogout = async () => {
         try {
             await signOut(auth);
             setUser({});
             setIsLoggedIn(false);
-            console.log('logged in', isLoggedIn);
-            // navigate('/login');
         } catch (err) {
             console.error('Error in logging out: ', err);
         }

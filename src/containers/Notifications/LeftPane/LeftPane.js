@@ -16,10 +16,10 @@ import { fetchProfileInformation } from "../../../utils/apis/profile";
 
 function LeftPane() {
     const [userProfile, setUserProfile] = useState([]);
-    const { userId } = useUser();
+    const { user } = useUser();
 
     useEffect(() => {
-        fetchProfileInformation('1').then(data => setUserProfile(data));
+        fetchProfileInformation(user.userId).then(data => setUserProfile(data));
     }, []);
 
     return (

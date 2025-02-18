@@ -19,10 +19,16 @@ import EditProfileAbout from "../../../components/Profile/ProfileAbout/EditProfi
 import EditProfileInfo from "../../../components/Profile/ProfileInformation/EditProfileInfo/EditProfileInfo";
 import EditEducation from "../../../components/Profile/ProfileEducation/EditEduation/EditEducation";
 import EditExperience from "../../../components/Profile/ProfileExperience/EditExperience/EditExperience";
+import UpdateSkill from "../../../components/Profile/Skills/UpdateSkill/UpdateSkill";
+
+// contexts
+import { useUser } from "../../../Context/UserContext";
 
 // apis
-import { createProfileExperience, createProfileEducation, createProfileSkill, fetchProfileInformation, fetchProfileExperience, fetchProfileEducation } from "../../../utils/apis/profile";
-import UpdateSkill from "../../../components/Profile/Skills/UpdateSkill/UpdateSkill";
+import {
+    createProfileExperience, createProfileEducation, createProfileSkill, fetchProfileInformation,
+    fetchProfileExperience, fetchProfileEducation
+} from "../../../utils/apis/profile";
 
 function MainFeed() {
 
@@ -46,11 +52,13 @@ function MainFeed() {
     const [showEditInfo, setShowEditInfo] = useState('none');
     const [showEditAbout, setShowEditAbout] = useState('none');
 
+    const { user } = useUser();
+
     useEffect(() => {
-        fetchProfileInformation('1').then(data => setProfileInfo(data));
+        fetchProfileInformation(user.userId).then(data => setProfileInfo(data));
         fetchProfileExperience().then(data => setAllExperiences(data));
         fetchProfileEducation().then(data => setAllEducations(data));
-        fetchProfileInformation('1').then(data => setAllSkills(data.skills));
+        fetchProfileInformation(user.userId).then(data => setAllSkills(data.skills));
     }, [])
 
     const [newExperienceFields, setNewExperienceFields] = useState({

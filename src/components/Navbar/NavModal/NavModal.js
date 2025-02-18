@@ -20,7 +20,7 @@ function NavModal({ showModal, setShowModal }) {
 
     const handleClickSignOut = () => {
         setShowModal('none');
-        handleLogout(navigate);
+        handleLogout();
     }
 
     return (

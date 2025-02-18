@@ -10,11 +10,11 @@ import SendIcon from '@mui/icons-material/Send';
 // constants
 import { CREATE_POST_ICONS } from "../../constants/mocks/Home/homeCreatePost";
 
-function CreatePost({ createNewPost, createPostInput, setCreatePostInput }) {
+function CreatePost({ createNewPost, createPostInput, setCreatePostInput, userProfile }) {
     return (
         <div className="createPostContainer">
             <div className="createPostInput">
-                <img src="https://media.licdn.com/dms/image/v2/D4D03AQGYxNTXYJlddQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1699309825094?e=1740614400&v=beta&t=mZFI7qaZgbNl4g8ilVpeQX5YXM3bTesolnDTaZlLdRA" alt="userProfileImage" />
+                <img src={userProfile.image} alt="userProfileImage" />
                 <input
                     type="text" placeholder="Start a post, try writing with AI"
                     value={createPostInput}

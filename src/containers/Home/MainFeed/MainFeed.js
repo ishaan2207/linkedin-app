@@ -11,11 +11,12 @@ import UpdatePost from "../../../components/Posts/UpdatePost/UpdatePost";
 import ProfileSummary from "../../../components/ProfileSummary/ProfileSummary";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
-// constants
-// import { allPostsArray } from "../../../constants/mocks/Home/homeMainFeed";
+// contexts
+import { useUser } from "../../../Context/UserContext.js";
 
 // apis
 import { fetchAllPosts, createPost, deletePost } from "../../../utils/apis/posts";
+import { fetchProfileInformation } from "../../../utils/apis/profile.js";
 
 function MainFeed() {
 
@@ -24,6 +25,9 @@ function MainFeed() {
     const [showUpdatePost, setShowUpdatePost] = useState('none');
     const [selectedPost, setSelectedPost] = useState({});
 
+    const [userProfile, setUserProfile] = useState({});
+    const { user } = useUser();
+
     const handleEditPost = (post) => {
         setSelectedPost(post);
         setShowUpdatePost('block');
@@ -31,8 +35,8 @@ function MainFeed() {
 
     useEffect(() => {
         fetchAllPosts().then(data => setAllPosts(data));
+        fetchProfileInformation(user.userId).then(data => setUserProfile(data));
     }, [])
-
 
     const updatePostsArray = (updatedPost) => {
         setAllPosts((prevPosts) =>
@@ -69,9 +73,10 @@ function MainFeed() {
             <UpdatePost showUpdatePost={showUpdatePost} setShowUpdatePost={setShowUpdatePost} selectedPost={selectedPost}
                 setSelectedPost={setSelectedPost} updatePostsArray={updatePostsArray}
             />
-            <CreatePost createNewPost={createNewPost} createPostInput={createPostInput} setCreatePostInput={setCreatePostInput} />
+            <CreatePost createNewPost={createNewPost} createPostInput={createPostInput} setCreatePostInput={setCreatePostInput}
+                userProfile={userProfile} />
             <AllPosts allPosts={allPosts} setAllPosts={setAllPosts} deletePost={deletePost} selectedPost={selectedPost}
-                handleEditPost={handleEditPost}
+                handleEditPost={handleEditPost} userProfile={userProfile}
             />
         </div>
     )

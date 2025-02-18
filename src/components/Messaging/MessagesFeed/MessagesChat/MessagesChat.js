@@ -1,5 +1,5 @@
 // deps
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // styles
 import './MessagesChat.css';
@@ -18,19 +18,30 @@ import SentimentSatisfiedOutlinedIcon from '@mui/icons-material/SentimentSatisfi
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
+// contexts
+import { useUser } from "../../../../Context/UserContext";
+
 // apis
 import { updateMessage } from '../../../../utils/apis/message';
+import { fetchProfileInformation } from '../../../../utils/apis/profile';
 
 function MessagesChat({ message, setAllMessages, handleBackToLeft, isMobile }) {
 
     const [messageText, setMessageText] = useState('');
+    const [userProfile, setUserProfile] = useState({});
+
+    const { user } = useUser();
+
+    useEffect(() => {
+        fetchProfileInformation(user.userId).then(data => setUserProfile(data));
+    }, [])
 
     const handleSubmit = () => {
         const newMessage = {
             text: messageText,
             timeSent: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false }),
             senderId: '1',
-            senderName: 'Ishaan Gupta',
+            senderName: userProfile.name,
         };
         updateMessage(message?._id, newMessage);
         setAllMessages(prevMessages =>
