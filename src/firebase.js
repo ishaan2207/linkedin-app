@@ -13,12 +13,12 @@ const apiKey = process.env.REACT_APP_API_KEY;
 
 const firebaseConfig = {
     apiKey: apiKey,
-    authDomain: "linkedin-1602c.firebaseapp.com",
-    projectId: "linkedin-1602c",
-    storageBucket: "linkedin-1602c.firebasestorage.app",
-    messagingSenderId: "1000117354614",
-    appId: "1:1000117354614:web:8785f9c5b51cab465d9f57",
-    measurementId: "G-JVFM625KJR"
+    authDomain: "linkedin-app-4ec3e.firebaseapp.com",
+    projectId: "linkedin-app-4ec3e",
+    storageBucket: "linkedin-app-4ec3e.firebasestorage.app",
+    messagingSenderId: "301873063251",
+    appId: "1:301873063251:web:488d1ae52cb4f1008e2da6",
+    measurementId: "G-LXTDES5149"
 };
 
 // Initialize Firebase

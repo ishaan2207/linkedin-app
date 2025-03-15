@@ -29,8 +29,8 @@ function Skills({ allSkills, setShowAddSkills, setShowUpdateSkills, setEditSkill
             </div>
             <div className="skillInformationContainer">
                 {allSkills.map((skill, key) => (
-                    <div>
-                        <div className="skillInformation" key={key}>
+                    <div key={key}>
+                        <div className="skillInformation">
                             <div>
                                 <div className="skillTitle">{skill.skill}</div>
                                 <div className="skillLearntFrom">

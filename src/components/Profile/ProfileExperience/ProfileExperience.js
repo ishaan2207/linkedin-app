@@ -30,7 +30,7 @@ function ProfileExperience({ experiences, setShowAddExperience, setShowEditExper
             <div className="profileExperience">
                 {experiences.map((experience, key) => (
                     <div key={key}>
-                        <div className="experiencesContainer" key={key}>
+                        <div className="experiencesContainer">
                             <div className="profileExperienceImage">
                                 <img src={experience.companyImage} alt="" />
                             </div>

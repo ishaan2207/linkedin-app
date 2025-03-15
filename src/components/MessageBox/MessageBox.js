@@ -21,8 +21,6 @@ import { fetchProfileInformation } from "../../utils/apis/profile";
 
 function MessageBox() {
 
-    const [messages, setMessages] = useState([]);
-
     const [userProfile, setUserProfile] = useState({});
 
     const [focusedMessages, setFocusedMessages] = useState([]);
@@ -32,12 +30,11 @@ function MessageBox() {
 
     useEffect(() => {
         fetchMessages('1').then(data => {
-            setMessages(data);
             setFocusedMessages(data.slice(0, data.length / 2));
             setOtherMessages(data.slice(data.length / 2, data.length - 1));
         });
         fetchProfileInformation(user.userId).then(data => setUserProfile(data));
-    }, [])
+    }, [user.userId])
 
     const [selectedMessages, setSelectedMessages] = useState(focusedMessages);
     const [openedMessages, setOpenedMessages] = useState([]);
@@ -115,7 +112,7 @@ function MessageBox() {
                     <div className="messageBoxMessagesContainer">
                         {selectedMessages.map((message, key) => (
                             <div className="messageBoxMessage" key={key} onClick={() => handleOpenMessage(message)}>
-                                <img src={message?.user2?.image} />
+                                <img src={message?.user2?.image} alt="" />
                                 <div className="messageBoxMessageRight">
                                     <div className="messageSender">
                                         <span className="messageSenderName">

@@ -13,8 +13,8 @@ import { PROFILE_SETTINGS_SECTION } from "../../../constants/texts/Profile/profi
 function ProfileSettings() {
     return (
         <div className="profileSettingsContainer">
-            {PROFILE_SETTINGS_SECTION.map((profileSettingSection, index) => (
-                <div className="profileSettingDivContainer">
+            {PROFILE_SETTINGS_SECTION.map((profileSettingSection, key) => (
+                <div className="profileSettingDivContainer" key={key}>
                     <div className="profileSettingHeader">
                         <p>{profileSettingSection.header}</p>
                         <EditOutlinedIcon />
@@ -22,7 +22,7 @@ function ProfileSettings() {
                     <div className="profileSettingText">
                         {profileSettingSection.text}
                     </div>
-                    {index !== PROFILE_SETTINGS_SECTION.length - 1 ? <div className="separator"></div> : ''}
+                    {key !== PROFILE_SETTINGS_SECTION.length - 1 ? <div className="separator"></div> : ''}
                 </div>
             ))}
         </div>
